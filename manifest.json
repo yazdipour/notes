@@ -9,6 +9,6 @@
     }
   ],
   "background_color": "#34495e",
-  "display": "minimal-ui",
+  "display": "standalone",
   "theme_color": "#34495e"
 }
