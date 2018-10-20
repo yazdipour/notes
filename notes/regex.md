@@ -1,6 +1,7 @@
 # Regex
 
 * `^((?!XXX).)*$` Get Lines that not have XXX
+
 ---
 * `^abc$`	start-end of the string
 * `.`	any character except newline

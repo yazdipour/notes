@@ -1,0 +1,14 @@
+{
+  "short_name": "Notes",
+  "name": "Notes",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "background_color": "#34495e",
+  "display": "minimal-ui",
+  "theme_color": "#34495e"
+}
