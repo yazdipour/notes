@@ -1,8 +1,9 @@
 # Regex
 
 * `^((?!XXX).)*$` Get Lines that not have XXX
+* `[א-ת؀-ۿ]` Get RTL Chars
 
----
+***
 * `^abc$`	start-end of the string
 * `.`	any character except newline
 * `\w\d\s`	word, digit, whitespace
