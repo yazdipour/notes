@@ -1,0 +1,61 @@
+[34m
+* Installing apt-transport-https
+[0m
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Ign:2 http://deb.debian.org/debian stretch InRelease
+Hit:3 http://security.debian.org/debian-security stretch/updates InRelease
+Hit:4 http://deb.debian.org/debian stretch-updates InRelease
+Hit:5 http://deb.debian.org/debian stretch Release
+Ign:6 https://apt.datadoghq.com stable InRelease
+Hit:7 https://apt.datadoghq.com stable Release
+Ign:1 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Fetched 107 kB in 18s (5,713 B/s)
+Reading package lists...
+W: GPG error: http://security.ubuntu.com/ubuntu xenial-security InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 40976EAF437D05B5 NO_PUBKEY 3B4FE6ACC0B21F32
+W: The repository 'http://security.ubuntu.com/ubuntu xenial-security InRelease' is not signed.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+apt-transport-https is already the newest version (1.4.8).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+dirmngr is already the newest version (2.1.18-8~deb9u2).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+[34m
+* Installing APT package sources for Datadog
+[0m
+Warning: apt-key output should not be parsed (stdout is not a terminal)
+Executing: /tmp/apt-key-gpghome.5r8bi6U4Re/gpg.1.sh --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 382E94DE
+gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+[34m
+* Installing the Datadog Agent package
+[0m
+Ign:1 https://apt.datadoghq.com stable InRelease
+Hit:2 https://apt.datadoghq.com stable Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+datadog-agent is already the newest version (1:6.5.2-1).
+0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+[34m
+* Keeping old datadog.yaml configuration file
+[0m
+[34m* Starting the Agent...
+[0m
+Failed to connect to bus: No such file or directory
+[31m
+It looks like you hit an issue when trying to install the Agent.
+
+Troubleshooting and basic usage information for the Agent are available at:
+
+    https://docs.datadoghq.com/agent/basic_agent_usage/
+
+If you're still having problems, please send an email to support@datadoghq.com
+with the contents of ddagent-install.log and we'll do our very best to help you
+solve your problem.
+[0m
