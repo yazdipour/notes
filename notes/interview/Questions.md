@@ -2,6 +2,9 @@
 
 ## Microsoft
 
+* https://www.glassdoor.com/Interview/Microsoft-Explore-Microsoft-Interview-Questions-EI_IE1651.0,9_KO10,27.htm
+* https://www.glassdoor.com/Interview/Microsoft-Intern-Interview-Questions-EI_IE1651.0,9_KO10,16.htm
+
 ### Phone Screen round
 
 * What is your favorite technology and why?
