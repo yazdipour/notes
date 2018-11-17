@@ -24,6 +24,9 @@ Cracking the Coding Interview is likely overdoing it, but good prep for future i
 * Keep track of the positions of people in a line. (Note that some questions asked are intentionally vague; ask clarifying questions. Can we consider this a sorted list? I.e. are they allowed to move around or not? What does that movement look like? That detail matters.)
 * Remove duplicates in this list.
 * Reverse a string.
+* Differences between a Binary Search Tree and Hash Table
+* Write a function that merges two sorted Linked Lists
+* Write some functions that traversed Binary Search Trees
 
 ### SWE Intern questions (final rounds)
 

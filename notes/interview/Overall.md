@@ -1,5 +1,9 @@
 # Interview
 
+## Where to Find
+
+* https://careers.microsoft.com/us/en/search-results?rt=university&keywords=Intern
+
 ## Tools
 
 Make sure the interviews focus on data structures, algorithms, or recursion.
@@ -10,4 +14,4 @@ Make sure the interviews focus on data structures, algorithms, or recursion.
 
 ## References
 
-* Book: Cracking the Coding Interview (1-5,7-10 Chapters)
+* Book: Cracking the Coding Interview (1-5,7-10 Chapters) [-> Samples SourceCode](https://github.com/careercup/CtCI-6th-Edition)

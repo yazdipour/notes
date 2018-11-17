@@ -1,7 +1,13 @@
 # Microsoft Intern
 
+* https://www.linkedin.com/company/microsoft/
 * Source1: https://github.com/CourtneyThurston/microsoft-internships
 * Source2: https://github.com/MeyAyre/tech-through-student-eyes/
+
+## Explore Internship
+
+* https://careers.microsoft.com/us/en/usexploremicrosoftprogram
+* **Candidates must be in their first or second year of college and enrolled in a bachelor's degree program in the United States, Canada, or Mexico with a demonstrated interest in majoring in computer science.**
 
 ## Getting Noticed/Contact Information
 
@@ -19,6 +25,10 @@ From online application through to hire stage, the acceptance rate for Internshi
 
 So you've been contacted for an interview. Congrats! This process begins in one of two ways: first with either a phone screen or a campus interview. Phone screens are typically non-technical or close-to-non-technical 30 minute conversations with a recruiter. See the section below for a sampling of questions. Campus interviews can be **more technical** despite being about the same amount of time; candidates are typically given an easy/moderate (Leetcode equivalent) technical question by an engineer to solve in real time or to code and hand-in for future evaluation. It appears as though this is done mostly at target schools and/or where there are large volumes of qualified candidates to sort through in short amounts of time (big state schools, etc).
 
+## Scheduling
+
+**I recommend you schedule your phone screen no later than the third week of October, and fly-out final rounds to be completed no later than the first week of November**. This advice is **especially** emphasized for candidates interviewing for the Explore program; there are only ~300 Explorer spots, while there are nearly 1.7-2k SWE Intern spots. Explorer spots go very quickly; I've seen PLENTY of top students at top schools do exceptionally well in interviews only to be turned away because they waited until December to complete the rounds and all the spots got taken out from under them in the meantime. (Likewise, don't do this if you're seeking a PM role, either. Those figures are similar and as the PM program is extraordinarily competitive, I recommend not waiting.)
+
 ## Interview Day
 
 On interview day your recruiter will tell you what building and time to meet them at. You'll have anywhere between 3-5, interviews,
@@ -32,59 +42,11 @@ Here's some tips to live by:
 
 * You will be asked to optimize your solution no matter what. If you think you can create the most optimal solution as your initial answer, go for it. If not, just create some solution that will work and mention that you plan on optimizing it later (if you have time). The team I interviewed with cared that I got /some/ answer on the board, especially if we were low on time.
 
-## Interview Question Examples
-
-Assume any questions asked for Explore are also fair game for SWE/etc, since they are in theory "easier".
-
-### Phone Screen round
-
-1. What is your favorite technology and why?
-2. What teams at Microsoft are you interested in and why?
-3. How did you become interested in computer science?
-4. What is a linked list?
-5. What is your favorite language and why?
-6. (Explore) You work in an ice cream shop and step into the back for a few minutes. You return and see a large group of people waiting. How do you serve them?
-7. (Explore) How would you make a multimedia cookbook for a family of varying cooking skills and abilities?
-
-### Explore - PM-y questions (final rounds)
-Cracking the PM Interview is overdoing it, but good prep for future PM candidates (you will need to re-interview from Explore to be considered for a return offer in a PM role).
-
-1. If you were given a keyboard, how would you test the keys?
-2. How would you test a pen?
-3. How would you design a calculator for a visually impaired student?
-4. How would you design a vending machine or a toaster?
-5. You have a series of numbers from one to one million and there is a missing number; how would you find the missing number? (Solution can also be coded as part of the tech interviews)
-6. In 2 to 3 minutes, explain a computer to a 5 year old who has seen a computer, but doesn’t really understand what it is or does.
-7. What is the difference between C and Java/between C and C# and how might this impact design decisions?
-
-### Explore - Dev questions (final rounds)
-
-Cracking the Coding Interview is likely overdoing it, but good prep for future interviews elsewhere (note that Explorers interested in returning as a SWE Intern within the same team do not need to re-interview).
-
-1. What is the best data structure for a phone book with names and phone numbers? Code an example solution and explain.
-2. Print values in a doubly linked list in descending order.
-3. Invert a binary search tree.
-4. Sort an array, stack, and queue in arrays and linked lists.
-5. Write a program that returns the acute angle between two hands on a clock.
-6. Keep track of the positions of people in a line. (Note that some questions asked are intentionally vague; ask clarifying questions. Can we consider this a sorted list? I.e. are they allowed to move around or not? What does that movement look like? That detail matters.)
-7. Remove duplicates in this list.
-8. Reverse a string.
-
-### SWE Intern questions (final rounds)
-
-Cracking the Coding Interview is good prep. Leetcode Hard is over-doing it.
-
-1. Given two integers m and n, loop repeatedly through an array of m and remove each nth element. Return the last element left. (If m = 7 and n = 4, then begin with the array 1 2 3 4 5 6 7 and remove, in order, 4 1 6 5 2 7 and return 3.)
-2. Given an array of 0's and 1's, move all of the 0's to the beginning of the array and all of the 1's to the end of the array. 
-3. Write a function that accepts an m x n matrix (array) of random numbers, and use the functions row (times) 2 and column-1 to set the entire array to 0.
-4. Solve a maze recursively.
-5. Solve the N Queens problem.
-6. Keep track of the X most recent entries to a list without duplicates (sometimes framed as a line problem).
-7. Find the longest palindrome in a string.
-
-## Scheduling
-
-**I recommend you schedule your phone screen no later than the third week of October, and fly-out final rounds to be completed no later than the first week of November**. This advice is **especially** emphasized for candidates interviewing for the Explore program; there are only ~300 Explorer spots, while there are nearly 1.7-2k SWE Intern spots. Explorer spots go very quickly; I've seen PLENTY of top students at top schools do exceptionally well in interviews only to be turned away because they waited until December to complete the rounds and all the spots got taken out from under them in the meantime. (Likewise, don't do this if you're seeking a PM role, either. Those figures are similar and as the PM program is extraordinarily competitive, I recommend not waiting.)
+Lastly, make sure you come up with some questions that you would like to ask your interviewers because normally you will have some time at the end of the interview and it’s kind of awkward if you don’t have anything to ask them. My go to questions are usually:
+* Why did you choose Microsoft over other companies?
+* Why have you stayed with Microsoft for as long as you have? Have you thought about trying another company?
+* What is your favorite thing about your job?
+* What is the work life balance like on your team?
 
 ## Compensation
 
