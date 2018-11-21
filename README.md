@@ -8,6 +8,7 @@
 * [Regex](notes/regex.md)
 * [Git](notes/git.md)
 * [Markdown](notes/markdown.md)
+* [StringFormat](notes/stringformat.md)
 * [Bash](notes/bash.md)
 * [Powershell](notes/powershell.md)
 * Interview
