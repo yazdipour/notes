@@ -9,7 +9,7 @@
 * [Git](notes/git.md)
 * [Markdown](notes/markdown.md)
 * [StringFormat](notes/stringformat.md)
-* [Bash](notes/bash.md)
+* [Linux](notes/linux.md)
 * [Powershell](notes/powershell.md)
 * Interview
     1. [Overall](notes/interview/Overall.md)
