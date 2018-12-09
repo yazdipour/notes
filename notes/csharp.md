@@ -117,3 +117,29 @@ Console. ( isZero( addNums ( - 5, 5)));
 bool[] arr={false,true,false};
 arr.Count(a=>a==false); //2. Count number of falses
 ```
+
+## C# 8.0
+
+```csharp
+#nullable enable  //to enable roslyn nullable check
+class X {
+    static async Task Main(string[] args){
+        var names= GetNames(Service.GetSubscribersAsync());
+        await for (var name in names) WriteLine(name);
+    }
+
+    static async IAsyncEnumerable<string> GetNames(IAsyncEnumerable<People> people){
+        await for (var name in names) yield return GetFirstName(name);
+    }
+
+    void newSwitch(People p){
+        return (p.FirstName, p.LastName) switch{
+            (null, null)=>"",
+            (string f, null)=> $"{f}",
+            (string f, string l) => $"{f},{l}",
+            (null, string _) => $"{_}"
+        };
+    }
+}
+
+```
