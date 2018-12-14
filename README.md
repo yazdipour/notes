@@ -1,6 +1,7 @@
 # Notes
 
 * [C#](notes/csharp.md)
+* [Android](notes/android.md)
 * [Css](notes/css.md)
 * [Sql](notes/sql.md)
 * [Js](notes/js.md)
