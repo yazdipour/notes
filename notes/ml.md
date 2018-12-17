@@ -3,6 +3,18 @@
 * Facial Recongnition Database: https://www.kairos.com/blog/60-facial-recognition-databases
 * Gensim (مانند LDA، LSI و یا Word2Vec) https://radimrehurek.com/gensim/
 
+## 9 Steps in becoming a Machine Learning Expert
+
+1. Understand the basics
+2. Learn Some Statics
+3. Learn python for Data Analysis
+4. Complete an Exploratory analysis project
+5. Create Unsupervised learning models
+6. Create supervised learning models
+7. Understand big data technologies
+8. Explorer deep learning models
+9. Undertake and complete a data project
+
 ## Basic Concepts
 
 https://raw.githubusercontent.com/yazdipour/notes/assets/BasicConcepts.png
