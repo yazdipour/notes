@@ -17,7 +17,7 @@
 
 ## Basic Concepts
 
-https://raw.githubusercontent.com/yazdipour/notes/assets/BasicConcepts.png
+https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
 
 ## 100DaysOfMLCode
 

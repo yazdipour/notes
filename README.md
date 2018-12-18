@@ -1,5 +1,6 @@
 # Notes
 
+* [Algorithm](notes/algorithm.md)
 * [🤖Android](notes/android.md)
 * [💚C#](notes/csharp.md)
 * [💜Css](notes/css.md)
@@ -13,8 +14,10 @@
 * [📚Machine Leanring](notes/ml.md)
 * [🐘Php](notes/php.md)
 * [💙Powershell](notes/powershell.md)
+* [🐍Python](notes/python.md)
 * [Regex](notes/regex.md)
 * [StringFormat](notes/stringformat.md)
+* [Test](notes/test.md)
 
 * Interview
     1. [Overall](notes/interview/Overall.md)
