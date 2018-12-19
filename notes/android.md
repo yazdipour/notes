@@ -12,14 +12,6 @@ try {
 }
 ```
 
-## Fastlane
-
-```shell
-fastlane init
-# modify fastlane file
-fastlane android deploy
-```
-
 ## Binding
 
 add in app/build.gradle
