@@ -28,6 +28,8 @@ var names = [String]()
 names.append("Ali")
 name.remove("Ali")
 name.remove(at:1)
+name.removeLast()
+name.removeAtIndex(3)
 var names2 = Array<String>()
 
 // Sets
@@ -39,13 +41,28 @@ names.insert("Ali")
 var dic:[Int:String]= [12:"Ali",22:""]
 var dic= [12:"Ali",22:""]
 var dic= [Int:String]()
-dic[22]="Ali"  // adding
+dic[22]="Ali"  			// adding
+dic[22]=nil				// removing
+dic.removeValueForKey(22) // removing
 for (key, val) in dic{} // loop
+dic.updateValue("XX",forKey:22)
 
 // func
 func sum(n1: Double, n2:Double) -> Double { return 0}
+```
 
-// class
+### Tuple
+
+```swift
+func x() -> (n1: Double, n2:Double) { return (0,1)}
+x().n1
+x().0
+let (m1,m2) = x()
+```
+
+### class
+
+```swift
 class Car{
 	var type:String?
 	var price:Double?
@@ -72,18 +89,30 @@ class Truck:Car{
 protocol ILayer{
 	func x(z:Int) - Int
 }
+```
 
-// Extension
+### Extension
+
+```swift
 extension Car{
 	func getPrice()->Int{
 		return prise
 	}
 }
 extension Double { func foo() {print(self)} }
+```
 
-// Enum
+### Enum
+
+```swift
 enum Direction { 
 	case EAST
 	case WEST
+}
+let xxx: Direction
+xxx = .EAST
+switch xxx{
+	case .EAST:
+		print()
 }
 ```

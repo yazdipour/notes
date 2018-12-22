@@ -12,7 +12,7 @@
 * [Js](notes/js.md)
 * [‍Security](notes/security.md)
 * [SQL](notes/sql.md)
-* [Swift](notes/swift.md)
+* [Swift / iOS](notes/swift.md)
 * [Linux](notes/linux.md)
 * [Markdown](notes/markdown.md)
 * [Machine Leanring](notes/ml.md)
