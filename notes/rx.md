@@ -13,8 +13,8 @@ def do_obs(observer):
 
 source = Observable.create(do_obs)
 source.subscribe(on_next=lambda value: print("next_{0}".format(value)),
-	on_error=lambda: print("completed"),
-	on_completed=lambda r: print("error_{0}".format(r)))
+    on_error=lambda: print("completed"),
+    on_completed=lambda r: print("error_{0}".format(r)))
 ```
 
 ## RxJava
@@ -24,9 +24,7 @@ source.subscribe(on_next=lambda value: print("next_{0}".format(value)),
 * https://github.com/kaushikgopal/RxJava-Android-Samples
 * [**RxJava: Alphabetical List of Observable Operators**](https://github.com/ReactiveX/RxJava/wiki/Alphabetical-List-of-Observable-Operators)
 * [**Pro Presentaion + Slides: The State of Managing State with RxJava**](https://jakewharton.com/the-state-of-managing-state-with-rxjava/)
-
 * [**Excellent Slides + Diagram of functions + Android Examples**](http://slides.com/yaroslavheriatovych/frponandroid#/)
-
 * [**Excellent Slides + Diagram of functions + Android Examples_2**](http://slides.com/yaroslavheriatovych/rxtips-3#/)
 
 ### Observable transformation
@@ -40,17 +38,17 @@ source.subscribe(on_next=lambda value: print("next_{0}".format(value)),
 
 ### Observable filtering
 
-filter( ) — filter items emitted by an Observable
-takeLast( ) — only emit the last n items emitted by an Observable
-takeLastBuffer( ) — emit the last n items emitted by an Observable, as a single list item
-skip( ) — ignore the first n items emitted by an Observable
-take( ) — emit only the first n items emitted by an Observable
-first( ) — emit only the first item emitted by an Observable, or the first item that meets some condition
-elementAt( ) — emit item n emitted by the source Observable
-timeout( ) — emit items from a source Observable, but issue an exception if no item is emitted in a specified timespan
-distinct( ) — suppress duplicate items emitted by the source Observable
+* `filter( )` — filter items emitted by an Observable
+* `takeLast( )` — only emit the last n items emitted by an Observable
+* `takeLastBuffer( )` — emit the last n items emitted by an Observable, as a single list item
+* `skip( )` — ignore the first n items emitted by an Observable
+* `take( )` — emit only the first n items emitted by an Observable
+* `first( )` — emit only the first item emitted by an Observable, or the first item that meets some condition
+* `elementAt( )` — emit item n emitted by the source Observable
+* `timeout( )` — emit items from a source Observable, but issue an exception if no item is emitted in a specified timespan
+* `distinct( )` — suppress duplicate items emitted by the source Observable
 
-### _ 
+### _
 
 An `Observable` emits items; a `Subscriber` consumes those items.
 

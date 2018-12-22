@@ -1,0 +1,1 @@
+For C++ people, foo is public, _bar is protected, and __baz is private.
