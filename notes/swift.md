@@ -1,5 +1,18 @@
 # Swift
 
+## Closure
+
+```swift
+func foo( bar:()->String){
+	print(bar())
+}
+foo({return "xx"})
+
+func foo( bar:()->()){ bar() }
+foo(()->() in print("xx"))
+foo(print("xx"))
+```
+
 ## Basics
 
 ```swift
@@ -48,7 +61,13 @@ for (key, val) in dic{} // loop
 dic.updateValue("XX",forKey:22)
 
 // func
+func foo(){} // === func foo()->(){}
 func sum(n1: Double, n2:Double) -> Double { return 0}
+
+// Access Level
+let x =1  // internal
+public let x=2
+private let x=3
 ```
 
 ### Tuple
