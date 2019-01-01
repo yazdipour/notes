@@ -1,6 +1,16 @@
 # Python
 
-## *_**
+## * **
+
+```python
+>>> def z(x):print(x);
+...
+>>> d = {'x':1}
+>>> z(*d) //Arg
+x
+>>> z(**d)  //keyArg
+1
+```
 
 ```python
 def foo(x,y):
