@@ -1,13 +1,31 @@
 # Python
 
-## * **
+## *_**
 
 ```python
-def x(x,y):
+def foo(x,y):
     print('%s %s' % (x,y))
 
-x(*(1,2))
-x(*[1,2])
+>>foo(*(1,2))
+>>foo(*[1,2])
+
+bar= (x* x for x in range(2))
+>> foo(*bar) # 1 2
+
+dic= {'a':1,'y':2}
+>> foo(**dic) ## 1 2
+```
+
+```python
+def foo(a,*b,**c): # only 'a' is required
+	print(a)
+	print(b)
+	print(c)
+
+>>>foo('hello',1,2,3,key1=1,keyX='3')
+hello
+(1,2,3)
+{'key1':1 , 'keyX':'3'}
 ```
 
 ## Merging Dictionaries
@@ -71,4 +89,14 @@ def foo():
 # SAME AS
 def foo():
 	if(True): return 1
+```
+
+## Switch alternative
+
+```python
+def foo(op,x,y):
+	return {
+		'add': lambda: x+y,
+		'sub': lambda: x-y
+	}.get(op,lambda: None)()
 ```
