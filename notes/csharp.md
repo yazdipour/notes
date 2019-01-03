@@ -1,5 +1,13 @@
 # CSharp
 
+## Publish .NetCore App
+
+RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+
+```powershell
+dotnet publish -c Release -r win-x86  (--help)
+```
+
 ## Byte[] to String
 
 ```csharp
