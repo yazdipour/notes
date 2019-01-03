@@ -16,6 +16,7 @@
 * [Linux](notes/linux.md)
 * [Markdown](notes/markdown.md)
 * [Machine Leanring](notes/ml.md)
+* [Project Management](notes/pm.md)
 * [Php](notes/php.md)
 * [Powershell](notes/powershell.md)
 * [Python](notes/python.md)
