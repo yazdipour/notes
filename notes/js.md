@@ -1,16 +1,25 @@
 # JS
 
-## Colorful Console Log
+## Debuging
+
+```js
+debugger; //to set breakpoint
+```
+
+### Colorful Console Log
 
 ```js
 console.log("%c%s","color: red; background: yellow; font-size: 24px;","WARNING!");
 ```
 
-# TS
+## Cloning
 
-## Loading External Modules
+`const clonedObj= Object.assign({},theobj);`
 
-```js
-System.defaultJSExtensions=true;
-System.import('app')
-```
+## SSR vs CSR(Prerendering)
+
+in SSR
+(+) SEO
+(+) No Client JS Rendering
+(-) More Complex and involved build setup
+(-) More server side load on Server
