@@ -7,11 +7,16 @@
 
 * `<p :class="{hide: boolVar}" />` : if boolVar==true, class=hide, else it will not set class
 
-## Loading External Modules
+## Load Components from File
 
 ```js
-System.defaultJSExtensions=true;
-System.import('app')
+import Footer from './components/Footer'
+export default{
+	components:{
+		Footer
+	}
+}
+<Footer/>
 ```
 
 ## Directive (v-)

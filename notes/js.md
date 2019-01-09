@@ -23,3 +23,12 @@ in SSR
 (+) No Client JS Rendering
 (-) More Complex and involved build setup
 (-) More server side load on Server
+
+# TS
+
+## Loading External Modules
+
+```js
+System.defaultJSExtensions=true;
+System.import('app')
+```
