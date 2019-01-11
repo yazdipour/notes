@@ -12,6 +12,25 @@ try {
 }
 ```
 
+## SocketIO
+
+https://socket.io/blog/native-socket-io-and-android
+
+```java
+mSocket = IO.socket("http://chat.socket.io");
+mSocket.connect();
+mSocket.emit("new message", message); //Emitting events - Sending data
+mSocket.on("new message", onNewMessage); //Listening on events
+mSocket.off("new message", onNewMessage);
+private Emitter.Listener onNewMessage = new Emitter.Listener() {
+    @Override
+    public void call(final Object.. args) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject data = (JSONObject) args[0];
+```
+
 ## Binding
 
 add in app/build.gradle
