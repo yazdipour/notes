@@ -7,6 +7,10 @@
 
 * `<p :class="{hide: boolVar}" />` : if boolVar==true, class=hide, else it will not set class
 
+## Tools and plugins
+
+vue-router - vue-resource (Handle web requests) - vue-async-data (async data loading) - vue-validator (Form validation plugin) - vue-touch(Touch gestures using HammerJS)
+
 ## Release GithubPage
 
 * https://github.com/KieferSivitz/vue-gh-pages
