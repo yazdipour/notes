@@ -7,6 +7,24 @@
 
 * `<p :class="{hide: boolVar}" />` : if boolVar==true, class=hide, else it will not set class
 
+## Release GithubPage
+
+* https://github.com/KieferSivitz/vue-gh-pages
+* Need a bit configuration
+* `npm run deploy`
+
+## Run on Create
+
+```js
+export default{
+      created: function()
+      {
+          this.fetchProducts();
+      },
+      methods: {
+        fetchProducts(){}
+```
+
 ## Load Components from File
 
 ```js
