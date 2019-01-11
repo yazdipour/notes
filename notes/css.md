@@ -9,3 +9,9 @@ html {
     color: #000;
 }
 ```
+
+## Best way of Loading Fonts
+
+* Use WOFF2 Font
+* Add `<link rel="preload">`
+* Add `@font-face` declaration with `font-display: swap;`
