@@ -12,8 +12,49 @@ UWSwitch.Appearance.OnTintColor = UIColor.Red;
 UISlider.Appearance.MinimumTrackTintColor = UIColor.Blue;
 ```
 
+## Platform Specific
+
+```xaml
+<Image Source="graph.png" WidthRequest="320">
+  <Image.WidthRequest>
+    <OnPlatform x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="320" />
+        <On Platform="Android" Value="300" />
+    </OnPlatform>
+  </Image.WidthRequest>
+</Image>
+```
+
+## DependencyService
+
+DependencyService allows apps to call into platform-specific functionality from shared code. 
+
+* 1st Create Interface in SharedProj
+
+```c#
+public interface ITextToSpeech {
+    void Speak ( string text ); //note that interface members are public by default
+```
+
+* 2nd Implement per Platform
+
+```c#
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+```
+
+* 3rd Use it
+
+```C#
+DependencyService.Get<ITextToSpeech>().Speak("Hello");
+```
+
 ## A Gray hLine with 15 margin up and down
-`<BoxView HeightRequest="1" Margin="15,0,5,0" BackgroundColor="#eeeeee" />`
+`<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
 
 
 ## Navigation
@@ -38,26 +79,6 @@ public App()
     <Setter Property="BarTextColor" Value="White" />
 </Style>
 ```
-
-## Platform Specific
-
-```xaml
-<Image Source="graph.png" WidthRequest="320">
-  <Image.WidthRequest>
-    <OnPlatform x:TypeArguments="x:Double">
-        <On Platform="iOS" Value="320" />
-        <On Platform="Android" Value="300" />
-    </OnPlatform>
-  </Image.WidthRequest>
-</Image>
-```
-
-## DependencyService
-
-* https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/introduction
-* https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingDependencyService
-
-DependencyService allows apps to call into platform-specific functionality from shared code. This functionality enables Xamarin.Forms apps to do anything that a native app can do.
 
 ## Behaviors
 
