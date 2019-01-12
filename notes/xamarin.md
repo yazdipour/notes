@@ -23,6 +23,26 @@
     <Setter Property="FontFamily" Value="{StaticResource MaterialFontFamily}" />
 ```
 
+## Gesture_Recognizer
+
+```c#
+var tapGestureRecognizer = new TapGestureRecognizer();
+tapGestureRecognizer.Tapped += (s, e) => {
+    // handle the tap
+};
+image.GestureRecognizers.Add(tapGestureRecognizer);
+```
+
+```xaml
+<Image>
+    <Image.GestureRecognizers>
+        <TapGestureRecognizer 
+            Command="{Binding Source={x:Reference Root}, Path=BindingContext.JobSelectedCommand}"
+            CommandParameter="{Binding Id}" NumberOfTapsRequired="1" />
+  </Image.GestureRecognizers>
+</Image>
+```
+
 ## Style - Platform Specific
 
 ```csharp
