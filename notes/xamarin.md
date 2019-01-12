@@ -4,6 +4,25 @@
 
 # Xamarin.Forms
 
+## Font
+
+* Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
+* Copy Fonts inside Android>Assets.
+
+```xaml
+<!-- App.xaml -->
+    <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="Material Design Icons" />
+        <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+    </OnPlatform>
+    <OnPlatform x:Key="MontserratMediumFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="Montserrat-Medium" />
+        <On Platform="Android" Value="Montserrat-Medium.ttf#Montserrat Medium" />
+    </OnPlatform>
+<!-- Usage -->
+    <Setter Property="FontFamily" Value="{StaticResource MaterialFontFamily}" />
+```
+
 ## Style - Platform Specific
 
 ```csharp
