@@ -31,7 +31,7 @@ A subset of Agile - Tasks are planned over **priority** (ex. Trello with all ToD
 * Start with minimal planning and Building and Release in several incremental releases (Sprint)
 * 3 Roles: Product Owner, ScrumMaster, Team
 * 3 Artifacts:
-    * Product Backlog: Product owners create a prioritized list of features and ideas (know as User stories), This list could change after each sprint.
+    * Product Backlog: Product owners create a prioritized list of features and ideas (User stories), This list could change after each sprint.
     * User stories: Is a feature request with details (As a__ I need__, So that__)
     * Burndown Chart: Shows progress of doing Tasks in Sprints. (It should reach 0 at the end of the project)
 * 3 Ceremonies:

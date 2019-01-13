@@ -12,6 +12,11 @@ try {
 }
 ```
 
+## DB
+
+* KeyValue: SnappyDB
+* ORM: ActiveAndroid, SugarORM, DBFlow
+
 ## SocketIO
 
 https://socket.io/blog/native-socket-io-and-android
