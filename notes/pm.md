@@ -12,18 +12,22 @@ Responsible for specific project and their team members and the project outcome.
 
 ## Methodologies
 
+### Waterfall
+
+* Plan <>> Build <>> Test <>> Review <>> Deploy
+* Have to Plan everything, build everything and ...(In cases of problems >> Lots of back stepping(Going up to the waterfall))
+
 ### Agile
 
 Project development continues with **feedbacks**
 
+* 🍕Agile-Epic-Feature: https://github.com/yazdipour/notes/blob/master/assets/agile.png
+
+* 🍕Scrum Flowchart: https://github.com/yazdipour/notes/blob/master/assets/scrum.jpg
+
 ### Kanban
 
 A subset of Agile - Tasks are planned over **priority** (ex. Trello with all ToDos, sorted by Priority)
-
-### Waterfall
-
-* Plan <>> Build <>> Test <>> Review <>> Deploy 
-* Have to Plan everything, build everything and ...(In cases of problems >> Lots of back stepping(Going up to the waterfall))
 
 ### Scrum
 
@@ -40,17 +44,27 @@ A subset of Agile - Tasks are planned over **priority** (ex. Trello with all ToD
     * Sprint Review: Accures at the end of Sprint. Team demonstrate the work to the product owner and discuss what they can do to improve process going forward.
 * Flow: Provide Product Backlog > Sprint Planning > Sprint Backlog > Sprint(With Daily Scrum) > ReleaseCandidate > Sprint Review (+ Retrospective: Things can do to improve the process)
 
-### _Sprint
+### Sprint
 
 * 1 to 3 Weeks
 * Several small releases overtime, Contains Plan-Build-Test-Deploy in each Sprint
 
-### _Epics
+### Epics
 
-An Epic can be defined as a big chunk of work that has one common objective
+* An Epic can be defined as a big chunk of work that has one common objective
+* An epic is a significant initiative that typically affects multiple products.
+* Epics require analysis using a lightweight business case and financial approval before implementation.
+* 2 Types
+    * Business Epics: Epics which bring direct business value
+    * Enabler Epics: Necessary epics which could put organization in a more successful place! (Ex. Implementation of a cloud strategy).
 
-## Documenting
+### Features
 
-### ChangeLog
+A feature is a service provided by the system that fulfils stackeholder needs and can be delivered by a single release.
+Each feature includes a statement of benefits and acceptance criteria and is sized to be delivered in few months.
+
+# Documenting
+
+## ChangeLog
 
 https://keepachangelog.com/
