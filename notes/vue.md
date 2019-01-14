@@ -29,6 +29,20 @@ export default{
         fetchProducts(){}
 ```
 
+## Component
+
+```js
+Vue.component('xcomponent',{
+	template:'<p>Hello {{name}}</p>',
+	data: function(){
+		return {
+			name: 'Shahriar'
+		}
+	}
+})
+
+```
+
 ## Load Components from File
 
 ```js
