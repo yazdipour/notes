@@ -4,6 +4,93 @@
 
 # Xamarin.Forms
 
+## Platform Specific
+
+```xaml
+<Image Source="graph.png" WidthRequest="320">
+  <Image.WidthRequest>
+    <OnPlatform x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="320" />
+        <On Platform="Android" Value="300" />
+    </OnPlatform>
+  </Image.WidthRequest>
+</Image>
+```
+
+## Inversion of Control / Dependency Injection
+
+We got IProductsService(interface), ProductsService(impl) and our ViewModel constructor depends on IProductsService.
+`public ProductsViewModel(IProductsService productsService){}`
+
+* To access ViewModel Dependecy in View `page.xaml.cs` (The Easy Way)
+
+```c#
+BindingContext = ServiceLocator.Current.GetInstance(typeof(ProductsViewModel));
+// OR ?NotSure? BindingContext = ServiceLocator.Current.GetInstance<ProductViewModel>();
+```
+
+* And we have to link interface and its impl inside DependecyLocator/IoC in `App.xaml.cs` class.
+
+```c#
+public App(ITextToSpeech textToSpeech){
+    InitializeComponent();
+    var unityContainer = new UnityContainer();
+    // register dependencies
+    unityContainer.RegisterType<IProductsService, ProductsService>();       // Link interface to its impl
+
+    var unityServiceLocator = new UnityServiceLocator(unityContainer);
+    ServiceLocator.SetLocatorProvider(() => unityServiceLocator);
+
+    MainPage = new NavigationPage(new ProductsPage());
+```
+
+in Unit Test
+
+```c#
+  [TestClass]
+    public class ProductsUnitTest{
+        [TestMethod]
+        public void GetProductsTest(){
+            // Arrange
+            IProductsService productsService = new ProductsService();
+            ITextToSpeech mockTextToSpeech = new MockTextToSpeach();
+            var vm = new ProductsViewModel(productsService, mockTextToSpeech);
+            // Act
+            vm.DownloadProducts();
+            // Assert
+            var expected = productsService.Getproducts();
+            var actual = vm.Products;
+            Assert.AreEqual(expected, actual);
+```
+
+## Dependency_Service
+
+DependencyService allows apps to call into platform-specific functionality from shared code. 
+
+* 1st Create Interface in SharedProj
+
+```c#
+public interface ITextToSpeech {
+    void Speak ( string text ); //note that interface members are public by default
+```
+
+* 2nd Implement per Platform
+
+```c#
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+```
+
+* 3rd Use it
+
+```C#
+DependencyService.Get<ITextToSpeech>().Speak("Hello");
+```
+
 ## Font
 
 * Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
@@ -49,47 +136,6 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 //>> in AppDelegate.cs
 UWSwitch.Appearance.OnTintColor = UIColor.Red;
 UISlider.Appearance.MinimumTrackTintColor = UIColor.Blue;
-```
-
-## Platform Specific
-
-```xaml
-<Image Source="graph.png" WidthRequest="320">
-  <Image.WidthRequest>
-    <OnPlatform x:TypeArguments="x:Double">
-        <On Platform="iOS" Value="320" />
-        <On Platform="Android" Value="300" />
-    </OnPlatform>
-  </Image.WidthRequest>
-</Image>
-```
-
-## DependencyService
-
-DependencyService allows apps to call into platform-specific functionality from shared code. 
-
-* 1st Create Interface in SharedProj
-
-```c#
-public interface ITextToSpeech {
-    void Speak ( string text ); //note that interface members are public by default
-```
-
-* 2nd Implement per Platform
-
-```c#
-[assembly: Dependency (typeof (TextToSpeech_iOS))]
-namespace UsingDependencyService.iOS
-{
-    public class TextToSpeech_iOS : ITextToSpeech
-    {
-        public void Speak (string text)
-```
-
-* 3rd Use it
-
-```C#
-DependencyService.Get<ITextToSpeech>().Speak("Hello");
 ```
 
 ## A Gray hLine with 15 margin up and down
