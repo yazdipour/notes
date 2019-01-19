@@ -1,5 +1,12 @@
 # CSharp
 
+## 20 C# Questions
+
+* string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)
+* `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
+* `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
+* `ref` and `out`: same but `ref` must be init before passing to method.
+
 ## Publish .NetCore App
 
 RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
@@ -8,7 +15,22 @@ RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
 dotnet publish -c Release -r win-x86  (--help)
 ```
 
+## Abstract
+
+* No impl & must overriden in subclass.
+* Can't call `baseClass.abstractFunc()`, Cause there is no impl.
+
+```c#
+abstract class absClass{
+	public abstract void x();
+
+class implClass{
+	public override void x(){
+```
+
 ## Virtual
+
+* Can be overriden in subclass / Not forced.
 
 ```c#
 class MyBaseClass
