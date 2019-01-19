@@ -1,11 +1,19 @@
 # Vue
 
+* Vue Electron Like: https://dev.to/vuevixens/building-a-desktop-app-with-vue-nwjs-1f9e
 * `v-on:` == @
 * `v-bind:` == :
 
 * `<p>You are {{ age>18?  'adult' : 'kid'}}</p>`
 
 * `<p :class="{hide: boolVar}" />` : if boolVar==true, class=hide, else it will not set class
+
+## CSS Frameworks
+
+* https://www.iviewui.com/
+* https://vuetifyjs.com/
+* https://madewithvuejs.com/go/element-ui
+* https://quasar-framework.org/
 
 ## Tools and plugins
 

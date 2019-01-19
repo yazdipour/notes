@@ -1,5 +1,9 @@
 # Swift
 
+## Capture iOS Simulator video
+
+In terminal: `xcrun simctl io booted recordVideo appVideo.mov`
+
 ## Closure
 
 ```swift
