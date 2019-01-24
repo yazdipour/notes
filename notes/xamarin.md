@@ -4,9 +4,53 @@
 
 # Xamarin.Forms
 
+## XAMLC and Compiled Bindings (x:Bind)
+
+```c#
+[assembly:XamlCompilation (XamlCompilationOptions.Compile)]
+Namespace MyApp{}
+```
+
+```xml
+<ListView>
+    <ListView.ItemTemplate>
+        <DataTemplate x:DataType="{x:Type local:XModel}">
+            <Label Text="{Binding Name}">
+```
+
+## FastRenderers
+
+```c#
+Forms.SetFlags("FastRenderers_Experimetal");
+Forms.Init(this,bundle);
+```
+
+## LV Fast Scroll
+
+```xml
+<ContenxtPage
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+        <ListView android:ListView.IsFastScrollEnabled="true"/>
+```
+
+## CollectionView
+
+* Better than ListView
+* Uses RecyclerView on Android
+* You provide the layout: Grid, Horizontal, Vertical, FlexLayout
+* Context Menu
+* Gestures
+
+```c#
+<CollectionView x:Name="Spaces"/>
+Spaces.ItemsLayout = new GridItemsLayout(2, ItemsLayoutOrientation.Vertical);
+Spaces.ItemTemplate = new DataTemplate(()=> new SpaceCard());
+Spaces.ItemsSource = items;
+```
+
 ## Platform Specific
 
-```xaml
+```xml
 <Image Source="graph.png" WidthRequest="320">
   <Image.WidthRequest>
     <OnPlatform x:TypeArguments="x:Double">
@@ -15,6 +59,25 @@
     </OnPlatform>
   </Image.WidthRequest>
 </Image>
+```
+
+or
+
+```xml
+<BoxView Margin="{OnPlatform Android=4, iOS=8, Default=10}"/>
+```
+
+## Bindable Span (Multiple Labels in One)
+
+```xml
+<Label>
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="Welcome"/>
+            <Span Text="{Binding name}" FontAttributes="Bold"/>
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
 ```
 
 ## Inversion of Control / Dependency Injection
@@ -96,7 +159,7 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello");
 * Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
 * Copy Fonts inside Android>Assets.
 
-```xaml
+```xml
 <!-- App.xaml -->
     <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
         <On Platform="iOS" Value="Material Design Icons" />
@@ -120,7 +183,7 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-```xaml
+```xml
 <Image>
     <Image.GestureRecognizers>
         <TapGestureRecognizer 
@@ -158,7 +221,7 @@ public App()
 
 ## Navigation Style
 
-```xaml
+```xml
 <Style TargetType="NavigationPage">
     <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
     <Setter Property="BarTextColor" Value="White" />
@@ -171,7 +234,7 @@ Behaviors are written for a specific control type (or a superclass that can appl
 
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/creating
 
-```xaml
+```xml
 <Entry Placeholder="Enter a System.Double">
     <Entry.Behaviors>
         <local:NumericValidationBehavior />
