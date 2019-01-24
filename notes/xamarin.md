@@ -4,6 +4,15 @@
 
 # Xamarin.Forms
 
+## Native Forms
+
+```C#
+Xamarin.Forms.Forms.Init();
+var settingsView = new SettingsView{BindingContext=settingsViewModel};
+var settingsController = settingsView.CreateViewController();
+NavigationController.PushViewController(settingsController, true);
+```
+
 ## XAMLC and Compiled Bindings (x:Bind)
 
 ```c#
