@@ -32,11 +32,41 @@ https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/
 
 ## Design Patterns
 
-### MVVM
-### MVC
-### MVP
+### Compound Patterns
+
+#### MVVM
+
+#### MVC
+
+* Combines Strategy, Observer and Composite patterns
+* Used to separate there parts: User interface, Logic, DataModel
+
+```c
+#http://x.com/users/profile/1
+
+/routes
+    users/profile/:id = Users.getProfile(id)
+/controllers
+    class Users{
+        function getProfile(id){
+            profile = this.UserModel.getProfile(id)
+            renderView('users/profile', profile)
+
+/models
+    class UserModel{
+        function getProfile(id){
+            return this.db.get('SELECT * FROM users WHERE id='+id);
+
+/views
+    /users
+        /profile
+            <h1>{{profile.name}}</h1>
+```
+
+#### MVP
 
 ### Creational patterns
+
 https://sourcemaking.com/design_patterns/creational_patterns
 
 #### Singleton
