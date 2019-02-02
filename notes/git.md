@@ -1,5 +1,24 @@
 # Git
 
+## Github Search tricks
+
+* In Name, In Description, and In README
+
+```
+in:name spring cloud
+in:description spring cloud
+in:readme spring cloud
+
+stars:>=3000 spring cloud
+forks:10..20 spring cloud
+
+language:java
+
+user:joshlong spring cloud
+
+org:spring-cloud spring cloud
+```
+
 ## Rm Cache
 
 ```shell
