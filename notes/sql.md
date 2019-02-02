@@ -6,9 +6,13 @@
 
 If one join input is small (fewer than 10 rows) and the other join input is fairly large and indexed on its join columns, an index nested loops join is the fastest join operation because they require the least I/O and the fewest comparisons.
 
+https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191318(v%3dsql.105)
+
 ### Merge joins
 
 If the two join inputs are not small but are sorted on their join column (for example, if they were obtained by scanning sorted indexes), a merge join is the fastest join operation. If both join inputs are large and the two inputs are of similar sizes, a merge join with prior sorting and a hash join offer similar performance. However, hash join operations are often much faster if the two input sizes differ significantly from each other. For more information, see Understanding Merge Joins.
+
+https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms190967(v%3dsql.105)
 
 ### Hash joins
 
@@ -18,6 +22,8 @@ Hash joins can efficiently process large, unsorted, nonindexed inputs. They are 
 * Query optimizers estimate only intermediate result sizes. Because estimates can be very inaccurate for complex queries, algorithms to process intermediate results not only must be efficient, but also must degrade gracefully if an intermediate result turns out to be much larger than anticipated.
 
 The hash join allows reductions in the use of denormalization. Denormalization is typically used to achieve better performance by reducing join operations, in spite of the dangers of redundancy, such as inconsistent updates. Hash joins reduce the need to denormalize. Hash joins allow vertical partitioning (representing groups of columns from a single table in separate files or indexes) to become a viable option for physical database design.
+
+https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms189313(v%3dsql.105)
 
 ## Search
 

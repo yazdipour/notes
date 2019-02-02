@@ -68,6 +68,9 @@ dic.updateValue("XX",forKey:22)
 func foo(){} // === func foo()->(){}
 func sum(n1: Double, n2:Double) -> Double { return 0}
 
+func sum(a n1: Double, b n2:Double) -> Double { return 0}
+sum(a:2.0,b:1.0)
+
 // Access Level
 let x =1  // internal
 public let x=2

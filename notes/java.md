@@ -1,6 +1,6 @@
 # Java
 
-## Genrice 
+## Genrice
 
 ```java
 public <E> void printArray( E[] inputArray ) {}
@@ -17,4 +17,11 @@ public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
 //CLASS
 public class Box<T> {
    private T t;
+```
+
+## Lambda
+
+```java
+map.setOnMapLongClickListener(this::markOnHoldLocation);
+map.setOnMapLongClickListener(latLng -> markOnHoldLocation(latLng));
 ```

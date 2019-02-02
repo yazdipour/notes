@@ -3,6 +3,34 @@
 * Facial Recongnition Database: https://www.kairos.com/blog/60-facial-recognition-databases
 * Gensim (مانند LDA، LSI و یا Word2Vec) https://radimrehurek.com/gensim/
 
+## Discriminative
+
+1:#Regression
+2:#Logistic regression
+3:#decision tree(Hunt)
+4:#neural network(traditional network, deep network)  
+5:#Support Vector Machine(SVM)
+
+## Generative
+
+1:#Hidden Markov model
+2:#Naive bayes
+3:#K-nearest neighbor(KNN)
+4:#Generative adversarial networks(GANs)
+
+## Deep learning
+
+1:CNN
+2:RNN
+3:LSTM
+4:CapsuleNet
+5:Siamese:
+  siamese cnn
+  siamese lstm
+  siamese bi-lstm
+  siamese CapsuleNet
+6:time series data
+
 ## 9 Steps in becoming a Machine Learning Expert
 
 1. Understand the basics
