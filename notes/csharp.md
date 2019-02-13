@@ -175,14 +175,6 @@ class X {
         await for (var name in names) yield return GetFirstName(name);
     }
 
-    void newSwitch(People p){
-        return (p.FirstName, p.LastName) switch{
-            (null, null)=>"",
-            (string f, null)=> $"{f}",
-            (string f, string l) => $"{f},{l}",
-            (null, string _) => $"{_}"
-        };
-    }
     string foo(Person person)
     {
         return person switch{
@@ -191,6 +183,36 @@ class X {
             _ => "z"
         };
     }
+}
+```
+
+## Switch
+
+```c#
+int value = 1;
+string greeting = value switch
+{
+    1 => "hello ",
+    2 => "world",
+    _ => string.Empty
+};
+
+IAnimal animal = new Cat();
+string greeting = animal switch
+{
+    Dog d => $"hello dog {d.Name}",
+    Cat c when c.Name == "Lemmy" => $"Hello motorcat!",
+    Cat c => $"hello cat {c.Name}",                
+    _ => string.Empty
+};
+
+void newSwitch(People p){
+    return (p.FirstName, p.LastName) switch{
+        (null, null)=>"",
+        (string f, null)=> $"{f}",
+        (string f, string l) => $"{f},{l}",
+        (null, string _) => $"{_}"
+    };
 }
 ```
 
