@@ -1,88 +1,72 @@
-# Machine Learning
+# ML, DL
 
 * Facial Recongnition Database: https://www.kairos.com/blog/60-facial-recognition-databases
 * Gensim (مانند LDA، LSI و یا Word2Vec) https://radimrehurek.com/gensim/
+* https://keras.io/
+* 100DaysOfMLCode: https://github.com/harshitahluwalia7895/100DaysOfMLCode
+* Basic Concepts: https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
+
+# Basic Consepts
+
+| --- | --- |
+| --- | --- |
+| MLP | Mutli layer perseptron
+| Ensemble learning | multi time trying and group of models votes for final result!
+| Batch normalization | Normalization on layer which will help our algorithm to fine min loss faster! (minus avg and divide it with variance) (Have trainable parameters)
+| Data Dividing | Train_Data 70%, Validation/Dev_Data 20%, Test_Data 10%
+| Cross Validation | Split data in 10 parts, use one part as TestData and the rest for training, and then do the same process with another part. ***Not Usable for Deep learning [its expensive]***
 
 ## Discriminative
 
-1:#Regression
-2:#Logistic regression
-3:#decision tree(Hunt)
-4:#neural network(traditional network, deep network)  
-5:#Support Vector Machine(SVM)
+1. Regression
+2. Logistic regression
+3. decision tree (Hunt)
+4. neural network(traditional network, deep network)  
+5. Support Vector Machine(SVM)
 
 ## Generative
 
-1:#Hidden Markov model
-2:#Naive bayes
-3:#K-nearest neighbor(KNN)
-4:#Generative adversarial networks(GANs)
+1. Hidden Markov model
+2. Naive bayes
+3. K-nearest neighbor(KNN)
+4. Generative adversarial networks(GANs)
 
-## Dictionary
+## ImageNet Models
 
-* Hyperparameter:
-* MLP: Mutli layer perseptron
-* Ensemble learning: multi time trying and group of models votes for final result!
+* Classic: LeNet5, AlexNet, ZFNet, VGG(Nice structure, Bad Memory usage)
+* Inception: (Idea: use  )
+* ResNet
 
-## 9 Steps in becoming a Machine Learning Expert
+## Image Classification
 
-1. Understand the basics
-2. Learn Some Statics
-3. Learn python for Data Analysis
-4. Complete an Exploratory analysis project
-5. Create Unsupervised learning models
-6. Create supervised learning models
-7. Understand big data technologies
-8. Explorer deep learning models
-9. Undertake and complete a data project
+A core task in Computer Vision
 
-## Basic Concepts
+* Challenges: Illumination, Deformation, Occlusion, Background clutter, Intraclass variation
+* Never use pure k-Nearest Neighbor on images. Cause: Distance metrics on level of whole images can be very unintuitive
 
-https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
+# ML
 
-## 100DaysOfMLCode
-
-https://github.com/harshitahluwalia7895/100DaysOfMLCode
-
-## PyCon 2017
-
-* Gensin Library
-* Image Net
-* Persian Stuff:
-    * Hazm - NLP Preprocessor
-    * Word2Vec-Doc2Vec
-* ResNet50
-* Xception
-* Keras
-* Corpora:
-    * Bijankhan
-    * Persica
-    * Hamshahri 1/2
-    * Tnews
-
-## Basics from Udacity Youtube Videos
-
-### Naive Bayse
+## Naive Bayse
 
 ex. Spam Mail Detector
 
-### Gradient Descent
+## Gradient Descent
 
 ex. Getting down from Mount. Height from ground. Goal is to get down easiest way. (Height is the error in Data Mining algorithms)
 
-### Regression Linear
+## Regression Linear
 
 ex. Predict House prize based on other houses properties and prize -> Draw random line -> try minimize error using Gradient Descent (least square).
 
-### Logistic Regression
+## Logistic Regression
 
 ex. Divide two classes by a line -> random line til reduce sum of error with gradient descent (log lost method!)
 
-### SVM (Support vector machine)
+## SVM (Support vector machine)
 
 Like LR find the best divider. The line with maximum distance from the classes. -> Find maximum distance with Gradient Descent or other algothims!
 
-### Kernel Method
+## Kernel Method
 
 Like LR when can't divide it in 2D. Add Z param so we can divide them with Surface in 3D.
 
@@ -91,15 +75,15 @@ Like LR when can't divide it in 2D. Add Z param so we can divide them with Surfa
 Or in 2D divide with curve y=1/x
 ```
 
-### K-Means Clustering
+## K-Means Clustering
 
 ex. Know numbers of clusters = K. find K centers for K groups
 
-### Hierarchical Clustering
+## Hierarchical Clustering
 
 ex. Like K-Means instead of K numbers of clusters, group objects with maximum distance that we defind, so we have unknown numbers clusters.
 
-### K-Nearest Classification
+## K-Nearest Classification
 
 * PYTHON Predict  > `n = Knearest(); n.fit(x,y); n.predict(X)`
 * PYTHON Validate > `n.score(xtest,ytest)*100`
@@ -112,7 +96,7 @@ Divide classes auto with weird shapes. (Is above Line1->TRUE | Is above Line2->F
 * Perceptron (The biological neuron)
     * Simple Perceptron can handle Linear problems.
     * MLP (Multi layer perseptron) can handle more.
-    * PARTS:
+    * PARTS
     * Input + BIAS (To avoid cases with ZERO inputs)
     * Output
     * Activation Function
@@ -145,23 +129,11 @@ Divide classes auto with weird shapes. (Is above Line1->TRUE | Is above Line2->F
     * Test2=[0,1], Predict2=[0,1]
     * -> (test*predict).sum() = 1 (1 wrong)
 
-## Validation
-
-* Data Dividing: Train_Data 70%, Dev_Data 20%, Test_Data 10%
-* Cross Validation: Split data in 10 parts, use one part as TestData and the rest for training, and then do the same process with another part. ***Not Usable for Deep learning [its expensive]***
-
-## Image Classification
-
-A core task in Computer Vision
-
-* Challenges: Illumination, Deformation, Occlusion, Background clutter, Intraclass variation
-* k-Nearest Neighbor on images never used.
-    * Distance metrics on level of whole images can be very unintuitive
 
 # Deep Learning
 
 * When there is >=3 hidden layers in NN.
-* Layers Count := |Input+HiddenLayer|
+* Layers Count := | InputLayer + HiddenLayer |
 
 1. CNN
 2. RNN
@@ -193,17 +165,54 @@ Usually use ConvLayer at first layers, FC Layers for last ones and a softmax for
         * Same Convolution: Convolution with add padding in each multiplation.
     * Stride: Number of Row*Columns to Skip on each multiplation.
     * Convolution Output: `[1+ (n+2p-f)/s] x [1+ (n+2p-f)/s]` ((nxn image, fxf filter, p padding, s stride)) (f,s are hyperparameter)
+* One By One Conv:
+    * It means use 1x1 filter.
+    * 1x1 Filters aren't helpful for 1_Channeled images, but they can have different effect on each layer and overall different at the end.
 * “sandwich” architecture (SCSCSC...)
     * simple cells: modifiable parameters
     * complex cells: perform pooling
 * RGB Conv
     * Do `R*f1 + G*f2 + B*f3 + BIAS` will result in 3D Filter. and then sweep it on the RGB Matrix. This will result in 4x4 matrix. Then we can learn proper filter with repeating the process with different filters.
 
+### Data Augmention
+
+* Create new images from the original image, to train on.
+* WAYS: Crop, Transition, Rotation, Flipping, Stretching, Shearing, Add Lens noise, ...
+
+### Transfer learning
+
+* Use pretrained model and only change output layer!
+* Feature extraction: Use all the layers of the pretrained model, but replace your own FC layers at the end.
+* Fine-tuning: Replace FCs and change couple of the layers of the pretrained model.
+
+## Imbalanced Data
+
+We can give weight to classes. Keras > `.fit(train_X,train_Y,class_weight = {0:3 , 1:1} )`
+
 ## Optimizers
 
-?
+```py
+opt=keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-8, decay=1e-3/200)
+# lr: float >= 0. > Learning Rate: The rate which we get closer to the min loss.
+# decay. On each try, lr -= decay.
+# epsilon: float >= 0. Fuzz factor.
+```
 
-# Python
+## Regression NN
+
+* Use LINEAR activation at the last layer, instead of softmax. (Unlinearity has handled in first layers!)
+* Can't use CrossEntropy for cost function. We can use:
+    * mean squared error: `Σ(y’-y)^2 / n`
+    * mean absolute error `Σ|y’-y| / n`
+    * mean absolute percentage `Σ|y’-y| / clip(y)-epsilon`! > If =200, it means, 200% or 2times have error.
+
+## LSTM
+
+## GANs
+
+# Coding
+
+## Keras
 
 * https://github.com/yazdipour/SRU-deeplearning-workshop/
 * np.squeeze > Remove single-dimensional entries from the shape of an array.
@@ -211,4 +220,26 @@ Usually use ConvLayer at first layers, FC Layers for last ones and a softmax for
 * model.add(Dense(64 `hyperparameter - hidden neuron` , activation='relu', input=25 `input params - only for first layer`))
 * Usually add softmax at the last layer `model.add(Dense(activiation='softmax'))` / softmax will normalize the result for us.
 * model.summery() > will print model structure > ex. FC | (NONE `is mini_batch`, 64)
-* model.compile(loss=,optimizer=,metrics=,validation_split=0.2)
+* model.compile(loss=,optimizer=,metrics=,validation_split=0.2) 
+
+### Symbolic and Imperative APIs
+
+* Symbolic
+    * Sequential Model: Build Layer by layer
+    * Functional API: Multiple input type -> Multiple Output (House features and Images)
+* Imperative
+    * Model Sub classing: Inherit from Keras Classes and add custom features!
+
+# ??
+
+* Gensin Library
+* Persian Stuff:
+    * Hazm - NLP Preprocessor
+    * Word2Vec-Doc2Vec
+* ResNet50
+* Xception
+* Corpora:
+    * Bijankhan
+    * Persica
+    * Hamshahri 1/2
+    * Tnews
