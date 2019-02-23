@@ -165,8 +165,18 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello");
 
 ## Font
 
-* Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
-* Copy Fonts inside Android>Assets.
+* ANDROID: Copy Fonts inside Android>Assets. Set Build action: AndroidAsset 
+* IOS: Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
+
+```xml
+In BundleResource 
+<key>UIAppFonts</key>
+<array>
+  <string>IndieFlower.ttf</string>
+</array>
+```
+
+* Usage
 
 ```xml
 <!-- App.xaml -->
@@ -180,6 +190,10 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello");
     </OnPlatform>
 <!-- Usage -->
     <Setter Property="FontFamily" Value="{StaticResource MaterialFontFamily}" />
+<!-- OR -->
+<Label Text="Welcome to Xamarin.Forms!"
+       FontFamily="{StaticResource IndieFlowerFontFamily}"
+       FontSize="Large" />
 ```
 
 ## Gesture_Recognizer
