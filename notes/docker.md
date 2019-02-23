@@ -1,4 +1,6 @@
 # Docker
+
+https://github.com/wsargent/docker-cheat-sheet
 https://docs.docker.com/engine/examples/dotnetcore/
 
 ## Concepts
@@ -60,6 +62,10 @@ docker stop [container id]
 docker tag [cont_id] shery/debian:tag
 # Push to docker hub
 docker push shery/debian:tag
+# to run command inside running container/login in to container
+docker -it [con_id] [bash command]
+# --link 2 containers
+docker run -d -op 5000:5000 --link redis [container]/dockerapp:v1
 ```
 
 ## Build Image
@@ -102,7 +108,7 @@ Can be any bash command
 * CMD instruction specifies what command you want to run when the container starts up.
 * If we don't specify CMD instruction in the Dockerfile, Docker will use the default command defined in the base image.
 * **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
-* You can specify the command in either exec form which is preferred or in shell form.
+* You can specify the command in either form which is preferred or in shell form.
 * `CMD ["echo","hello"]`
 
 #### COPY
@@ -113,6 +119,61 @@ Can be any bash command
 
 * Similar to COPY, but also allow you to download file and copy to container.
 * ADD also has the ability to automatically unpack compressed files.
+
+#### EXPOSE
+
+### Dockerignore
+
+Docker’s `.dockerignore` file allows you to prevent certain files from being copied into the image. You should always include a .dockerignore file when using the COPY instruction. At minimum, it should include files related to your version control system and locally installed dependencies.
+
+```txt
+# .dockerignore
+Dockerfile
+.dockerignore
+# Node
+node_modules
+npm-debug.log
+# ignore .git and .cache folders
+.git
+.cache
+# JAVA - ignore all *.class files in all folders, including build root
+**/*.class
+# DOCS - ignore all markdown files (md) beside all README*.md other than README-secret.md
+*.md
+!README*.md
+README-secret.md
+```
+
+### Docker Compose
+
+* a tool for defining and running multi-container Docker apps.
+* `docker-compose.yml`
+
+```docker
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+    - "5000:5000"
+    valumes:
+    - ./app:/app  #To share data between Container and host. HostDir:ContDir
+    - logvolume01:/var/log
+  redis:
+    image: "redis:alpine"
+```
+
+* To build containers
+
+```
+$ docker-compose up [-d to run on background]
+$ docker-compose down
+$ docker-compose stop # Stop all
+$ docker-compose logs [con_name]
+$ docker-compose rm # Remove all
+$ docker-compose build  # to update image
+$ docker-compose ps  # to check
+```
 
 #### Example
 
@@ -134,4 +195,79 @@ PHP
 FROM php:7.0-apache
 COPY src/ /var/www/html/
 EXPOSE 80
+```
+
+## Network
+
+### Types
+
+* Closed/None Network
+  - Disconnected from network
+  - `docker run --net none`
+* Bridge Network (Default - docker0)
+  - Default IP Range from 172.17.0.0 to 172.17.255.255
+  - We can access other containers from the same bridge network
+* Host/Open Network
+  - Like OS Host network
+  - `docker run --net host`
+* Overlay Network
+  - Multi-host, which is handled by kube/swarm
+
+### Inspect Network
+
+* `docker network ls`
+* `docker network inspect [NAME]`
+
+### Create network
+
+`docker network create --driver [bridge/host/null] [network_name]`
+
+### Dis/Connect two networks
+
+So that they can ping each other from different ip range.
+
+* `docker network connect [network_name1] [network_name2]`
+* `docker network disconnect [network_name1] [network_name2]`
+
+### Compose
+
+```docker
+version: '3'
+services:
+  dockerapp:
+    ...
+    networks:
+      - xnet
+  redis:
+    networks:
+      - xnet
+
+networks:
+  xnet:
+    driver: bridge
+```
+
+Pro Sample
+
+```docker
+version: '3'
+services:
+  proxy:
+    networks:
+      - front
+  app:
+    networks:
+      - front
+      - back
+  db:
+    networks:
+      - back
+
+networks:
+  back:
+    driver: bridge
+    driver_opts:
+      foo: "1"
+  front:
+    driver: bridge
 ```
