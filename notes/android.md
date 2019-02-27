@@ -1,5 +1,9 @@
 # Android
 
+## Caching Retrofit
+
+https://medium.com/mindorks/caching-with-retrofit-store-responses-offline-71439ed32fda
+
 ## Get Package Version
 
 ```java
