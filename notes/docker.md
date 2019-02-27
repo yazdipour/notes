@@ -271,3 +271,79 @@ networks:
   front:
     driver: bridge
 ```
+
+### Docker Machine Create command
+
+```docker
+docker-machine create --driver digitalocean --digitalocean-access-token <xxxxx> docker-app-machine
+```
+
+#### Step 1: Expose environment variables
+
+(If you are using Windows, replace "export" with "set" command)
+
+```docker
+export DIGITALOCEAN_ACCESS_TOKEN=<YOUR_DIGITALOCEAN_TOKEN>
+export DIGITALOCEAN_PRIVATE_NETWORKING=true
+export DIGITALOCEAN_IMAGE=debian-8-x64
+```
+
+#### Step 2: Provision consul machine
+
+`docker-machine create -d digitalocean consul`
+
+#### Step 3: Display the network configuration of the consul machine
+
+`docker-machine ssh consul ifconfig`
+
+#### Step 4: Ping the private and public IP address of the consul machine
+
+`ping -c 1 $(docker-machine ssh consul 'ifconfig eth0 | grep "inet addr:" | cut -d: -f2 | cut -d" " -f1')`
+`ping -c 1 $(docker-machine ssh consul 'ifconfig eth1 | grep "inet addr:" | cut -d: -f2 | cut -d" " -f1')`
+
+#### Step 5: Export the private IP to KV_IP environment variable
+
+`export KV_IP=$(docker-machine ssh consul 'ifconfig eth1 | grep "inet addr:" | cut -d: -f2 | cut -d" " -f1')`
+
+#### Step 6: Configure Docker client to connect to the consul machine
+
+`eval $(docker-machine env consul)`
+
+#### Step 7: Start the consul container in the consul machine
+
+`docker run -d -p ${KV_IP}:8500:8500 --restart always gliderlabs/consul-server -bootstrap`
+
+Read more:
+Consul in Docker
+https://hub.docker.com/r/gliderlabs/consul-server/
+
+Bootstrap mode in Consul server
+https://www.consul.io/docs/guides/bootstrapping.html
+
+### Create Swarm master
+
+```bash
+docker-machine create -d digitalocean --swarm \
+  --swarm-master \
+  --swarm-discovery="consul://${KV_IP}:8500" \
+  --engine-opt="cluster-store=consul://${KV_IP}:8500" \
+  --engine-opt="cluster-advertise=eth1:2376" \
+  master
+```
+
+### Create Swarm slave
+
+```bash
+docker-machine create \
+  -d digitalocean \
+  --swarm \
+  --swarm-discovery="consul://${KV_IP}:8500" \
+  --engine-opt="cluster-store=consul://${KV_IP}:8500" \
+  --engine-opt="cluster-advertise=eth1:2376" \
+  slave
+```
+
+### “Extends” keywords in Docker Compose File
+
+* The extends keyword enables sharing of common configurations among different files or even different projects entirely
+* Extending services is useful if you have several different environments that reuse a common set of configuration options
