@@ -1,5 +1,7 @@
 # Linux
 
+https://mh-salari.me/new-linux-essential/
+
 ## Exec Python File without calling python
 
 ```python
@@ -25,4 +27,3 @@ env | grep \$USER
 ```bash
 export PATH=$PATH:/newEnv/
 ```
-
