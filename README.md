@@ -18,6 +18,7 @@
 * [Linux](notes/linux.md)
 * [Math](notes/math.md)
 * [Markdown](notes/markdown.md)
+* [Image Processing](notes/ip.md)
 * [Machine Leanring](notes/ml.md)
 * [Project Management](notes/pm.md)
 * [Php](notes/php.md)

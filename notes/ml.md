@@ -5,6 +5,7 @@
 * https://keras.io/
 * 100DaysOfMLCode: https://github.com/harshitahluwalia7895/100DaysOfMLCode
 * Basic Concepts: https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
+* WGet Kaggle Datasets in Google Driver:https://mh-salari.me/wqet-download/
 
 # Basic Consepts
 

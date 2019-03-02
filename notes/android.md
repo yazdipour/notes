@@ -1,5 +1,31 @@
 # Android
 
+## Simple RX
+
+```java
+        boolean ready = false;
+        Observable<Boolean> observable = Observable.just(ready);
+        Observer<Boolean> observer = new Observer<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+            }
+
+            @Override
+            public void onNext(Boolean aBoolean) {
+                // DO SOMETHING
+            }
+
+            @Override
+            public void onError(Throwable e) {
+            }
+
+            @Override
+            public void onComplete() {
+            }
+        };
+        observable.subscribe(observer);
+```
+
 ## Caching Retrofit
 
 https://medium.com/mindorks/caching-with-retrofit-store-responses-offline-71439ed32fda
