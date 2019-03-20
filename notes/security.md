@@ -12,6 +12,18 @@ run
 
 ## Tools
 
+```
+nmap -PR //ARP Scan
+netdiscover
+nc //netcap
+amap //like nc
+pof -i eth0 //sniffing pof
+xprobe2 //Find OS
+msf //metasploit
+msf payload //metasploit payload
+smb // so scan
+```
+
 ### Web Apps
 
 * BurpS
