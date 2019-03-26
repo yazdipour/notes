@@ -292,3 +292,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 ## Drop Shadow/Elevation on Android Bottom Navigation TabbedPage
 
 https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/
+
+## Using FontAwesome
+
+https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/
