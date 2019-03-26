@@ -1,5 +1,23 @@
 # Rx
 
+## Summery - Map, Filter, Reduce
+
+* The map() method creates a new array with the results of calling a provided function on every element in the calling array → MDNvar `arr = [5, 7, 4, 12];let map = arr.map(x => x * 7);`
+
+* The filter() method creates a new array with all elements that pass the test implemented by the provided
+
+* reduce takes a list and returns any data structure. It could be another list or an object.
+
+```py
+const add = (, ) =>  + 
+yxyxconst input = [ 1, 2, 3 ]
+const initial = 0
+const output = input.reduce(add, initial)
+
+output //=> 6
+```
+
+
 ## RxPy
 
 ```python
