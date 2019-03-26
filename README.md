@@ -37,6 +37,7 @@
 * Interview
     1. [Overall](notes/interview/Overall.md)
     2. [Questions](notes/interview/Questions.md)
+    2. [Questions_Farsi](notes/interview/QuestionsFa.md)
     3. [Microsoft](notes/interview/MicrosftInternship.md)
     4. [Java](notes/interview/Java.md)
 
