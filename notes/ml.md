@@ -7,7 +7,12 @@
 * Basic Concepts: https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
 * WGet Kaggle Datasets in Google Driver:https://mh-salari.me/wqet-download/
 
-# Basic Consepts
+## Projects
+
+* [Latest Deep Learning OCR with Keras and Supervisely in 15 minutes](https://hackernoon.com/latest-deep-learning-ocr-with-keras-and-supervisely-in-15-minutes-34aecd630ed8)
+* [تشخیص پلاک فارسی خودرو](https://www.youtube.com/watch?v=Lb4IcGF5iTQ)
+
+## Basic Consepts
 
 | --- | --- |
 | --- | --- |
@@ -174,6 +179,7 @@ Usually use ConvLayer at first layers, FC Layers for last ones and a softmax for
     * complex cells: perform pooling
 * RGB Conv
     * Do `R*f1 + G*f2 + B*f3 + BIAS` will result in 3D Filter. and then sweep it on the RGB Matrix. This will result in 4x4 matrix. Then we can learn proper filter with repeating the process with different filters.
+
 
 ### Data Augmention
 
