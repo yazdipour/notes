@@ -11,6 +11,25 @@
 
 * [Latest Deep Learning OCR with Keras and Supervisely in 15 minutes](https://hackernoon.com/latest-deep-learning-ocr-with-keras-and-supervisely-in-15-minutes-34aecd630ed8)
 * [تشخیص پلاک فارسی خودرو](https://www.youtube.com/watch?v=Lb4IcGF5iTQ)
+* http://winter96.class.vision/
+* http://fall97.class.vision/
+
+## Books
+
+Social Media Mining
+http://dmml.asu.edu/smm/book/
+
+Automate the Boring Stuff with Python
+https://automatetheboringstuff.com/
+
+Neural Networks and Deep Learning
+http://neuralnetworksanddeeplearning.com/index.html
+
+Natural Language Processing with Python
+https://www.nltk.org/book/  
+
+DATA SCIENCE HANDBOOK
+https://www.thedatasciencehandbook.com/get-the-book#2
 
 ## Basic Consepts
 
@@ -252,3 +271,13 @@ opt=keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-8, deca
     * Persica
     * Hamshahri 1/2
     * Tnews
+
+
+## Keras - Tensorflow
+
+ذخیره #checkpoint در #keras در حین آموزش مدل
+
+```
+filepath = "saved-model-{epoch:02d}-{val_acc:.2f}.hdf5"
+checkpoint = keras.callbacks.ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=False, mode='max')
+```

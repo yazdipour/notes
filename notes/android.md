@@ -1,5 +1,9 @@
 # Android
 
+## Amazing open source Android apps
+
+https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
+
 ## Simple RX
 
 ```java
