@@ -4,6 +4,10 @@
 
 # Xamarin.Forms
 
+## Persian Calender
+
+https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms
+
 ## Improve BuildTimes
 
 https://github.com/brminnick/ImproveXamarinBuildTimes

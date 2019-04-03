@@ -1,8 +1,32 @@
 # Android
 
+## DB
+
+* Realm: https://virgool.io/@sjd.noroozi91/بلعیدن-شیرینی-دانمارکی-یا-راهکاری-برای-قورت-دادن-استوانه-ها-mcftjpolptjs
+* KeyValue: SnappyDB
+* ORM: ActiveAndroid, SugarORM, DBFlow
+
 ## Amazing open source Android apps
 
-https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
+* https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
+
+## IntentFilter
+
+
+```xml
+<activity android:name=".HelloWorld"
+    android:label="@string/app_name">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="http" android:host="androidium.org"/>
+    </intent-filter>
+</activity>
+```
+
+To test:
+`startActivity(new Intent (Intent.ACTION_VIEW, Uri.parse("http://androidium.org")));`
 
 ## Simple RX
 
@@ -45,11 +69,6 @@ try {
     e.printStackTrace();
 }
 ```
-
-## DB
-
-* KeyValue: SnappyDB
-* ORM: ActiveAndroid, SugarORM, DBFlow
 
 ## SocketIO
 

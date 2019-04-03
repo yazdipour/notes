@@ -12,6 +12,8 @@ run
 
 ## Tools
 
+* [XSStrike: ابزاری اپن‌سورس به منظور تشخیص حملات XSS](https://sokanacademy.com/blog/9137/ایکس-اس-اس-استرایک-ابزاری-اپن‌سورس-به-منظور-تشخیص-حملات-ایکس-اس-اس)
+
 ```
 nmap -PR //ARP Scan
 netdiscover

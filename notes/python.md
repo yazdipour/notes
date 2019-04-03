@@ -1,5 +1,10 @@
 # Python
 
+## Tutorial
+
+* [An A-Z of useful Python tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747)
+* [Writing Comments in Python](https://realpython.com/python-comments-guide/)
+
 ## Server
 
 `python -m SimpleHTTPServer 8000`

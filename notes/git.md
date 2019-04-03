@@ -1,5 +1,9 @@
 # Git
 
+## Tutorial
+
+* https://elmah.ir/post/118-چطور-تقریباً-هر-چیزی-را-در-git-به-حالت-قبلی-برگردانیم-قسمت-اول/
+
 ## Github Search tricks
 
 * In Name, In Description, and In README

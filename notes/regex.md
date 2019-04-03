@@ -1,5 +1,7 @@
 # Regex
 
+* [راهنمای رگولار اکسپرشن](https://sokanacademy.com/blog/281/راهنمای-رگولار-اکسپرشن-یا-رجیکس-برای-برنامه‌نویسان-مبتدی)
+
 * `^((?!XXX).)*$` Get Lines that not have XXX
 * `[א-ת؀-ۿ]` Get RTL Chars
 

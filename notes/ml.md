@@ -6,6 +6,7 @@
 * 100DaysOfMLCode: https://github.com/harshitahluwalia7895/100DaysOfMLCode
 * Basic Concepts: https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
 * WGet Kaggle Datasets in Google Driver:https://mh-salari.me/wqet-download/
+* http://blog.class.vision/1397/04/اتصال-مستقیم-سرویس-کولب-google-colab-به-درایو-google-drive/
 
 ## Projects
 
@@ -13,6 +14,7 @@
 * [تشخیص پلاک فارسی خودرو](https://www.youtube.com/watch?v=Lb4IcGF5iTQ)
 * http://winter96.class.vision/
 * http://fall97.class.vision/
+* [آشنایی با چند مورد از رکامندر سیستم‌های اپن‌سورس](https://sokanacademy.com/blog/9043/آشنایی-با-چند-مورد-از-رکامندر-سیستم‌های-اپن‌سورس)
 
 ## Books
 
