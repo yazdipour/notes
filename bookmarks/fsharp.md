@@ -1,0 +1,4 @@
+- http://fsharp.org/guides/machine-learning/
+- http://fsharp.org/guides/data-science/
+- http://accord-framework.net/
+- https://fsharpforfunandprofit.com/series/why-use-fsharp.html

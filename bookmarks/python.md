@@ -1,0 +1,4 @@
+- http://pythonfiddle.com/
+- https://github.com/Junnplus/awesome-python-books
+- https://radimrehurek.com/gensim/
+- https://www.pythonsheets.com/

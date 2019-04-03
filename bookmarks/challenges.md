@@ -1,0 +1,3 @@
+- https://app.codesignal.com/
+- https://www.studytonight.com/
+- http://www.codewars.com/dashboard

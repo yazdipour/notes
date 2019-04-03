@@ -1,0 +1,3 @@
+- http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/
+- https://esri.github.io/
+- https://map.igismap.com/converter

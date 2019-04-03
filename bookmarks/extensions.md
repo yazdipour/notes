@@ -1,0 +1,4 @@
+- https://www.youtube.com/watch?v=BZeQETah684&index=2&list=PLCA101D6A85FE9D4B
+- https://developer.chrome.com/extensions/getstarted
+- https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/extensions/extension-api-roadmap/
+- http://crxextractor.com/
