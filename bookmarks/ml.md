@@ -45,6 +45,7 @@ IoT](https://hub.packtpub.com/25-datasets-deep-learning-iot/)
 * https://datproject.org/
 * https://toolbox.google.com/datasetsearch
 * https://rajpurkar.github.io/SQuAD-explorer/
+* https://www.datasetlist.com/
 
 ## Learning/Tutorial
 

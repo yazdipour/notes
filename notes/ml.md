@@ -14,7 +14,10 @@
 * [تشخیص پلاک فارسی خودرو](https://www.youtube.com/watch?v=Lb4IcGF5iTQ)
 * http://winter96.class.vision/
 * http://fall97.class.vision/
+* [تشخیص تخلف در کارت های اعتباری](http://www.ai-man.ir/post/detecting-credit-card-fraud-using-machine-learning/)
 * [آشنایی با چند مورد از رکامندر سیستم‌های اپن‌سورس](https://sokanacademy.com/blog/9043/آشنایی-با-چند-مورد-از-رکامندر-سیستم‌های-اپن‌سورس)
+* [Liveness Detection with OpenCV](https://www.pyimagesearch.com/2019/03/11/liveness-detection-with-opencv/)
+* [Traditional Face Detection With Python](https://realpython.com/traditional-face-detection-python/)
 
 ## Books
 

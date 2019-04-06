@@ -1,6 +1,6 @@
 [![Donate](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoff.ee/XrTW5YQDy)
 
-# Notes
+# Tech
 
 * [Algorithm](notes/algorithm.md)
 * [Android](notes/android.md)
@@ -49,13 +49,13 @@
 1. [Apple](notes/interview/Apple.md)
 1. [Facebook](notes/interview/Facebook.md)
 
-# Business
+# Life
 
-* business
-* law
-* management
-* money
-* networking
+* [business](/business/business.md)
+* [law](/business/law.md)
+* [management](/business/management.md)
+* [money](/business/money.md)
+* [networking](/business/networking.md)
 
 # Bookmarks
 
