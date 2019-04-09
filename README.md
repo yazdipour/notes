@@ -1,6 +1,4 @@
-[![Donate](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoff.ee/XrTW5YQDy)
-
-# Tech
+# Notes
 
 * [Algorithm](notes/algorithm.md)
 * [Android](notes/android.md)
@@ -41,13 +39,13 @@
 
 # Interview
 
-1. [Overall](notes/interview/Overall.md)
-1. [Questions](notes/interview/Questions.md)
-1. [Questions_Farsi](notes/interview/QuestionsFa.md)
-1. [Microsoft](notes/interview/MicrosftInternship.md)
-1. [Java](notes/interview/Java.md)
-1. [Apple](notes/interview/Apple.md)
-1. [Facebook](notes/interview/Facebook.md)
+1. [Overall](interview/Overall.md)
+1. [Questions](interview/Questions.md)
+1. [Questions_Farsi](interview/QuestionsFa.md)
+1. [Microsoft](interview/MicrosftInternship.md)
+1. [Java](interview/Java.md)
+1. [Apple](interview/Apple.md)
+1. [Facebook](interview/Facebook.md)
 
 # Life
 
@@ -56,34 +54,3 @@
 * [management](/business/management.md)
 * [money](/business/money.md)
 * [networking](/business/networking.md)
-
-# Bookmarks
-
-* [__DEFAULT__](/bookmarks/_.md)
-* [3D - 🕹Game - 📦3D - VR - AR - MixedReality](/bookmarks/3d.md)
-* [🤖android](/bookmarks/android.md)
-* [📚books](/bookmarks/books.md)
-* [c++](/bookmarks/cpp.md)
-* [c#](/bookmarks/csharp.md)
-* [challenges](/bookmarks/challenges.md)
-* [db](/bookmarks/db.md)
-* [devops](/bookmarks/devops.md)
-* [extensions](/bookmarks/extensions.md)
-* [f#](/bookmarks/fsharp.md)
-* [flutter](/bookmarks/flutter.md)
-* [🎈fun](/bookmarks/fun.md)
-* [gis](/bookmarks/gis.md)
-* [git](/bookmarks/git.md)
-* [go](/bookmarks/go.md)
-* [IDE & Code Editors ](/bookmarks/ide.md)
-* [iot](/bookmarks/iot.md)
-* [interview](/bookmarks/interview.md)
-* [ImageProcessing](/bookmarks/imageprocessing.md)
-* [🕸network](/bookmarks/network.md)
-* [Machine Learning & Deep Learning & Ai](/bookmarks/ml.md)
-* [🐧linux](/bookmarks/linux.md)
-* [php](/bookmarks/php.md)
-* [🐍python](/bookmarks/python.md)
-* [security](/bookmarks/security.md)
-* [ui](/bookmarks/ui.md)
-* [jobs](/bookmarks/jobs.md)
