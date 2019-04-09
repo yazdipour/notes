@@ -1,6 +1,7 @@
 # Linux
 
-https://mh-salari.me/new-linux-essential/
+* https://mh-salari.me/new-linux-essential/
+* [Learn the ways of Linux](https://linuxjourney.com/)
 
 ## Exec Python File without calling python
 

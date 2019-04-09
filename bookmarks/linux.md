@@ -1,1 +1,0 @@
-- [Learn the ways of Linux](https://linuxjourney.com/)

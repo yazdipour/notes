@@ -18,6 +18,7 @@
 * [آشنایی با چند مورد از رکامندر سیستم‌های اپن‌سورس](https://sokanacademy.com/blog/9043/آشنایی-با-چند-مورد-از-رکامندر-سیستم‌های-اپن‌سورس)
 * [Liveness Detection with OpenCV](https://www.pyimagesearch.com/2019/03/11/liveness-detection-with-opencv/)
 * [Traditional Face Detection With Python](https://realpython.com/traditional-face-detection-python/)
+* https://www.pyimagesearch.com/2019/04/01/pan-tilt-face-tracking-with-a-raspberry-pi-and-opencv/
 
 ## Books
 
@@ -35,6 +36,10 @@ https://www.nltk.org/book/
 
 DATA SCIENCE HANDBOOK
 https://www.thedatasciencehandbook.com/get-the-book#2
+
+## Tools
+
+* [Word2Vec For Anything](https://www.basilica.ai/)
 
 ## Basic Consepts
 

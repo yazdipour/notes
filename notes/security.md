@@ -1,20 +1,25 @@
 # Security
 
-```shell
-gdb
-disassemble main
-set disassembly-flavor intel //make it readble
-disassemble main
+* https://tpbclean.com/
+* https://media.defcon.org/
+* http://0day.today/
+* https://www.bountysource.com/
+* https://0x00sec.org/
 
-break *main
-run
-```
+
+## Wifi 
+
+* [LinSSID: Graphical wireless scanning for Linux](https://sourceforge.net/projects/linssid/)
+
+## Web
+
+* [check web sec > webhint](https://webhint.io/)
 
 ## Tools
 
 * [XSStrike: ابزاری اپن‌سورس به منظور تشخیص حملات XSS](https://sokanacademy.com/blog/9137/ایکس-اس-اس-استرایک-ابزاری-اپن‌سورس-به-منظور-تشخیص-حملات-ایکس-اس-اس)
 
-```
+```shell
 nmap -PR //ARP Scan
 netdiscover
 nc //netcap
@@ -43,3 +48,56 @@ smb // so scan
 * MobSF
 * AppUse (commercially available)
 * Drozer
+
+## Tutorial
+
+* [free class for web security](https://www.hacker101.com/)
+
+## Projects
+
+* [Electronics Project – Simple Card Read Keyboard Emulator Using Arduino Pro Micro](https://www.szehau.com/archives/2015/04/electronics-project-simple-card-read-keyboard-emulator-using-arduino-pro-micro/)
+
+## RF
+
+* https://v3gard.com/tag/rfcat/
+* https://leonjza.github.io/blog/2016/10/02/reverse-engineering-static-key-remotes-with-gnuradio-and-rfcat/
+* http://dani.foroselectronica.es/rfcat-ti-chronos-and-replaying-rf-signals-337/
+* http://leetupload.com/blagosphere/2014/02/16/you-know-how-to-send-my-signal-setting-up-rfcat-from-scratch/
+* https://www.legacysecuritygroup.com/index.php/categories/13-sdr/22-rfpwnon-py-the-ultimate-rfcat-ask-ook-brute-force-tool
+* https://www.blackhat.com/us-17/training/software-defined-radio.html
+* https://console-cowboys.blogspot.com/2017/10/hacking-everything-with-rf-and-software.html
+* https://www.shodan.io/
+* https://www.hacker101.com/
+* http://www.bluehatil.com/abstracts.html
+* https://ctftime.org/ctf-wtf/
+* https://www.cybersecuritychallenge.org.uk/
+* http://onhex.ir/
+
+
+## Brute Force
+
+## Command Execution
+
+## CSRF
+
+## File Inclusion
+
+```shell
+gdb
+disassemble main
+set disassembly-flavor intel //make it readble
+disassemble main
+
+break *main
+run
+```
+
+## SQL Injection
+
+## SQL Injection (Blind)
+
+## Shell Uploading
+
+## XSS ( Reflected )
+
+## XSS ( Stored)

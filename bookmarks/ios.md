@@ -1,2 +1,0 @@
-- arkit https://github.com/olucurious/Awesome-ARKit
-- https://mobbin.design/

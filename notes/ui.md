@@ -13,10 +13,6 @@
 - https://undraw.co/illustrations
 - [Collection of free city-based icon sets](http://citysets.co.uk/)
 
-## 3D Model
-- https://sketchfab.com/
-- http://groba.tv/
-
 ## Ref
 - [UI Hand Sketch](https://mockflow.com/)
 - [UI Sketch](https://moqups.com/)
@@ -27,7 +23,7 @@
 - http://sketchapp.tv/
 - http://collectui.com/
 - https://www.lottiefiles.com/
-
+- https://scrnshts.club/
 
 ## Icon
 - https://icons8.com/

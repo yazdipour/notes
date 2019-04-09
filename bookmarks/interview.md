@@ -1,3 +1,0 @@
-- https://github.com/30-seconds/30-seconds-of-interviews
-- https://www.lintcode.com/en/
-- https://10up.github.io/Engineering-Best-Practices/

@@ -1,5 +1,11 @@
 # flutter
 
+- https://flutterstudio.app/
+- https://pub.dartlang.org/flutter
+- http://fluttericon.com/
+- http://mutisya.com/
+- https://startflutter.com/
+
 ## Flutter for Xamarin.Forms developers
 
 https://flutter.dev/docs/get-started/flutter-for/xamarin-forms-devs

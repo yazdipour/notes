@@ -1,5 +1,0 @@
-- https://flutterstudio.app/
-- https://pub.dartlang.org/flutter
-- http://fluttericon.com/
-- http://mutisya.com/
-- https://startflutter.com/

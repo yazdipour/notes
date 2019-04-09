@@ -1,1 +1,0 @@
-- https://github.com/enochtangg/quick-SQL-cheatsheet
