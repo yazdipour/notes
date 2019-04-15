@@ -1,5 +1,9 @@
 # Books
 
+## CS Book Review
+
+https://mustread.tech/books
+
 ## Search Query
 
 * `intitle:index.of (epub|mobi|PDF) Pro C#`

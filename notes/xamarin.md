@@ -1,8 +1,8 @@
-# Xamarin.Native
-
-...
-
 # Xamarin.Forms
+
+## Shell
+
+* https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx
 
 ## Persian Calender
 
@@ -173,6 +173,7 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello");
 
 ## Font
 
+* https://montemagno.com/using-font-icons-in-xamarin-forms-goodbye-images-hello-fonts/
 * ANDROID: Copy Fonts inside Android>Assets. Set Build action: AndroidAsset 
 * IOS: Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
 
