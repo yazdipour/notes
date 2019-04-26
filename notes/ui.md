@@ -14,6 +14,7 @@
 * https://www.grabient.com/
 * https://colorhunt.co
 * https://gradientbuttons.colorion.co/
+* https://colordesigner.io/
 
 ## illustrations
 
@@ -47,3 +48,4 @@
 * https://simpleicons.org/
 * https://iconscout.com/unicons
 * https://thenounproject.com/  Collect Icons in FONT
+* https://www.ikonate.com/
