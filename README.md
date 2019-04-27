@@ -13,6 +13,7 @@
 * [CI/CD](notes/cicd.md)
 * [DevOps](notes/devops.md)
 * [Docker](notes/docker.md)
+* [Design Patterns](notes/design_patterns.md)
 * [Extensions](notes/extensions.md)
 * [Flutter](notes/flutter.md)
 * [F#](notes/fsharp.md)
@@ -35,6 +36,7 @@
 * [Design Patterns and Programming Principles](notes/principles.md)
 * [Program Management - Project Management](notes/pm.md)
 * [Python](notes/python.md)
+* [PWA](notes/pwa.md)
 * [Regex](notes/regex.md)
 * [Rx](notes/rx.md)
 * [‍Security](notes/security.md)
@@ -44,6 +46,7 @@
 * [Test](notes/test.md)
 * [Vim](notes/vim.md)
 * [UWP](notes/uwp.md)
+* [WPF](notes/wpf.md)
 * [Xamarin](notes/xamarin.md)
 
 # Interview

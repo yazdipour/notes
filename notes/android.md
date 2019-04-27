@@ -162,7 +162,7 @@ class Activty{
     />
 ```
 
-# Resources
+## Resources
 
 * https://androidresources.net/
 * [Libraries](https://android-arsenal.com/)
@@ -174,7 +174,7 @@ class Activty{
 * https://material.io/icons/#ic_done
 * https://romannurik.github.io/AndroidAssetStudio/index.html
 
-## Iranian Store
+### Iranian Store
 
 * https://developer.myket.ir/applications?type=grid
 * https://cafebazaar.ir/developers/panel/apps/?l=fa
@@ -218,7 +218,15 @@ class Activty{
 
 * [Linx](https://github.com/pedrovgs/Lynx) * Show logcat inside the device for debug builds
 * [Scalpel](https://github.com/JakeWharton/scalpel) * View the entire hierarchy in 3d in the phone.
-* [Stetho](https://github.com/facebook/stetho) * Debug hierarchy and network from chrome.
+* [Stetho](https://github.com/facebook/stetho) 
+    * Debug hierarchy and network from Chrome DevTools.
+    * Network Inspection
+    * Database Inspection
+    * View Hierarchy
+    * dumpapp
+    * Javascript Console
+    * https://youtu.be/iyXpdkqBsG8
+
 * [Android Debug Database](https://github.com/amitshekhariitbhu/Android-Debug-Database) * Android Debug Database is a powerful library for debugging databases and shared preferences in Android applications.
 * [Android Debug Bridge * ADB](https://github.com/mzlogin/awesome-adb/blob/master/README.en.md) * a command-line tool to assist in debugging Android-powered devices
 * [ADB Enhanced](https://github.com/ashishb/adb-enhanced) * a command-line wrapper around ADB for developers, so that, developers don't have to remember esoteric version-dependent commands
