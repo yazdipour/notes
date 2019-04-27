@@ -1,5 +1,11 @@
 # WPF
 
+## Theme and Controls
+
+* https://github.com/MahApps/MahApps.Metro
+* http://materialdesigninxaml.net
+* https://nugetmusthaves.com/article/top-wpf-libraries
+
 ## Tutorial
 
 https://www.wpf-tutorial.com/
