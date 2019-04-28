@@ -5,6 +5,7 @@
 * Realm: https://virgool.io/@sjd.noroozi91/بلعیدن-شیرینی-دانمارکی-یا-راهکاری-برای-قورت-دادن-استوانه-ها-mcftjpolptjs
 * KeyValue: SnappyDB
 * ORM: ActiveAndroid, SugarORM, DBFlow
+* ROOM: https://programchi.ir/2018/08/27/آموزش-دیتابیس-room-در-اندروید/
 
 ## Amazing open source Android apps
 

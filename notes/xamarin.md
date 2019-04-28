@@ -12,6 +12,10 @@ https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms
 
 https://github.com/brminnick/ImproveXamarinBuildTimes
 
+## ConnectionView
+
+https://xamgirl.com/handling-connection-changes-in-xamarin-forms/
+
 ## Native Forms
 
 ```C#
