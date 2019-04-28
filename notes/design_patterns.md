@@ -14,10 +14,21 @@ https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/
 * https://github.com/iluwatar/java-design-patterns/
 
 ## Creational Patterns
+https://sourcemaking.com/design_patterns/structural_patterns
+
+### Object Pool / Resource Pool
+* Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+* Sample: https://sourcemaking.com/design_patterns/object_pool/java
+
+### Prototype
+Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+Sample: https://sourcemaking.com/design_patterns/prototype/java/1
 
 ### Abstract Factory
-
-### Builder
+* Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+* A hierarchy that encapsulates: many possible “platforms”, and the construction of a suite of “products”.
+* The new operator considered harmful.
+* Sample: https://sourcemaking.com/design_patterns/abstract_factory/java/2
 
 ### Factory Method
 
@@ -50,8 +61,6 @@ public class PizzaStore {
     }
 ```
 
-### Prototype
-
 ### Singleton
 
 Only a single instance can exist
@@ -74,11 +83,28 @@ public class Singleton {
 
 ## Structural Patterns
 
+### Builder
+* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+* Parse a complex representation, create one of several targets.
+* Sample: https://sourcemaking.com/design_patterns/builder/java/2
+
 ### Adapter
+Match interfaces of different classes
 
 ### Bridge
+Separates an object’s interface from its implementation
 
 ### Composite
+A tree structure of simple and composite objects
+
+### Facade
+A single class that represents an entire subsystem
+
+### Flyweight
+A fine-grained instance used for efficient sharing
+
+### Proxy
+An object representing another object
 
 ### Decorator
 
@@ -122,19 +148,32 @@ public class Mocha extends CondimentDecorator {
 }
 ```
 
-### Facade
-
-### Flyweight
-
-### Proxy
-
 ## Behavioral Patterns
+https://sourcemaking.com/design_patterns/behavioral_patterns
 
 ### Chain of Responsibility
+A way of passing a request between a chain of objects
 
 ### Command
+Encapsulate a command request as an object
 
 ### Interpreter
+A way to include language elements in a program
+
+### Mediator
+Defines simplified communication between classes
+
+### Memento
+Capture and restore an object’s internal state
+
+### Template
+Defer the exact steps of an algorithm to a subclass
+
+### Visitor
+Defines a new operation to a class without change
+
+#### Null Object
+Designed to act as a default value of an object
 
 ### Iterator/Collection
 
@@ -176,10 +215,6 @@ public class DinerMenuIterator implements Iterator<String> {
     }
 }
 ```
-
-### Mediator
-
-### Memento
 
 ### State
 
@@ -287,13 +322,11 @@ public class FlyNoWay implements FlyBehavior {...
 public class FlyWithWings implements FlyBehavior {...
 ```
 
-### Template
-
-### Visitor
-
 ## Compound Patterns
 
 ### MVVM
+
+### MVP
 
 ### MVC
 
@@ -321,73 +354,5 @@ public class FlyWithWings implements FlyBehavior {...
         /profile
             <h1>{{profile.name}}</h1>
 ```
-
-### MVP
-
-### Creational patterns
-
-https://sourcemaking.com/design_patterns/creational_patterns
-
-#### Prototype
-
-Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-
-Sample: https://sourcemaking.com/design_patterns/prototype/java/1
-
-#### Object Pool / Resource Pool
-
-* Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
-* Sample: https://sourcemaking.com/design_patterns/object_pool/java
-
-#### Builder
-
-* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-* Parse a complex representation, create one of several targets.
-* Sample: https://sourcemaking.com/design_patterns/builder/java/2
-
-
-#### Abstract Factory
-
-* Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-* A hierarchy that encapsulates: many possible “platforms”, and the construction of a suite of “products”.
-* The new operator considered harmful.
-* Sample: https://sourcemaking.com/design_patterns/abstract_factory/java/2
-
-### Structural patterns
-https://sourcemaking.com/design_patterns/structural_patterns
-
-#### Adapter
-Match interfaces of different classes
-#### Bridge
-Separates an object’s interface from its implementation
-#### Composite
-A tree structure of simple and composite objects
-#### Facade
-A single class that represents an entire subsystem
-#### Flyweight
-A fine-grained instance used for efficient sharing
-#### Private Class Data
-Restricts accessor/mutator access
-#### Proxy
-An object representing another object
-
-### Behavioral patterns
-https://sourcemaking.com/design_patterns/behavioral_patterns
-#### Chain of responsibility
-A way of passing a request between a chain of objects
-#### Command
-Encapsulate a command request as an object
-#### Interpreter
-A way to include language elements in a program
-#### Mediator
-Defines simplified communication between classes
-#### Memento
-Capture and restore an object’s internal state
-#### Null Object
-Designed to act as a default value of an object
-#### Template method
-Defer the exact steps of an algorithm to a subclass
-#### Visitor
-Defines a new operation to a class without change
 
 ## Antipatterns
