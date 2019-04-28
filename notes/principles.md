@@ -5,13 +5,9 @@ https://en.wikipedia.org/wiki/Event-driven_programming
 https://www.techopedia.com/definition/7083/event-driven-program
 https://dzone.com/articles/what-is-event-driven-programming-and-why-is-it-so
 
-MVP
-https://antonioleiva.com/mvp-android/
-https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
-https://android.jlelse.eu/why-to-choose-mvvm-over-mvp-android-architecture-33c0f2de5516
-https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b
-https://github.com/googlesamples/android-architecture
-https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/
+## Basics
+
+* Boilerplate code means a piece of code which can be used over and over again. On the other hand, anyone can say that it's a piece of reusable code.
 
 ## UML
 
@@ -27,143 +23,11 @@ https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/
 * Polymorphism:
 * Abstraction:
 * Inversion of Control: 2 dbClass with one interface - class using an obj type interface  - call class method with dbClass obj
-
-* Dependency Injection:
-
-## Design Patterns
-
-### Compound Patterns
-
-#### MVVM
-
-#### MVC
-
-* Combines Strategy, Observer and Composite patterns
-* Used to separate there parts: User interface, Logic, DataModel
-
-```c
-#http://x.com/users/profile/1
-
-/routes
-    users/profile/:id = Users.getProfile(id)
-/controllers
-    class Users{
-        function getProfile(id){
-            profile = this.UserModel.getProfile(id)
-            renderView('users/profile', profile)
-
-/models
-    class UserModel{
-        function getProfile(id){
-            return this.db.get('SELECT * FROM users WHERE id='+id);
-
-/views
-    /users
-        /profile
-            <h1>{{profile.name}}</h1>
-```
-
-#### MVP
-
-### Creational patterns
-
-https://sourcemaking.com/design_patterns/creational_patterns
-
-#### Singleton
-
-A class of which only a single instance can exist
-
-```c#
-    public static class ApiHandler
-    {   //Semi Singleton Sample!
-        private static IApi api;
-        public static IApi Api => api ?? (api = Refit.RestService.For<IApi>("http://x.com"));
-    }
-```
-
-#### Prototype
-
-Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-
-Sample: https://sourcemaking.com/design_patterns/prototype/java/1
-
-#### Object Pool / Resource Pool
-
-* Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
-* Sample: https://sourcemaking.com/design_patterns/object_pool/java
-
-#### Builder
-
-* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-* Parse a complex representation, create one of several targets.
-* Sample: https://sourcemaking.com/design_patterns/builder/java/2
-
-#### Factory Method
-
-* Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
-* Defining a “virtual” constructor.
-* The new operator considered harmful.
-* Sample: https://sourcemaking.com/design_patterns/factory_method/java/1
-
-#### Abstract Factory
-
-* Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-* A hierarchy that encapsulates: many possible “platforms”, and the construction of a suite of “products”.
-* The new operator considered harmful.
-* Sample: https://sourcemaking.com/design_patterns/abstract_factory/java/2
-
-### Structural patterns
-https://sourcemaking.com/design_patterns/structural_patterns
-
-#### Adapter
-Match interfaces of different classes
-#### Bridge
-Separates an object’s interface from its implementation
-#### Composite
-A tree structure of simple and composite objects
-#### Decorator
-Add responsibilities to objects dynamically
-#### Facade
-A single class that represents an entire subsystem
-#### Flyweight
-A fine-grained instance used for efficient sharing
-#### Private Class Data
-Restricts accessor/mutator access
-#### Proxy
-An object representing another object
-
-### Behavioral patterns
-https://sourcemaking.com/design_patterns/behavioral_patterns
-#### Chain of responsibility
-A way of passing a request between a chain of objects
-#### Command
-Encapsulate a command request as an object
-#### Interpreter
-A way to include language elements in a program
-#### Iterator
-Sequentially access the elements of a collection
-#### Mediator
-Defines simplified communication between classes
-#### Memento
-Capture and restore an object’s internal state
-#### Null Object
-Designed to act as a default value of an object
-#### Observer
-A way of notifying change to a number of classes
-#### State
-Alter an object’s behavior when its state changes
-#### Strategy
-Encapsulates an algorithm inside a class
-#### Template method
-Defer the exact steps of an algorithm to a subclass
-#### Visitor
-Defines a new operation to a class without change
-
-## Antipatterns
-
-???
+* Dependency Injection
 
 ## Refactoring
+
+---
 
 ## SOILID
 
