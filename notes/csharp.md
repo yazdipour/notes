@@ -15,6 +15,19 @@ RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
 dotnet publish -c Release -r win-x86  (--help)
 ```
 
+## extends/implements
+
+* Java 
+    ```java
+    public class Lion extends Animal implements Diurnal
+    ```
+
+* C#
+    ```C#
+    public class Lion : Animal, // base class must go first
+                        Diurnal // then interface(s) if any
+    ```
+
 ## Abstract
 
 * No impl & must overriden in subclass.
@@ -24,7 +37,7 @@ dotnet publish -c Release -r win-x86  (--help)
 abstract class absClass{
 	public abstract void x();
 
-class implClass{
+class implClass : absClass{
 	public override void x(){
 ```
 

@@ -33,9 +33,11 @@
 * http://collectui.com/
 * https://www.lottiefiles.com/
 * https://scrnshts.club/
+* Premium Stuff https://graphicriver.net/ >> https://parsget.com/
 
 ## Icon
 
+* https://feathericons.com/
 * https://icons8.com/
 * http://oozled.com/resources/icons
 * https://www.iconfinder.com/

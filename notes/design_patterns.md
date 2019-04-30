@@ -1,36 +1,63 @@
 # Design Patterns
 
-MVP
-https://antonioleiva.com/mvp-android/
-https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42
-https://android.jlelse.eu/why-to-choose-mvvm-over-mvp-android-architecture-33c0f2de5516
-https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b
-https://github.com/googlesamples/android-architecture
-https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/
+## Samples
 
-## Sample
-
-* Lynda Course: In Java https://github.com/derekwzheng/design-patterns
+* Lynda Course in Java https://github.com/derekwzheng/design-patterns
 * https://github.com/iluwatar/java-design-patterns/
+* https://sourcemaking.com/design_patterns/ 
 
 ## Creational Patterns
-https://sourcemaking.com/design_patterns/structural_patterns
+
+all about class instantiation
 
 ### Object Pool / Resource Pool
-* Object pooling can offer a significant performance boost; it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+
+* Significant performance boost
+* it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+* How? Have to have `public abstract class ObjectPool<T>` with some abstract methods of managing pool of objects. Then Classes need to extends `ObjectPool<X>` to impl reusability and ... logics base on the usage.
+* More Details: https://sourcemaking.com/design_patterns/object_pool
 * Sample: https://sourcemaking.com/design_patterns/object_pool/java
 
 ### Prototype
+
 Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-Sample: https://sourcemaking.com/design_patterns/prototype/java/1
 
-### Abstract Factory
-* Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-* A hierarchy that encapsulates: many possible “platforms”, and the construction of a suite of “products”.
-* The new operator considered harmful.
-* Sample: https://sourcemaking.com/design_patterns/abstract_factory/java/2
+* More Details: https://sourcemaking.com/design_patterns/prototype
+* Sample2: https://sourcemaking.com/design_patterns/prototype/java/2
 
-### Factory Method
+```java
+//PrototypeFactory
+public class PrototypeFactory {
+    public static void main(String[] args) {
+        for (String type : args) {
+            Person prototype = Factory.getPrototype(type);
+            System.out.println(prototype);
+// Factory
+class Factory {
+    private static final Map<String, Person> prototypes = new HashMap<>();
+    static {
+        prototypes.put("tom", new Tom());
+        prototypes.put("dick", new Dick());
+    }
+    public static Person getPrototype(String type) {
+        try {
+            return prototypes.get(type).clone();
+        } catch (NullPointerException ex) {
+            System.out.println(type + ", doesn't exist");
+// Types
+interface Person {
+    Person clone();
+}
+class Dick implements Person {
+class Tom implements Person {
+private final String NAME = "Tom";
+    @Override
+    public Person clone() { return new Tom(); }
+}
+
+```
+
+### Factory Method (Abstract Factory Similar)
 
 * Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 * Sample: https://sourcemaking.com/design_patterns/factory_method/java/1
@@ -81,30 +108,57 @@ public class Singleton {
     public static **synchronized** Singleton getInstance() {...
 ```
 
+### Builder
+
+* Instead of Passing all obj property by Constructor, 
+* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+
+```c#
+// Usage
+var api = new ApiHandler()
+            .setBaseUrl("x.com");
+// Builder
+class ApiHandler
+{
+    private String base_url;
+    public ApiHandler setBaseUrl(String base_url)
+    {
+        this.base_url = base_url;
+    }
+```
+
 ## Structural Patterns
 
-### Builder
-* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-* Parse a complex representation, create one of several targets.
-* Sample: https://sourcemaking.com/design_patterns/builder/java/2
+define ways to compose objects to obtain new functionality.
 
 ### Adapter
-Match interfaces of different classes
 
-### Bridge
-Separates an object’s interface from its implementation
+* We have Line,Rectangle Classes with no parent and with same `Draw()` method. Now we create `IShape` interface with `DrawAdapter & LineAdapter` implementing `IShape`.
 
-### Composite
-A tree structure of simple and composite objects
-
-### Facade
-A single class that represents an entire subsystem
-
-### Flyweight
-A fine-grained instance used for efficient sharing
-
-### Proxy
-An object representing another object
+```java
+class Line {
+    public void draw(int x1, int y1, int x2, int y2) {
+class Rectangle {
+    public void draw(int x, int y, int width, int height) {
+//Adapter
+interface Shape {
+    void draw(int x1, int y1, int x2, int y2);
+class LineAdapter implements Shape {
+    @Override
+        public void draw(int x1, int y1, int x2, int y2) {
+            adaptee.draw(x1, y1, x2, y2);
+class RectangleAdapter implements Shape {
+    @Override
+    public void draw(int x1, int y1, int x2, int y2) {
+        int x = Math.min(x1, x2);
+        int y = Math.min(y1, y2);
+        int width = Math.abs(x2 - x1);
+        int height = Math.abs(y2 - y1);
+        adaptee.draw(x, y, width, height);
+// Usage
+Shape l = new LineAdapter(), r = new RectangleAdapter();
+l.draw(...); r.draw(...);
+```
 
 ### Decorator
 
@@ -148,36 +202,76 @@ public class Mocha extends CondimentDecorator {
 }
 ```
 
+### Bridge (Handle-Body Pattern)
+
+* Separates interface from its implementation.
+* Ex. We have `Switch` interface, but in each Class we have different impl of `Switch`.
+![Bridge](https://sourcemaking.com/files/v2/content/patterns/Bridge_example.png)
+
+### Composite
+
+* A tree structure of simple and composite objects
+* 1-to-many "has a" up the "is a" hierarchy
+
+### Facade
+
+* A single class that represents an entire subsystem
+* Wrap a complicated subsystem with a simpler interface.
+
+### Flyweight
+
+* Use sharing to support large numbers of fine-grained objects efficiently.
+
+### Proxy
+
+* Just a wrapper for other libraries!
+* X_LIBRARY <---> PROXY <---> MyApp
+* Provide a surrogate or placeholder for another object to control access to it.
+* Sample https://sourcemaking.com/design_patterns/proxy/java/1
+
 ## Behavioral Patterns
-https://sourcemaking.com/design_patterns/behavioral_patterns
+
+* most specifically concerned with communication between objects.
+* https://sourcemaking.com/design_patterns/behavioral_patterns
 
 ### Chain of Responsibility
+
 A way of passing a request between a chain of objects
 
 ### Command
+
 Encapsulate a command request as an object
 
 ### Interpreter
+
 A way to include language elements in a program
 
 ### Mediator
+
 Defines simplified communication between classes
 
 ### Memento
-Capture and restore an object’s internal state
+
+* Capture and restore an object’s internal state
+* Promote undo or rollback to full object status.
+* A magic cookie that encapsulates a "check point" capability.
+* https://sourcemaking.com/design_patterns/memento/
 
 ### Template
-Defer the exact steps of an algorithm to a subclass
+
+* Defer the exact steps of an algorithm to a subclass
 
 ### Visitor
+
 Defines a new operation to a class without change
 
-#### Null Object
+### Null Object
+
 Designed to act as a default value of an object
 
 ### Iterator/Collection
 
-Kinda like `inteface for array, arraylist, vector, linkedlist`. With `hasNext, next, remove,...` mothods.
+Kinda like inteface for `array, arraylist, vector, linkedlist`. With `hasNext, next, remove,...` mothods.
 
 ```java
 public interface Menu {
@@ -324,10 +418,6 @@ public class FlyWithWings implements FlyBehavior {...
 
 ## Compound Patterns
 
-### MVVM
-
-### MVP
-
 ### MVC
 
 * Combines Strategy, Observer and Composite patterns
@@ -335,7 +425,6 @@ public class FlyWithWings implements FlyBehavior {...
 
 ```c
 #http://x.com/users/profile/1
-
 /routes
     users/profile/:id = Users.getProfile(id)
 /controllers
@@ -343,16 +432,16 @@ public class FlyWithWings implements FlyBehavior {...
         function getProfile(id){
             profile = this.UserModel.getProfile(id)
             renderView('users/profile', profile)
-
 /models
     class UserModel{
         function getProfile(id){
             return this.db.get('SELECT * FROM users WHERE id='+id);
-
 /views
     /users
         /profile
             <h1>{{profile.name}}</h1>
 ```
 
-## Antipatterns
+### MVVM
+
+### MVP
