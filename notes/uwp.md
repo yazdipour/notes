@@ -21,31 +21,3 @@ https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-
     </ListView.ItemsSource>
 </ListView>
 ```
-
-## Functions in x:Bind
-
-* `<object property="{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}" ... />`
-* https://docs.microsoft.com/en-us/windows/uwp/data-binding/function-bindings
-
-```xml
-<Grid Background="{x:Bind local:ColorEntry.Brushify(Color), Mode=OneWay}"
-<!-- OR -->
-<TextBlock x:Name="BigTextBlock" FontSize="20"/>
-<TextBlock FontSize="{x:Bind local:ColorEntry.Half(BigTextBlock.FontSize)}" />
-```
-
-```c#
-class ColorEntry
-{
-    public static SolidColorBrush Brushify(Color c) => new SolidColorBrush(c);
-    public static double Half(double value) => value / 2.0;
-```
-
-### StringFormat
-
-```xml
-<Page xmlns:sys="using:System">
-     <CalendarDatePicker Date="{x:Bind sys:DateTime.Parse(TextBlock1.Text)}" />
-     <TextBlock Text="{x:Bind sys:String.Format('{0} is now available in {1}', local:MyPage.personName, local:MyPage.location)}" />
-</Page>
-```

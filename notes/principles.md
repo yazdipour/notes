@@ -11,7 +11,6 @@ https://dzone.com/articles/what-is-event-driven-programming-and-why-is-it-so
 
 ## UML
 
-* https://sourcemaking.com/uml
 * Activity Diagram
 * State Diagram
 * Sequence Diagram
@@ -28,7 +27,7 @@ https://dzone.com/articles/what-is-event-driven-programming-and-why-is-it-so
 
 ## Refactoring
 
-https://sourcemaking.com/refactoring
+---
 
 ## SOILID
 
