@@ -46,6 +46,7 @@
 * [Program/Project Management](notes/pm.md)
 * [Blockchain](notes/blockchain.md)
 * [Algorithm](notes/algorithm.md)
+* [Cloud](notes/cloud.md)
 * [CI/CD](notes/cicd.md)
 * [DevOps](notes/devops.md)
 * [Docker](notes/docker.md)
