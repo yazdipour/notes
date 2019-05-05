@@ -56,7 +56,7 @@
 * [Machine Leanring](ml/ml.md)
 * [Image Processing](ml/ip.md)
 * [Natural language processing](ml/nlp.md)
-* [Pytorch](notes/pytorch.md)
+* [Pytorch](ml/pytorch.md)
 
 # Programming Principles
 
@@ -89,8 +89,8 @@
 
 # Life
 
-* [business](/business/business.md)
-* [law](/business/law.md)
-* [management](/business/management.md)
-* [money](/business/money.md)
-* [networking](/business/networking.md)
+* [business](life/business.md)
+* [law](life/law.md)
+* [management](life/management.md)
+* [money](life/money.md)
+* [networking](life/networking.md)
