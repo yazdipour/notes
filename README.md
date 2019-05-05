@@ -14,13 +14,13 @@
 * [Math](notes/math.md)
 * [Test](notes/test.md)
 
-## UI
+# UI
 
 * [UI](notes/ui.md)
 * [3D](notes/3d.md)
 * [Css](notes/css.md)
 
-## Languages
+# Languages
 
 * [Java](notes/java.md)
 * [Js](notes/js.md)
@@ -36,7 +36,7 @@
 * [SQL](notes/sql.md)
 * [Kotlin](notes/kotlin.md)
 
-## Platformms
+# Platformms
 
 * [ASP](notes/asp.md)
 * [UWP](notes/uwp.md)
@@ -47,13 +47,13 @@
 * [PWA](notes/pwa.md)
 * [Extensions](notes/extensions.md)
 
-## Machine Leanring
+# Machine Leanring
 
 * [Machine Leanring](notes/ml.md)
 * [Image Processing](notes/ip.md)
 * [Natural language processing](notes/nlp.md)
 
-## Programming Principles
+# Programming Principles
 
 * [Programming Principles](notes/principles.md)
 * [Architecture Patterns](notes/architecture.md)
@@ -64,8 +64,10 @@
 * [Rx](notes/rx.md)
 * [StringFormat](notes/stringformat.md)
 * [Crawling](notes/crawling.md)
+* [Code Review](notes/code_review.md)
 
-## CLI
+# CLI
+
 * [Vim](notes/vim.md)
 * [Linux](notes/linux.md)
 * [Powershell](notes/powershell.md)
