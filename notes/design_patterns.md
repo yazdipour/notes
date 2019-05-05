@@ -416,52 +416,6 @@ public class FlyNoWay implements FlyBehavior {...
 public class FlyWithWings implements FlyBehavior {...
 ```
 
-## Compound Patterns
+## Architecture / Compound Patterns
 
-### MVC - Web
-
-* Combines Strategy, Observer and Composite patterns
-* Used to separate there parts: User interface, Logic, DataModel
-
-```c
-#http://x.com/users/profile/1
-/routes
-    users/profile/:id = Users.getProfile(id)
-/controllers
-    class Users{
-        function getProfile(id){
-            profile = this.UserModel.getProfile(id)
-            renderView('users/profile', profile)
-/models
-    class UserModel{
-        function getProfile(id){
-            return this.db.get('SELECT * FROM users WHERE id='+id);
-/views
-    /users
-        /profile
-            <h1>{{profile.name}}</h1>
-```
-
-### MVVM
-
-### MVP - Android
-
-![mvp_blueprint](../assets/mvp_blueprint.png)
-
-* View: It is the part of the application which renders the UI and receives interactions from the user. Activity, Fragment, and CustomView constitute this part.
-* MvpView: It is an interface, that is implemented by the View. It contains methods that are exposed to its Presenter for the communication.
-* Presenter: It is the decision-making counterpart of the View and is a pure java class, with no access to Android APIs. It receives the user interactions passed on from its View and then takes the decision based on the business logic, finally instructing the View to perform specific actions.
-* MvpPresenter: It is an interface, that is implemented by the Presenter. It contains methods that are exposed to its View for the communication.
-
-MVP has some risks, and the most important we use to forget is that the presenter is attached to the view forever. And the view is an activity, which means that:
-
-* We can leak the activity with long-running tasks
-    > If you can ensure that your background tasks finish in a reasonable amount of time, I wouldn’t worry much. Leaking an activity 5-10 seconds won’t make your App much worse, and the solutions to this are usually complex.
-* We can try to update activities that have already died
-    > To solve this, we call the onDestroy() method that cleans the view: `fun onDestroy() {loginView = null}`
-
-Project Sample
-
-* Java https://github.com/MindorksOpenSource/android-mvp-architecture
-* Kotlin https://github.com/MindorksOpenSource/android-kotlin-mvp-architecture
-![mvp_ProjectStructure](../assets/mvp_ProjectStructure.png)
+[Visit Architecture Page](./architecture.md)
