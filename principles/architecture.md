@@ -1,6 +1,7 @@
 # Architecture / Compound Patterns
 
-Android MVC, MVP, and MVVM: https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+* Android MVC, MVP, and MVVM: https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+* MVVM Example: https://medium.com/@husayn.hakeem/android-by-example-mvvm-data-binding-introduction-part-1-6a7a5f388bf7
 
 ## MVC
 
@@ -120,10 +121,6 @@ public void Tasks_ShowsNonEmptyMessage() throws Exception {
         .getString(R.string.statistics_active_tasks);
     onView(withText(containsString(expectedActiveTaskText)))
         .check(matches(isDisplayed()));
-    String expectedCompletedTaskText = context
-        .getString(R.string.statistics_completed_tasks);
-    onView(withText(containsString(expectedCompletedTaskText)))
-        .check(matches(isDisplayed()));
 }
 ```
 
@@ -134,7 +131,7 @@ All Presenters implement the same BasePresenter interface.
 ```java
 public interface BasePresenter {
     void subscribe();
-    void unsubscribe();
+    void unsubscribe(); // The role of the unsubscribe method is to clear all the subscriptions of the Presenter, thus avoiding memory leaks.
 ```
 
 When the subscribe method is called, the Presenter starts requesting the data from the Model, then it applies the UI logic to the received data and sets it to the View. For example, in the StatisticsPresenter, all tasks are requested from the TaskRepository - then the retrieved tasks are used to compute the number of active and completed tasks. These numbers will be used as parameters for the showStatistics(int numberOfActiveTasks, int numberOfCompletedTasks) method of the View.
@@ -144,8 +141,7 @@ A unit test to check that indeed the showStatistics method is called with the co
 ```java
 @Test
 public void loadNonEmptyTasksFromRepository_CallViewToDisplay() {
-    // Given an initialized StatisticsPresenter with
-    // 1 active and 2 completed tasks
+    // Given an initialized StatisticsPresenter with 1 active and 2 completed tasks
     setTasksAvailable(TASKS);
     // When loading of Tasks is requested
     mStatisticsPresenter.subscribe();
@@ -153,21 +149,6 @@ public void loadNonEmptyTasksFromRepository_CallViewToDisplay() {
     verify(mStatisticsView).showStatistics(1, 2);
 }
 ```
-
-The role of the unsubscribe method is to clear all the subscriptions of the Presenter, thus avoiding memory leaks.
-
-Apart from subscribe and unsubscribe, each Presenter exposes other methods, corresponding to the user actions in the View. For example, the AddEditTaskPresenter, adds methods like createTask, that would be called when the user presses the button that creates a new task. This ensures that all the user actions - and consequently all the UI logic - go through the Presenter and thereby can be unit tested.
-
-### Disadvantages
-
-Forgetting that the presenter is attached to the view forever:
-
-* We can leak the activity with long-running tasks
-    > If you can ensure that your background tasks finish in a reasonable amount of time, I wouldn’t worry much. Leaking an activity 5-10 seconds won’t make your App much worse, and the solutions to this are usually complex.
-* We can try to update activities that have already died
-    > To solve this, we call `unsubscribe` in RxJava or the onDestroy() method that cleans the view: `fun onDestroy() {loginView = null}`
-
-![mvp_ProjectStructure](../assets/mvp_ProjectStructure.png)
 
 ## MVVM
 
@@ -177,78 +158,46 @@ Forgetting that the presenter is attached to the view forever:
 
 ![mvvm_blueprint](../assets/mvvm_blueprint.png)
 
-At a first glance, MVVM seems very similar to the MVP pattern, because both of them do a great job in abstracting the view’s state and behavior. The Presentation Model abstracts a View independent from a specific user-interface platform, whereas the MVVM pattern was created to simplify the event driven programming of user interfaces.
-
 ## MVVM - Android
 
-**DataModel**
-The DataModel exposes data easily consumable through event streams - RxJava’s Observables. It composes data from multiple sources, like the network layer, database or shared preferences and exposes easily consumable data to whomever needs it. The DataModels hold the entire business logic.
+* DataModel: The DataModel exposes data easily consumable through event streams - RxJava’s Observables + hold the entire business logic.
 
-Our strong emphasis on the single responsibility principle leads to creating a DataModel for every feature in the app. For example, we have an ArticleDataModel that composes its output from the API service and database layer. This DataModel handles the business logic ensuring that the latest news from the database is retrieved, by applying an age filter.
+* ViewModel: The ViewModel retrieves the necessary data from the DataModel, applies the UI logic and then exposes relevant data for the View to consume. Similar to the DataModel, the ViewModel exposes the data via Observables.
 
-**ViewModel**
-The ViewModel is a model for the View of the app: an abstraction of the View. The ViewModel retrieves the necessary data from the DataModel, applies the UI logic and then exposes relevant data for the View to consume. Similar to the DataModel, the ViewModel exposes the data via Observables.
+* View: It can be an Activity, a Fragment or any custom Android View. For Activities and Fragments.
 
-We learned two things about the ViewModel the hard way:
-
-The ViewModel should expose states for the View, rather than just events. For example, if we need to display the name and the email address of a User, rather than creating two streams for this, we create a DisplayableUser object that encapsulates the two fields. The stream will emit every time the display name or the email changes. This way, we ensure that our View always displays the current state of the User.
-
-We should make sure that every action of the user goes through the ViewModel and that any possible logic of the View is moved in the ViewModel.
-
-We wrote about these two topics in a blog post about common mistakes in MVVM + RxJava.
-
-**View**
-The View is the actual user interface in the app. It can be an Activity, a Fragment or any custom Android View. For Activities and Fragments, we are binding and unbinding from the event sources on onResume() and onPause().
+We are binding and unbinding from the event sources on `onResume() and onPause()`.
 
 ```java
     private final CompositeSubscription mSubscription = new CompositeSubscription();
-
     @Override
     public void onResume() {
         super.onResume();
         mSubscription.add(mViewModel.getSomeData()
                          .observeOn(AndroidSchedulers.mainThread())
-                         .subscribe(this::updateView,
-                                    this::handleError));
-    }
-
+                         .subscribe(this::updateView,this::handleError));
     @Override
     public void onPause() {
         mSubscription.clear();
         super.onPause();
-    }
 ```
 
-If the MVVM View is a custom Android View, the binding is done in the constructor. To ensure that the subscription is not preserved, leading to possible memory leaks, the unbinding happens in onDetachedFromWindow.
+If the MVVM View is a **custom Android View**, the binding is done in the constructor. To ensure that the subscription is not preserved, leading to possible memory leaks, the unbinding happens in onDetachedFromWindow.
 
 ```java
     private final CompositeSubscription mSubscription = new CompositeSubscription();
-
     public MyView(Context context, MyViewModel viewModel) {
         ...
         mSubscription.add(mViewModel.getSomeData()
                          .observeOn(AndroidSchedulers.mainThread())
-                         .subscribe(this::updateView,
-                                    this::handleError));
-    }
-
+                         .subscribe(this::updateView,this::handleError));
     @Override
     public void onDetachedFromWindow() {
         mSubscription.clear();
         super.onDetachedFromWindow();
-    }
-}
 ```
 
-Testability Of The Model-View-ViewModel Classes
-
-* DataModel:
-The use of inversion of control pattern, heavily applied in our code, and the lack of any Android classes, facilitate the implementation of unit tests of the DataModel.
-
-* ViewModel:
-We see the Views and the unit tests as two different types of consumers of data from the ViewModel. The ViewModel is completely separated from the UI or any Android classes, therefore straightforward to unit test.
-
-Consider the following example where the ViewModel just exposes some data from the DataModel:
+* Testability: Consider the following example where the ViewModel just exposes some data from the DataModel:
 
 ```java
 public class ViewModel {
@@ -268,16 +217,13 @@ The tests for the ViewModel are easy to implement. With the help of Mockito, we 
 
 ```java
 public class ViewModelTest {
-
     @Mock
     private IDataModel mDataModel;
-
     private ViewModel mViewModel;
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-
         mViewModel = new ViewModel(mDataModel);
     }
 
@@ -286,17 +232,15 @@ public class ViewModelTest {
         SomeData data = new SomeData();
         Mockito.when(mDataModel.getSomeData()).thenReturn(Observable.just(data));
         TestSubscriber<SomeData> testSubscriber = new TestSubscriber<>();
-
         mViewModel.getSomeData().subscribe(testSubscriber);
-
         testSubscriber.assertValue(data);
-    }
-}
 ```
 
-If the ViewModel needs access to Android classes, we create wrappers that we call Providers. For example, for Android resources we created a IResourceProvider, that exposes methods like String getString(@StringRes final int id). The implementation of the IResourceProvider will contain a reference to the Context but, the ViewModel will only refer to an IResourceProvider injected.
+**If the ViewModel needs access to Android classes, we create wrappers that we call Providers. For example, for Android resources we created a IResourceProvider, that exposes methods like `String getString(@StringRes final int id)`. The implementation of the IResourceProvider will contain a reference to the Context but, the ViewModel will only refer to an IResourceProvider injected.**
 
-* Sample https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+### Example
+
+https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
 
 ![mvvm_structure](../assets/mvvm_structure.png)
 
@@ -318,29 +262,13 @@ public class TicTacToeViewModel implements ViewModel {
         model = new Board();
     }
 
-    // As with presenter, we implement standard lifecycle methods from the view
-    // in case we need to do anything with our model during those events.
-    public void onCreate() { }
-    public void onPause() { }
-    public void onResume() { }
-    public void onDestroy() { }
-
-    /**
-     * An Action, callable by the view.  This action will pass a message to the model
-     * for the cell clicked and then update the observable fields with the current
-     * model state.
-     */
+    /* An Action, callable by the view */
     public void onClickedCellAt(int row, int col) {
-        Player playerThatMoved = model.mark(row, col);
-        cells.put("" + row + col, playerThatMoved == null ? 
-                                                     null : playerThatMoved.toString());
+        cells.put("" + row + col, playerThatMoved == null ? null : model.mark(row, col).toString());
         winner.set(model.getWinner() == null ? null : model.getWinner().toString());
     }
 
-    /**
-     * An Action, callable by the view.  This action will pass a message to the model
-     * to restart and then clear the observable data in this ViewModel.
-     */
+    /* An Action, callable by the view */
     public void onResetSelected() {
         model.restart();
         winner.set(null);
@@ -350,51 +278,21 @@ public class TicTacToeViewModel implements ViewModel {
 ```
 
 ```xml
-<!-- 
-    With Data Binding, the root element is <layout>.  It contains 2 things.
-    1. <data> - We define variables to which we wish to use in our binding expressions and 
-                import any other classes we may need for reference, like android.view.View.
-    2. <root layout> - This is the visual root layout of our view.  This is the root xml tag in the MVC and MVP view examples.
--->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <!-- We will reference the TicTacToeViewModel by the name viewModel as we have defined it here. -->
     <data>
         <import type="android.view.View" />
         <variable name="viewModel" type="com.acme.tictactoe.viewmodel.TicTacToeViewModel" />
     </data>
     <LinearLayout...>
-        <GridLayout...>
-            <!-- onClick of any cell in the board, the button clicked will invoke the onClickedCellAt method with its row,col -->
-            <!-- The display value comes from the ObservableArrayMap defined in the ViewModel  -->
-            <Button
-                style="@style/tictactoebutton"
-                android:onClick="@{() -> viewModel.onClickedCellAt(0,0)}"
-                android:text='@{viewModel.cells["00"]}' />
-            ...
-            <Button
-                style="@style/tictactoebutton"
-                android:onClick="@{() -> viewModel.onClickedCellAt(2,2)}"
-                android:text='@{viewModel.cells["22"]}' />
-        </GridLayout>
-
-        <!-- The visibility of the winner view group is based on whether or not the winner value is null.
-             Caution should be used not to add presentation logic into the view.  However, for this case
-             it makes sense to just set visibility accordingly.  It would be odd for the view to render
-             this section if the value for winner were empty.  -->
+        <Button
+            android:onClick="@{() ->viewModel.onClickedCellAt(0,0)}"
+            android:text='@{viewModel.cells["00"]}' />
         <LinearLayout...
             android:visibility="@{viewModel.winner != null ? View.VISIBLE : View.GONE}"
-            tools:visibility="visible">
-
-            <!-- The value of the winner label is bound to the viewModel.winner and reacts if that value changes -->
+            tools:visibility="visible"> **use tools for XmlDesigner**
             <TextView
-                ...
                 android:text="@{viewModel.winner}"
-                tools:text="X" />
-            ...
-        </LinearLayout>
-    </LinearLayout>
-</layout>
+                tools:text="X" /> **use tools for XmlDesigner**
 ```
