@@ -1,5 +1,7 @@
 # Architecture / Compound Patterns
 
+Android MVC, MVP, and MVVM: https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+
 ## MVC
 
 * Combines Strategy, Observer and Composite patterns
@@ -165,7 +167,6 @@ Forgetting that the presenter is attached to the view forever:
 * We can try to update activities that have already died
     > To solve this, we call `unsubscribe` in RxJava or the onDestroy() method that cleans the view: `fun onDestroy() {loginView = null}`
 
-Project Sample in Java https://github.com/MindorksOpenSource/android-mvp-architecture
 ![mvp_ProjectStructure](../assets/mvp_ProjectStructure.png)
 
 ## MVVM
@@ -294,3 +295,106 @@ public class ViewModelTest {
 ```
 
 If the ViewModel needs access to Android classes, we create wrappers that we call Providers. For example, for Android resources we created a IResourceProvider, that exposes methods like String getString(@StringRes final int id). The implementation of the IResourceProvider will contain a reference to the Context but, the ViewModel will only refer to an IResourceProvider injected.
+
+* Sample https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+
+![mvvm_structure](../assets/mvvm_structure.png)
+
+```java
+public class TicTacToeViewModel implements ViewModel {
+
+    private Board model;
+
+    /* 
+     * These are observable variables that the viewModel will update as appropriate
+     * The view components are bound directly to these objects and react to changes
+     * immediately, without the ViewModel needing to tell it to do so. They don't
+     * have to be public, they could be private with a public getter method too.
+     */
+    public final ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
+    public final ObservableField<String> winner = new ObservableField<>();
+
+    public TicTacToeViewModel() {
+        model = new Board();
+    }
+
+    // As with presenter, we implement standard lifecycle methods from the view
+    // in case we need to do anything with our model during those events.
+    public void onCreate() { }
+    public void onPause() { }
+    public void onResume() { }
+    public void onDestroy() { }
+
+    /**
+     * An Action, callable by the view.  This action will pass a message to the model
+     * for the cell clicked and then update the observable fields with the current
+     * model state.
+     */
+    public void onClickedCellAt(int row, int col) {
+        Player playerThatMoved = model.mark(row, col);
+        cells.put("" + row + col, playerThatMoved == null ? 
+                                                     null : playerThatMoved.toString());
+        winner.set(model.getWinner() == null ? null : model.getWinner().toString());
+    }
+
+    /**
+     * An Action, callable by the view.  This action will pass a message to the model
+     * to restart and then clear the observable data in this ViewModel.
+     */
+    public void onResetSelected() {
+        model.restart();
+        winner.set(null);
+        cells.clear();
+    }
+}
+```
+
+```xml
+<!-- 
+    With Data Binding, the root element is <layout>.  It contains 2 things.
+    1. <data> - We define variables to which we wish to use in our binding expressions and 
+                import any other classes we may need for reference, like android.view.View.
+    2. <root layout> - This is the visual root layout of our view.  This is the root xml tag in the MVC and MVP view examples.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- We will reference the TicTacToeViewModel by the name viewModel as we have defined it here. -->
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.acme.tictactoe.viewmodel.TicTacToeViewModel" />
+    </data>
+    <LinearLayout...>
+        <GridLayout...>
+            <!-- onClick of any cell in the board, the button clicked will invoke the onClickedCellAt method with its row,col -->
+            <!-- The display value comes from the ObservableArrayMap defined in the ViewModel  -->
+            <Button
+                style="@style/tictactoebutton"
+                android:onClick="@{() -> viewModel.onClickedCellAt(0,0)}"
+                android:text='@{viewModel.cells["00"]}' />
+            ...
+            <Button
+                style="@style/tictactoebutton"
+                android:onClick="@{() -> viewModel.onClickedCellAt(2,2)}"
+                android:text='@{viewModel.cells["22"]}' />
+        </GridLayout>
+
+        <!-- The visibility of the winner view group is based on whether or not the winner value is null.
+             Caution should be used not to add presentation logic into the view.  However, for this case
+             it makes sense to just set visibility accordingly.  It would be odd for the view to render
+             this section if the value for winner were empty.  -->
+        <LinearLayout...
+            android:visibility="@{viewModel.winner != null ? View.VISIBLE : View.GONE}"
+            tools:visibility="visible">
+
+            <!-- The value of the winner label is bound to the viewModel.winner and reacts if that value changes -->
+            <TextView
+                ...
+                android:text="@{viewModel.winner}"
+                tools:text="X" />
+            ...
+        </LinearLayout>
+    </LinearLayout>
+</layout>
+```
