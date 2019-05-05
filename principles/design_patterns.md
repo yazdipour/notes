@@ -1,5 +1,7 @@
 # Design Patterns
 
+https://java-design-patterns.com/patterns/
+
 ## Samples
 
 * Lynda Course in Java https://github.com/derekwzheng/design-patterns
