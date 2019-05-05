@@ -34,6 +34,12 @@ System.import('app')
 
 # DevTools
 
+## Table
+
+`console.table(arrayOfArrays)`
+
+![console.table](https://d585tldpucybw.cloudfront.net/sfimages/default-source/default-album/array-of-arrays.png?sfvrsn=fcc7ba3_1)
+
 ## Colorful Console Log
 
 ```js
