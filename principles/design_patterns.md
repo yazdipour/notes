@@ -418,4 +418,4 @@ public class FlyWithWings implements FlyBehavior {...
 
 ## Architecture / Compound Patterns
 
-[Visit Architecture Page](./architecture.md)
+[Visit Architecture Page](https://yazdipour.github.io/notes/#/principles/architecture.md)

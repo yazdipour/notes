@@ -1,11 +1,13 @@
 # Notes
 
 * [DEFAULT](notes/_.md)
+* [Book](notes/book.md)
 * [Program/Project Management](notes/pm.md)
 * [Blockchain](notes/blockchain.md)
 * [Algorithm](notes/algorithm.md)
 * [Cloud](notes/cloud.md)
 * [CI/CD](notes/cicd.md)
+* [Crawling](notes/crawling.md)
 * [DevOps](notes/devops.md)
 * [Docker](notes/docker.md)
 * [IOT](notes/iot.md)
@@ -13,65 +15,67 @@
 * [‍Security](notes/security.md)
 * [Math](notes/math.md)
 * [Test](notes/test.md)
+* [GIS](notes/gis.md)
+* [IDE](notes/ide.md)
 
 # UI
 
-* [UI](notes/ui.md)
-* [3D](notes/3d.md)
-* [Css](notes/css.md)
+* [UI](ui/ui.md)
+* [3D](ui/3d.md)
+* [Css](ui/css.md)
 
 # Languages
 
-* [Java](notes/java.md)
-* [Js](notes/js.md)
-	* [VueJS](notes/vue.md)
-* [Php](notes/php.md)
-* [Cpp](notes/cpp.md)
-* [C#](notes/csharp.md)
-* [F#](notes/fsharp.md)
-* [Go](notes/go.md)
-* [Swift / iOS](notes/swift.md)
-* [Python](notes/python.md)
-* [Markdown](notes/markdown.md)
-* [SQL](notes/sql.md)
-* [Kotlin](notes/kotlin.md)
+* [Java](languages/java.md)
+* [Js](languages/js.md)
+	* [VueJS](languages/vue.md)
+* [Php](languages/php.md)
+* [Cpp](languages/cpp.md)
+* [C#](languages/csharp.md)
+* [F#](languages/fsharp.md)
+* [Go](languages/go.md)
+* [Swift / iOS](languages/swift.md)
+* [Python](languages/python.md)
+* [Markdown](languages/markdown.md)
+* [SQL](languages/sql.md)
+* [Kotlin](languages/kotlin.md)
 
-# Platformms
+# Platforms
 
-* [ASP](notes/asp.md)
-* [UWP](notes/uwp.md)
-* [WPF](notes/wpf.md)
-* [Xamarin](notes/xamarin.md)
-* [Android](notes/android.md)
-* [Flutter](notes/flutter.md)
-* [PWA](notes/pwa.md)
-* [Extensions](notes/extensions.md)
+* [ASP](platforms/asp.md)
+* [UWP](platforms/uwp.md)
+* [WPF](platforms/wpf.md)
+* [Xamarin](platforms/xamarin.md)
+* [Android](platforms/android.md)
+* [Flutter](platforms/flutter.md)
+* [PWA](platforms/pwa.md)
+* [Extensions](platforms/extensions.md)
 
 # Machine Leanring
 
-* [Machine Leanring](notes/ml.md)
-* [Image Processing](notes/ip.md)
-* [Natural language processing](notes/nlp.md)
+* [Machine Leanring](ml/ml.md)
+* [Image Processing](ml/ip.md)
+* [Natural language processing](ml/nlp.md)
+* [Pytorch](notes/pytorch.md)
 
 # Programming Principles
 
-* [Programming Principles](notes/principles.md)
-* [Architecture Patterns](notes/architecture.md)
-* [Anti-patterns](notes/anti_patterns.md)
-* [Design-Patterns](notes/design_patterns.md)
-* [Refactoring](notes/refactoring.md)
-* [Regex](notes/regex.md)
-* [Rx](notes/rx.md)
-* [StringFormat](notes/stringformat.md)
-* [Crawling](notes/crawling.md)
-* [Code Review](notes/code_review.md)
+* [Programming Principles](principles/principles.md)
+* [Architecture Patterns](principles/architecture.md)
+* [Anti-patterns](principles/anti_patterns.md)
+* [Design-Patterns](principles/design_patterns.md)
+* [Refactoring](principles/refactoring.md)
+* [Regex](principles/regex.md)
+* [Rx](principles/rx.md)
+* [StringFormat](principles/stringformat.md)
+* [Code Review](principles/code_review.md)
 
 # CLI
 
-* [Vim](notes/vim.md)
-* [Linux](notes/linux.md)
-* [Powershell](notes/powershell.md)
-* [Git](notes/git.md)
+* [Vim](cli/vim.md)
+* [Linux](cli/linux.md)
+* [Powershell](cli/powershell.md)
+* [Git](cli/git.md)
 
 # Interview
 
