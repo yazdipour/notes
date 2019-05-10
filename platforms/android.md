@@ -11,6 +11,10 @@
 
 * https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
 
+## LiveData
+
+
+
 ## Manifest
 
 ### android:networkSecurityConfig
@@ -153,13 +157,16 @@ class Activty{
         <import type="android.view.View" />
 
         <variable name="user" type="com.example.User"/>
+        <variable name="vm" type="com.example.vm"/>
     </data>
 
     <TextView
     android:visibility="@{bool1? View.VISIBLE:View.GONE}"
     android:text="@{@string/pFormat{p.Name}}"
     android:text2="@={p.Age, default=my_default}"
-    app:onRefreshListener="@{() -> yourViewFragment.refreshList()}"
+    app:onRefreshListener="@{() -> vm.refreshList()}"
+    android:onClick="@{() -> vm.onClickedCellAt(0, 0)}"
+    android:text='@{vm.arr["00"]}'
     />
 ```
 

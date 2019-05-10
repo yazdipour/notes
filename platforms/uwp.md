@@ -1,6 +1,7 @@
 # UWP
 
-https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-app-1c518febbda1
+* [create-custom-icon-fonts](https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-app-1c518febbda1)
+* [best-practices](https://github.com/futurice/windows-app-development-best-practices)
 
 ## Design Time Data
 
