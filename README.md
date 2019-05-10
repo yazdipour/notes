@@ -14,7 +14,6 @@
 * [Jobs](notes/jobs.md)
 * [‍Security](notes/security.md)
 * [Math](notes/math.md)
-* [Test](notes/test.md)
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
 
@@ -69,6 +68,8 @@
 * [Rx](principles/rx.md)
 * [StringFormat](principles/stringformat.md)
 * [Code Review](principles/code_review.md)
+* [Test](principles/test.md)
+	* [UnitTest](principles/unit-test.md)
 
 # CLI
 
