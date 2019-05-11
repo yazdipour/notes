@@ -7,6 +7,27 @@
 * `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
 * `ref` and `out`: same but `ref` must be init before passing to method.
 
+## Automapper
+
+Just a lib to map object type to another type. ex, `Person {FName, LName, Age} -> Student {FirstName, LName}`
+
+If attributes have same name, it will map automaticlly:
+
+```csharp
+Mapper.CreateMap<Person, Student>();
+Student st = Mapper.Map<Student>(new Person{FName="",LName=""});
+```
+
+else:
+
+```csharp
+// Create a map
+Mapper.CreateMap<Person, Student>()
+.ForMember(dest => dest.FName, opt => opt.MapFrom(src => src.FirstName));
+// Use the Map to create obj
+Student st = Mapper.Map<Student>(new Person{FName="",LName=""});
+```
+
 ## Publish .NetCore App
 
 RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
