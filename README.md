@@ -61,7 +61,6 @@
 
 * [Programming Principles](principles/principles.md)
 * [Architecture Patterns](principles/architecture.md)
-* [Anti-patterns](principles/anti_patterns.md)
 * [Design-Patterns](principles/design_patterns.md)
 * [Refactoring](principles/refactoring.md)
 * [Regex](principles/regex.md)
