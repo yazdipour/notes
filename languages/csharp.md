@@ -173,17 +173,24 @@ private static string Print(Task<HttpResponseMessage> httpTask)
 }
 ```
 
-## Func Delegates
+## Func<T, TResult>
 
 * **Func<TResult\>** — matches a method that takes no arguments, and returns value of type TResuIt.
-* **Func<T, TResult>** — matches a method that takes no argument of type T, and returns value of type TResuIt.
+* **Func<T..., TResult>** — matches a method that takes no argument of type T, and returns value of type TResuIt.
 
 ```csharp
 Func<int, int> addOne = n => n+1;
 Func<int, int, int, > addNums  = (x,y) x + y;
 Func<int, bool> isZero = n => n==0;
-Console. ( isZero( addNums ( - 5, 5)));
+Console.Write(isZero(addNums ( - 5, 5)));
+```
 
+## Action<T\>
+
+Action is like FUNC, but you can't define the returning type. `Action<T> == Func<T>`
+
+```csharp
+Action<int, int> addNums = (x,y) => x+y;
 ```
 
 ## Functional
