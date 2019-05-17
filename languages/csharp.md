@@ -36,7 +36,7 @@ RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
 dotnet publish -c Release -r win-x86  (--help)
 ```
 
-## extends/implements
+## Extends / Implements
 
 * Java 
     ```java
@@ -172,6 +172,22 @@ private static string Print(Task<HttpResponseMessage> httpTask)
     return result;
 }
 ```
+
+اگر جایی مجبور شدید از Async استفاده نکنید
+
+بجای
+
+```c#
+task.Wait();
+var result = task.Result;
+```
+
+حتما حتما از روش زیر استفاده کنید
+
+`var result = task.GetAwaiter().GetResult();`
+
+این روش دقیقا مانند روش اول است حتی بحث dead-lock و blocking ترد هم صادق است ولی ...
+در روش اول اگر خطایی رخ دهد استثنای صادر شده را در یک AggregateException محصور شده پرتاب میکند که بررسی Detail آن سخت تر و نامفهوم تر است ولی در روش دوم اگر خطایی رخ دهد یک Exception معمولی پرتاب میشود
 
 ## Func<T, TResult>
 
