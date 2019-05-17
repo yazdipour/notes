@@ -13,7 +13,88 @@
 
 ## LiveData
 
+* Lifecycle: an object that defines an Android Lifecycle
+* LifecycleOwner: an interface for objects with a Lifecycle
+    * `getLifecycle()`
+    * AppCompatActivity / Fragment
+    `Lifecycle.isAtLeast(Lifecycle.State.STARTED)`
+    * ProcessLifecycleOwner
+    * LifecycleService
+    ```java
+    class MyObserver: DefaultLifecycleObserver{
+        override fun onResume(owner:LifecycleOwner){}
+        override fun onPause(owner:LifecycleOwner){}
+    }
 
+    // Activity / Fragment observer
+    lifecycle.addObserver(MyObserver())
+    // process observer
+    ProcessLifecycleOwner.get().lifecycle.addObserver(MyObserver())
+    // service observer
+    myLifecycleService.lifecycle.addObserver(MyObserver())
+    ```
+* LifecycleObserver: an interface for observing a Lifecycle
+
+### VM
+
+```kt
+class UserProfileViewModel: ViewModel(){
+    private val _user = MutableLiveData<User>()
+    val user : LiveData<User>
+        get() = _user
+}
+```
+
+### View
+
+```kt
+override fun onCreate(savedInstanceState: Bundle?){
+    val userViewModel = ViewModelProviders.of(this).get(UserProfileViewModel::class.java)
+
+    val binding = ActivityMainBinding.inflate(layoutInflater)
+    binding.viewmodel = userViewModel
+    binding.setLifecycleOwner(this)
+    setContentView(binding.root)
+
+}
+// Meanwhile in another Component
+user.setValue(newUser)  // UI Thread
+user.postValue(newUser) // Bg Thread
+```
+
+### Binding
+
+```kt
+//onChanged() will trigger this
+userViewModel.user.observe(this,Observer{user->userNameTextView.text = user?.name})
+```
+
+OR
+
+```xml
+<layout>
+    <data>
+        <variable name="viewmodel" type="android.example.com.UserProfileViewModel"/>
+    </data>
+    <TextView android:text="@{viewmodel.user.name}"/>
+```
+
+### Transforming LiveData
+
+* `map()` apply function to change LiveData output
+
+    ```kt
+    //in vm
+    var userNameLiveData = Transformations.map(userLiveData{user->"${user.name} ${user.lastname"})
+    ```
+
+* `switchMap()` apply function that swaps LiveData observer is listening to. (Like Searching, Loged in User)
+
+    ```ky
+    val userNamesResult: LiveData<Result> = Transformations.switchMap(query, resposity.search(it))
+    ```
+
+* `MediatorLiveData`: custom transformations
 
 ## Manifest
 
