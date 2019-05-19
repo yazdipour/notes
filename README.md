@@ -38,6 +38,7 @@
 * [Markdown](languages/markdown.md)
 * [SQL](languages/sql.md)
 * [Kotlin](languages/kotlin.md)
+* [Rust](languages/rust.md)
 
 # Platforms
 

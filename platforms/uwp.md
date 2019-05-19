@@ -3,6 +3,12 @@
 * [create-custom-icon-fonts](https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-app-1c518febbda1)
 * [best-practices](https://github.com/futurice/windows-app-development-best-practices)
 
+## Run on UI Thread
+
+```c#
+await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, ()=> foo());
+```
+
 ## Design Time Data
 
 ```xml

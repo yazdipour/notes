@@ -11,7 +11,9 @@
 
 * https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
 
-## LiveData
+## MVVM
+
+### Lifecycle
 
 * Lifecycle: an object that defines an Android Lifecycle
 * LifecycleOwner: an interface for objects with a Lifecycle
@@ -43,6 +45,15 @@ class UserProfileViewModel: ViewModel(){
     val user : LiveData<User>
         get() = _user
 }
+```
+
+* We should use `LiveData` for Views and `MutableLiveData` in ViewModel side.
+
+```java
+private MutableLiveData<String> mCurrentName;
+public LiveData<String> getCurrentName(){
+	if(mCurrentName==null)mCurrentName=new MutableLiveData<String>();
+	return mCurrentName;
 ```
 
 ### View
