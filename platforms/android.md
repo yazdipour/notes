@@ -1,15 +1,50 @@
 # Android
 
-## DB
-
 * Realm: https://virgool.io/@sjd.noroozi91/بلعیدن-شیرینی-دانمارکی-یا-راهکاری-برای-قورت-دادن-استوانه-ها-mcftjpolptjs
 * KeyValue: SnappyDB
 * ORM: ActiveAndroid, SugarORM, DBFlow
 * ROOM: https://programchi.ir/2018/08/27/آموزش-دیتابیس-room-در-اندروید/
+* Drawer: https://programchi.ir/2018/04/05/آموزش-navigation-drawer-متریال-دیزاین-در-اندروید/
+* SQLITE Lazy: https://dmytrodanylyk.com/articles/lazy-sqlite/
+* Deep Link: https://programchi.ir/2018/04/06/آموزش-deep-link-در-برنامه-نویسی-اندروید/
+* espresso: https://programchi.ir/2018/08/12/آموزش-espresso-در-برنامه-نویسی-اندروید/
+
+## Hide Keyboard
+
+```java
+InputMethodManagermgr=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+mgr.hideSoftInputFromWindow(edit,0);
+```
+
+## Make NestedScrollView full
+
+Add `android:fillViewport="true"` to NestedScrollView
 
 ## Amazing open source Android apps
 
 * https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
+
+## Lifecycle
+
+• Fragment
+	○ onAttach
+	○ onCreate
+	○ onCreateView
+	○ onActivityCreated
+	○ onStart
+	○ onResume
+	○ onPause
+	○ onDestroyView
+	○ onDestroy
+	○ onDetach
+• Activity
+	○ onCreate
+	○ onStart
+	○ onResume
+	○ onPause
+	○ onStop
+	○ onDestroy
+	○ onRestart
 
 ## MVVM
 

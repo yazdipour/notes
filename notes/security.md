@@ -6,7 +6,6 @@
 * https://www.bountysource.com/
 * https://0x00sec.org/
 
-
 ## Wifi 
 
 * [LinSSID: Graphical wireless scanning for Linux](https://sourceforge.net/projects/linssid/)
@@ -73,6 +72,21 @@ smb // so scan
 * https://www.cybersecuritychallenge.org.uk/
 * http://onhex.ir/
 
+### RFCAT
+
+```py
+from rflib import *
+D = RfCat()
+d.setFreq(433929000)
+d.setFreq(315860000)
+d.setMdmModulation(MOD_ASK_OOK)
+d.setMdmDRate(4800)
+d.setMdmDRate(int(1.0/0.00855))
+d.Rfxmit('hex code here')
+
+
+Rfpwnon.py -f 310000000 -b 1010 -p 100101 -l 10 -r 2
+```
 
 ## Brute Force
 
