@@ -21,6 +21,8 @@ raw_input() # Don’t use input(), eval, exec cause of security problems
 ** # Math.Pow
 Var=8 if(1==1) else 9 # ?:
 import sys; sys.argv # Get Input from CLI
+x, _, y = (1,2,3) # x=1, y=3
+x, *_, y = (1,2,3,4,5,6) # x=1, y=6, ignores in between
 
 # String - immutable
 # ' for words | " for sentence | """ for multiline in CLI
@@ -73,6 +75,15 @@ d.has_key(k); d.fromkeys(ks)
 def f(**dic):
 	for i in dic:
 		print(i,dic[i]2)
+```
+
+## __name__
+
+```py
+# when run as the main program.
+__name__ = "__main__" ### python foo.py
+# when it's imported from another module.
+__name__ = "foo" ### import foo
 ```
 
 ## Lambda

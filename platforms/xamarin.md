@@ -1,20 +1,15 @@
 # Xamarin.Forms
 
-## Shell
-
-* https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx
-
-## Persian Calender
-
-https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms
-
-## Improve BuildTimes
-
-https://github.com/brminnick/ImproveXamarinBuildTimes
-
-## ConnectionView
-
-https://xamgirl.com/handling-connection-changes-in-xamarin-forms/
+| Subjects | QuickRef |
+|---|---|
+Shell | https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx
+Persian Calender | https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms
+Improve BuildTimes | https://github.com/brminnick/ImproveXamarinBuildTimes
+ConnectionView | https://xamgirl.com/handling-connection-changes-in-xamarin-forms/
+Read File | `var txt = File.ReadAllText("x.txt");`
+Gray hLine | `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
+Drop Shadow on Android Bottom Navigation | https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/
+FontAwesome | https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/
 
 ## Native Forms
 
@@ -27,16 +22,13 @@ NavigationController.PushViewController(settingsController, true);
 
 ## XAMLC and Compiled Bindings (x:Bind)
 
+https://xamarinhelp.com/improving-xamarin-forms-startup-performance/
+
 ```c#
 [assembly:XamlCompilation (XamlCompilationOptions.Compile)]
 Namespace MyApp{}
-```
 
-```xml
-<ListView>
-    <ListView.ItemTemplate>
-        <DataTemplate x:DataType="{x:Type local:XModel}">
-            <Label Text="{Binding Name}">
+[XamlCompilation (XamlCompilationOptions.Compile)]
 ```
 
 ## FastRenderers
@@ -80,12 +72,18 @@ Spaces.ItemsSource = items;
     </OnPlatform>
   </Image.WidthRequest>
 </Image>
+<!-- or -->
+<BoxView Margin="{OnPlatform Android=4, iOS=8, Default=10}"/>
 ```
 
-or
+```cs
+Device.OnPtatform (
+	IOS: () =>{ new Thickness(Padding = new Thickness(0,20,0,0);},
+	Android: ( ) => {}
 
-```xml
-<BoxView Margin="{OnPlatform Android=4, iOS=8, Default=10}"/>
+#if __ANDROID__
+Using …
+#endif
 ```
 
 ## Bindable Span (Multiple Labels in One)
@@ -237,10 +235,6 @@ UWSwitch.Appearance.OnTintColor = UIColor.Red;
 UISlider.Appearance.MinimumTrackTintColor = UIColor.Blue;
 ```
 
-## A Gray hLine with 15 margin up and down
-`<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
-
-
 ## Navigation
 
 ```csharp
@@ -302,10 +296,11 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-## Drop Shadow/Elevation on Android Bottom Navigation TabbedPage
+## Idiom at runtime
 
-https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/
-
-## Using FontAwesome
-
-https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/
+```cs
+public MainPage() {
+    Initializecomponent(); 
+    if(Device.Idiom == TargetIdiom.Desktop) this.Content = new DesktopView(); 
+    else this.Content = new DefaultView();
+```
