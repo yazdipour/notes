@@ -169,7 +169,7 @@ private void Reload(object param) {
 
 ### Splitview
 
-![Splitview](/assets/uwp_splitview.png)
+![Splitview](assets/uwp_splitview.png)
 
 ## Animation
 
