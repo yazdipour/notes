@@ -1,3 +1,5 @@
+# Latex
+
 |||||
 |--- |--- |--- |--- |
 |\documentclass|[ 12pt, twocolumn ]|{article}|Enviroment|
@@ -18,7 +20,6 @@
 |\begin|pmatrix||Making body is like sample in array (previous)|
 |\begin|Split|Use & for aligning|Multiline|
 |\begin|Figure [h]||\begin{figure} \includegraphics{Images/capture} \caption{Info about Pic}|
-|\begin{displaymath}\xymatrix||||
 |\label{Figure}||||
 |\quad   \qquad||||
 |\lr||{TEX}|TEX Left to right|
@@ -62,3 +63,22 @@
 |$\begin{bmatrix}|||$\begin{bmatrix} A&b&c\\d&e&f \end{bmatrix}$|
 |\right|_{x=0}||||
 |||||
+
+## Centering MakeTitle
+
+```tex
+\null \nointerlineskip
+\vfill \let\snewpage \newpage
+\let\newpage \relax
+\maketitle
+\let \newpage \snewpage \vfill
+\break \newpage
+```
+
+## position-of-float-environments-like-figure-and-table-in-lat
+
+* ! indicates that some restrictions should be ignored (discussed later)
+* h indicates that the float is allowed to be placed inline
+* t indicates that the float is allowed to go into a top area
+* b indicates that the float is allowed to go into a bottom area
+* p indicates the the float is allowed to go on a float page or column area

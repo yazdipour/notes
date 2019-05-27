@@ -1,3 +1,5 @@
+# Matlab
+
 |||
 |--- |--- |
 |edit startup|Can set command to load on Startup of Matlab Like changing directory by cd(dir)|
@@ -18,7 +20,7 @@
 |Randperm(n)|Random vector list of 1 to n|
 |Randi(max) Randi(max,n) Randi(max,n,m)|Random integer from 1 to max  n,n Matrix of Randi   n,m matrix of randi|
 |Real|Real part of answer|
-|Plot(x,y,'ro',x.^2,y,'b--'      ,'LineWidth',4             ,'markersize',40             ,'markeredgecolor','y'            ) Hold on/off Xlabel Title('alaki') Legend('y','y2','y3')|PLOT Fixes figure X label of plot Title of the plot Define on corner of plot|
+|`Plot(x,y,'ro',x.^2,y,'b--' ,'LineWidth',4 ,'markersize',40 ,'markeredgecolor','y')` Hold on/off Xlabel `Title('alaki') Legend('y','y2','y3')`|PLOT Fixes figure X label of plot Title of the plot Define on corner of plot|
 |Fplot(f,[1 6])|Function plots in limit|
 |Figure(n)|Make figure n|
 |Axis|Axis of plot|
@@ -51,4 +53,13 @@
 |Fprintf('string %i',intvar)|%i for integer %f for float - fixed point notation %e for Exponential notation %g shorter form of %e %-5.2f|
 |Fid=fopen('filename','permission'); Fprintf(fid,'text'); Fclose(fid);|Permissions: r for reading w for writing (delete if needed) a for writing (append)|
 |Comet(x,y)||
-|||
+
+## Plot
+
+![1](assets/matlab-plot.png)
+![2](assets/matlab-plot-2.png)
+![3](assets/matlab-plot-3.png)
+
+## Text
+
+![Text](assets/matlab-text.png)
