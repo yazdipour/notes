@@ -1,4 +1,12 @@
-# String Format Cheatsheet
+# String
+
+## Json
+
+* https://quicktype.io/
+* http://www.objgen.com/json
+* http://www.jsonschema2pojo.org/
+
+## String Format Cheatsheet
 
 ```java
 //INDEX
@@ -24,7 +32,7 @@ String.format("|%30.5s|", "Hello World"); //| Hello| =>Field Width and Maximum N
 
 ```
 
-## Format Specifiers
+### Format Specifiers
 
 <table> 
  <thead> 
@@ -103,7 +111,7 @@ String.format("|%30.5s|", "Hello World"); //| Hello| =>Field Width and Maximum N
  </tbody> 
 </table> 
 
-## Date and Time Formatting
+### Date and Time Formatting
 
 <table> 
  <thead> 

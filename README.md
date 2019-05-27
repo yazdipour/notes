@@ -1,9 +1,8 @@
 # Notes
 
-* [DEFAULT](notes/_.md)
 * [Book](notes/book.md)
-* [Program/Project Management](notes/pm.md)
 * [Blockchain](notes/blockchain.md)
+* [BitTech](notes/biotech.md)
 * [Algorithm](notes/algorithm.md)
 * [Cloud](notes/cloud.md)
 * [CI/CD](notes/cicd.md)
@@ -11,7 +10,6 @@
 * [DevOps](notes/devops.md)
 * [Docker](notes/docker.md)
 * [IOT](notes/iot.md)
-* [Jobs](notes/jobs.md)
 * [‍Security](notes/security.md)
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
@@ -62,12 +60,13 @@
 
 * [Programming Principles](principles/principles.md)
 * [Architecture Patterns](principles/architecture.md)
-* [Design-Patterns](principles/design_patterns.md)
+* [Api Design](principles/api-design.md)
+* [Design-Patterns](principles/design-patterns.md)
 * [Refactoring](principles/refactoring.md)
 * [Regex](principles/regex.md)
 * [Rx](principles/rx.md)
-* [StringFormat](principles/stringformat.md)
-* [Code Review](principles/code_review.md)
+* [String](principles/string.md)
+* [Code Review](principles/code-review.md)
 * [Test](principles/test.md)
 	* [UnitTest](principles/unit-test.md)
 
@@ -98,20 +97,44 @@
 * [Css](ui/css.md)
 * [Sass](ui/sass.md)
 
-# Interview
+# Job/Interview
 
-1. [Overall](interview/Overall.md)
-1. [Questions](interview/Questions.md)
-1. [Questions_Farsi](interview/QuestionsFa.md)
-1. [Microsoft](interview/MicrosftInternship.md)
-1. [Java](interview/Java.md)
-1. [Apple](interview/Apple.md)
-1. [Facebook](interview/Facebook.md)
+1. [Jobs](job/jobs.md)
+1. [Hackathons](job/hackathons.md)
+1. [Overall](job/Overall.md)
+1. [Questions](job/Questions.md)
+1. [Questions_Farsi](job/QuestionsFa.md)
+1. [Microsoft](job/MicrosftInternship.md)
+1. [Java](job/Java.md)
+1. [Apple](job/Apple.md)
+1. [Facebook](job/Facebook.md)
 
-# Life
+# Business
 
-* [business](life/business.md)
-* [law](life/law.md)
-* [management](life/management.md)
-* [money](life/money.md)
-* [networking](life/networking.md)
+* [business](business/business.md)
+* [law](business/law.md)
+* [management](business/management.md)
+* [money](business/money.md)
+* [networking](business/networking.md)
+* [Program/Project Management](business/pm.md)
+
+---
+
+## Tools
+
+* [lib4dev](http://www.lib4dev.com/)
+* [CodeScreen](https://carbon.now.sh)
+* [startup name check](https://startupnamecheck.com/)
+* [cheatsheet](https://guif.re/)
+* [slacklist](https://slacklist.info/)
+* [Draw Diagrams](https://www.draw.io/)
+
+## Courses
+
+* [Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses)
+* https://scrimba.com/
+* https://learn-anything.xyz/?ref=producthunt
+* https://search.firstround.com/?ref=producthunt
+* https://30secondsofcode.org/
+* https://exercism.io
+* https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_213
