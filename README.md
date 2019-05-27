@@ -13,9 +13,15 @@
 * [IOT](notes/iot.md)
 * [Jobs](notes/jobs.md)
 * [‍Security](notes/security.md)
-* [Math](notes/math.md)
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
+
+# Math
+
+* [Math](math/math.md)
+* [Latex](math/latex.md)
+* [Maple](math/maple.md)
+* [Matlab](math/matlab.md)
 
 # UI
 
