@@ -19,6 +19,8 @@ foo(()->() in print("xx"))
 foo(print("xx"))
 ```
 
+![swift-closure](assets/swift-closure.png)
+
 ## Basics
 
 ```swift

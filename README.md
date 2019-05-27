@@ -16,24 +16,12 @@
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
 
-# Math
-
-* [Math](math/math.md)
-* [Latex](math/latex.md)
-* [Maple](math/maple.md)
-* [Matlab](math/matlab.md)
-
-# UI
-
-* [UI](ui/ui.md)
-* [3D](ui/3d.md)
-* [Css](ui/css.md)
-
 # Languages
 
 * [Java](languages/java.md)
 * [Js](languages/js.md)
 	* [VueJS](languages/vue.md)
+	* [TypeScript](languages/ts.md)
 * [Php](languages/php.md)
 * [Cpp](languages/cpp.md)
 * [C#](languages/csharp.md)
@@ -49,6 +37,7 @@
 # Platforms
 
 * [ASP](platforms/asp.md)
+* [Unity](platforms/unity.md)
 * [UWP](platforms/uwp.md)
 * [WPF](platforms/wpf.md)
 * [Xamarin](platforms/xamarin.md)
@@ -56,6 +45,11 @@
 * [Flutter](platforms/flutter.md)
 * [PWA](platforms/pwa.md)
 * [Extensions](platforms/extensions.md)
+
+# DB
+
+* [neo4j](db/neo4j.png)
+* [realm](db/realm.png)
 
 # Machine Leanring
 
@@ -89,6 +83,20 @@
 * [Basics](network/basics.md)
 * [CCNA](network/ccna.md)
 * [MCSE](network/mcse.md)
+
+# Math
+
+* [Math](math/math.md)
+* [Latex](math/latex.md)
+* [Maple](math/maple.md)
+* [Matlab](math/matlab.md)
+
+# UI
+
+* [UI](ui/ui.md)
+* [3D](ui/3d.md)
+* [Css](ui/css.md)
+* [Sass](ui/sass.md)
 
 # Interview
 

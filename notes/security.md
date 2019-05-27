@@ -16,6 +16,10 @@
 
 ## Tools
 
+* Tamper Data
+* [Modify Headers](https://addons.mozilla.org/en-US/firefox/addon/modify-headers/)
+* [HackBar](https://addons.mozilla.org/en-US/firefox/addon/hackbar/)
+* [iMacros]
 * [XSStrike: ابزاری اپن‌سورس به منظور تشخیص حملات XSS](https://sokanacademy.com/blog/9137/ایکس-اس-اس-استرایک-ابزاری-اپن‌سورس-به-منظور-تشخیص-حملات-ایکس-اس-اس)
 
 ```shell

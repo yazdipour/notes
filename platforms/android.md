@@ -9,6 +9,10 @@
 * Deep Link: https://programchi.ir/2018/04/06/آموزش-deep-link-در-برنامه-نویسی-اندروید/
 * espresso: https://programchi.ir/2018/08/12/آموزش-espresso-در-برنامه-نویسی-اندروید/
 
+## Speedup Gradle
+
+[Gradle Speedup](assets/android/speedup-gradle.pdf)
+
 ## Hide Keyboard
 
 ```java
