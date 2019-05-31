@@ -9,6 +9,22 @@
 * [Writing Comments in Python](https://realpython.com/python-comments-guide/)
 * [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
 
+## Naming convention
+
+```py
+module_name
+package_name
+ClassName
+method_name
+ExceptionName
+function_name
+GLOBAL_CONSTANT_NAME
+global_var_name
+instance_var_name
+function_parameter_name
+local_var_name
+```
+
 ## Basics
 
 ```py

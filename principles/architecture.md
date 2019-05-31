@@ -6,7 +6,7 @@
 ## MVC
 
 * Combines Strategy, Observer and Composite patterns
-![mvp_blueprint](../assets/mvc_blueprint.png)
+![mvp_blueprint](assets/mvc_blueprint.png)
 * Model — the data layer, responsible for managing the business logic and handling network or database API.
 * View — the UI layer — a visualisation of the data from the Model.
 * Controller — the logic layer, gets notified of the user’s behavior and updates the Model as needed.
@@ -15,13 +15,13 @@ Two types of MVC:
 
 ### Passive Model
 
-![mvp_blueprint](../assets/mvc_PassiveModel.png)
+![mvp_blueprint](assets/mvc_PassiveModel.png)
 
 ### Active Model
 
 For the cases when the Controller is not the only class that modifies the Model, the Model needs a way to notify the View, and other classes, about updates. This is achieved with the help of the Observer pattern. The Model contains a collection of observers that are interested in updates. The View implements the observer interface and registers as an observer to the Model.
 
-![mvp_blueprint](../assets/mvc_ActiveModel.png)
+![mvp_blueprint](assets/mvc_ActiveModel.png)
 
 ## MVC - Android
 
@@ -52,7 +52,7 @@ For the cases when the Controller is not the only class that modifies the Model,
 
 ## MVP
 
-![mvp_blueprint](../assets/mvp_blueprint.png)
+![mvp_blueprint](assets/mvp_blueprint.png)
 
 * Model - the data layer. Responsible for handling the business logic and communication with the network and database layers.
 * View - the UI layer. Displays the data and notifies the Presenter about user actions.
@@ -156,7 +156,7 @@ public void loadNonEmptyTasksFromRepository_CallViewToDisplay() {
 * The ViewModel - exposes streams of data relevant to the View
 * The DataModel - abstracts the data source. The ViewModel works with the DataModel to get and save the data.
 
-![mvvm_blueprint](../assets/mvvm_blueprint.png)
+![mvvm_blueprint](assets/mvvm_blueprint.png)
 
 ## MVVM - Android
 
@@ -242,7 +242,7 @@ public class ViewModelTest {
 
 https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
 
-![mvvm_structure](../assets/mvvm_structure.png)
+![mvvm_structure](assets/mvvm_structure.png)
 
 ```java
 public class TicTacToeViewModel implements ViewModel {

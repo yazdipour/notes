@@ -393,6 +393,14 @@ public class StatisticsDisplay implements Observer {
             // do stuff
 ```
 
+Difference between Observer, Pub/Sub
+
+![](assets/observer-pub.jpg)
+
+Observer/Observable pattern is mostly implemented in a synchronous way, i.e. the observable calls the appropriate method of all its observers when some event occurs. The Publisher/Subscriber pattern is mostly implemented in an asynchronous way (using message queue).
+
+In the Observer/Observable pattern, the observers are aware of the observable. Whereas, in Publisher/Subscriber, publishers and subscribers don't need to know each other. They simply communicate with the help of message queues.
+
 ### Strategy (x Has y Behavior)
 
 * In Parent Class, put behaviors with Interfaces so you cloud be able to modify behaviors in Child class.
