@@ -28,6 +28,19 @@ Mapper.CreateMap<Person, Student>()
 Student st = Mapper.Map<Student>(new Person{FName="",LName=""});
 ```
 
+## Dynamic Type
+
+* A dynamic type escapes type checking at compile time; instead, it resolves type at run time.
+* A method can have parameters of the dynamic type.
+* The dynamic types do not have intellisense support in visual studio.
+* Like variables in JS! They can be anything!
+
+```cs
+class X{
+    dynamic dynamic_ec = new ExampleClass();
+}
+```
+
 ## Publish .NetCore App
 
 RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog

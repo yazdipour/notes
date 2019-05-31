@@ -211,3 +211,7 @@ RepositionThemeTransition
 ## Font
 
 `<FontFamily x:Key="Yekan">Assets/Far_Yekan.ttf#Far_Yekan</FontFamily>`
+
+## generic.xaml AND themeresources.xaml
+
+`C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.17763.0\Generic`
