@@ -13,6 +13,7 @@
 * [‍Security](notes/security.md)
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
+* [Hardware](notes/hardware.md)
 
 # Languages
 
