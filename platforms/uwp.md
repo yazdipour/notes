@@ -9,6 +9,14 @@
 await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, ()=> foo());
 ```
 
+## MVVM
+
+```c#
+void OnPropertyChanged([CallerMemberName] string name=""){} //with CallerMemberName you will not need to pass nameof() for each property
+
+model.PropertyChanged += eventOnChange; //call an event when model get changed
+```
+
 ## Design Time Data
 
 ```xml
@@ -48,7 +56,7 @@ class ColorEntry
     public static double Half(double value) => value / 2.0;
 ```
 
-### StringFormat
+## StringFormat
 
 ```xml
 <Page xmlns:sys="using:System">
@@ -57,7 +65,7 @@ class ColorEntry
 </Page>
 ```
 
-### Message Dialog
+## Message Dialog
 
 ``` cs
 var dialog = new MessageDialog("Error. Noooo...");
@@ -66,7 +74,7 @@ dialog.Commands.Add(new UICommand("Cancel"));
 await dialog.ShowAsync();
 ```
 
-### VisualState
+## VisualState
 
 ``` cs
 //VisualState.GoToState(elementName,"IsClicked");
@@ -84,11 +92,11 @@ private void SizeChanged(object sender, RoutedEventArgs e){
 }
 ```
 
-### Set Image Source
+## Set Image Source
 
 `((Image) sender).Source = new BitmapImage(new Uri("ms-appx:///Assets/_film_.jpg"));`
 
-### Save in clip
+## Save in clip
 
 ```cs
 var pkg=new DataPackage();
@@ -96,7 +104,7 @@ pkg.SetText(res);
 Clipboard.SetContent(pkg);
 ```
 
-### Web Authentication
+## Web Authentication
 
 ```cs
 WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(WebAuthenticationOptions.None, new Uri(loginUrl));
@@ -104,7 +112,7 @@ WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.
         var response = WebAuthenticationResult.ResponseData;
 ```
 
-### HttpClient
+## HttpClient
 
 ```cs
 HttpClient http = new System.Net.Http.HttpClient();
@@ -112,11 +120,11 @@ HttpResponseMessage response = await http.GetAsync("somesite");
 var webresponse = await response.Content.ReadAsStringAsync();
 ```
 
-### Rate & Review
+## Rate & Review
 
 `Windows.System.Launcher.launchUriAsync(new Windows.Foundation.Uri("ms-windows-store:review?PFN:" + Windows.ApplicationModel.Package.current.id));`
 
-### Share
+## Share
 
 ```cs
 var manager = DataTransferManager.GetForCurrentView();
@@ -130,7 +138,7 @@ manager.DataRequested += (transferManager, args) =>
 DataTransferManager.ShowShareUI();
 ```
 
-### Send Mail
+## Send Mail
 
 ```cs
 var mail = new EmailMessage();
@@ -139,25 +147,25 @@ mail.Subject = "sub";
 await EmailManager.ShowComposeNewEmailAsync(mail);
 ```
 
-### Style
+## Style
 
 ```cs
 var s = new Style(typeof(Button));
 s.Setters.Add(new Setter {Property = Button.BackgroundColorProperty, Value = Color.Red});
 ```
 
-### Resource
+## Resource
 
 ```cs
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 var cl=((SolidColorBrush)this.Resources["SystemControlBackgroundAccentBrush"]).Color;
 ```
 
-### Open Dialog via ClassType
+## Open Dialog via ClassType
 
 `await ((ContentDialog)Activator.CreateInstance(_typeOfTheClass)).ShowAsync();`
 
-### PageReload
+## PageReload
 
 ```cs
 private void Reload(object param) {
@@ -167,7 +175,7 @@ private void Reload(object param) {
 }
 ```
 
-### Splitview
+## Splitview
 
 ![Splitview](assets/uwp/splitview.png)
 
@@ -189,7 +197,7 @@ DrillInNavigationTransitionInfo/>
 EntranceNavigationTransitionInfo/>		
 SlideNavigationTransitionInfo/> # Jump Bottom to top
 SuppressNavigationTransitionInfo/>		
-### Doesn’t need <Navigation Theme Transition>
+## Doesn’t need <Navigation Theme Transition>
 PaneThemeTransition	Come from a side # Edge="Left"
 AddDeleteThemeTransition		
 EdgeUIThemeTransition # Edge="Left"

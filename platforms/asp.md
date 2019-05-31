@@ -5,6 +5,7 @@
 With Razor
 
 ![](https://aspblogs.blob.core.windows.net/media/scottgu/Media/image_thumb_39360205.png)
+
 Without Razor
 
 ![](https://aspblogs.blob.core.windows.net/media/scottgu/Media/image_thumb_7AB0B45E.png)
