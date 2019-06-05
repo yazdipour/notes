@@ -7,6 +7,10 @@
 * [Download Github Folder](https://minhaskamal.github.io/DownGit/#/home)
 * [GitZip for github Extension](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn?hl=en)
 
+## GitFlow
+
+![GitFlow](assets/git-flow.png)
+
 ## Doc
 
 * https://docsify.js.org/

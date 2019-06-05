@@ -13,6 +13,10 @@
 
 [Gradle Speedup](assets/android/speedup-gradle.pdf)
 
+## Instant
+
+![instant](assets/android/instant.png)
+
 ## Hide Keyboard
 
 ```java
@@ -28,123 +32,11 @@ Add `android:fillViewport="true"` to NestedScrollView
 
 * https://github.com/Mybridge/amazing-android-apps/blob/master/README.md
 
-## Lifecycle
-
-• Fragment
-	○ onAttach
-	○ onCreate
-	○ onCreateView
-	○ onActivityCreated
-	○ onStart
-	○ onResume
-	○ onPause
-	○ onDestroyView
-	○ onDestroy
-	○ onDetach
-• Activity
-	○ onCreate
-	○ onStart
-	○ onResume
-	○ onPause
-	○ onStop
-	○ onDestroy
-	○ onRestart
-
-## MVVM
-
-### Lifecycle
-
-* Lifecycle: an object that defines an Android Lifecycle
-* LifecycleOwner: an interface for objects with a Lifecycle
-    * `getLifecycle()`
-    * AppCompatActivity / Fragment
-    `Lifecycle.isAtLeast(Lifecycle.State.STARTED)`
-    * ProcessLifecycleOwner
-    * LifecycleService
-    ```java
-    class MyObserver: DefaultLifecycleObserver{
-        override fun onResume(owner:LifecycleOwner){}
-        override fun onPause(owner:LifecycleOwner){}
-    }
-
-    // Activity / Fragment observer
-    lifecycle.addObserver(MyObserver())
-    // process observer
-    ProcessLifecycleOwner.get().lifecycle.addObserver(MyObserver())
-    // service observer
-    myLifecycleService.lifecycle.addObserver(MyObserver())
-    ```
-* LifecycleObserver: an interface for observing a Lifecycle
-
-### VM
-
-```kt
-class UserProfileViewModel: ViewModel(){
-    private val _user = MutableLiveData<User>()
-    val user : LiveData<User>
-        get() = _user
-}
-```
-
-* We should use `LiveData` for Views and `MutableLiveData` in ViewModel side.
+## Anotations
 
 ```java
-private MutableLiveData<String> mCurrentName;
-public LiveData<String> getCurrentName(){
-	if(mCurrentName==null)mCurrentName=new MutableLiveData<String>();
-	return mCurrentName;
+String getString(@StringRes int id) { return context.getString(id); }
 ```
-
-### View
-
-```kt
-override fun onCreate(savedInstanceState: Bundle?){
-    val userViewModel = ViewModelProviders.of(this).get(UserProfileViewModel::class.java)
-
-    val binding = ActivityMainBinding.inflate(layoutInflater)
-    binding.viewmodel = userViewModel
-    binding.setLifecycleOwner(this)
-    setContentView(binding.root)
-
-}
-// Meanwhile in another Component
-user.setValue(newUser)  // UI Thread
-user.postValue(newUser) // Bg Thread
-```
-
-### Binding
-
-```kt
-//onChanged() will trigger this
-userViewModel.user.observe(this,Observer{user->userNameTextView.text = user?.name})
-```
-
-OR
-
-```xml
-<layout>
-    <data>
-        <variable name="viewmodel" type="android.example.com.UserProfileViewModel"/>
-    </data>
-    <TextView android:text="@{viewmodel.user.name}"/>
-```
-
-### Transforming LiveData
-
-* `map()` apply function to change LiveData output
-
-    ```kt
-    //in vm
-    var userNameLiveData = Transformations.map(userLiveData{user->"${user.name} ${user.lastname"})
-    ```
-
-* `switchMap()` apply function that swaps LiveData observer is listening to. (Like Searching, Loged in User)
-
-    ```ky
-    val userNamesResult: LiveData<Result> = Transformations.switchMap(query, resposity.search(it))
-    ```
-
-* `MediatorLiveData`: custom transformations
 
 ## Manifest
 
@@ -181,30 +73,214 @@ Whether or not hardware-accelerated rendering should be enabled for all activiti
 To test:
 `startActivity(new Intent (Intent.ACTION_VIEW, Uri.parse("http://androidium.org")));`
 
-## Simple RX
+## Lifecycle
+
+• Fragment
+	○ onAttach
+	○ onCreate
+	○ onCreateView
+	○ onActivityCreated
+	○ onStart
+	○ onResume
+	○ onPause
+	○ onDestroyView
+	○ onDestroy
+	○ onDetach
+• Activity
+	○ onCreate
+	○ onStart
+	○ onResume
+	○ onPause
+	○ onStop
+	○ onDestroy
+	○ onRestart
+
+## MVVM
+
+### Life-cycle
+
+* Lifecycle: an object that defines an Android Lifecycle
+* LifecycleOwner: an interface for objects with a Lifecycle
+    * `getLifecycle()`
+    * AppCompatActivity / Fragment
+    `Lifecycle.isAtLeast(Lifecycle.State.STARTED)`
+    * ProcessLifecycleOwner
+    * LifecycleService
+    ```java
+    class MyObserver: DefaultLifecycleObserver{
+        override fun onResume(owner:LifecycleOwner){}
+        override fun onPause(owner:LifecycleOwner){}
+    }
+
+    // Activity / Fragment observer
+    lifecycle.addObserver(MyObserver())
+    // process observer
+    ProcessLifecycleOwner.get().lifecycle.addObserver(MyObserver())
+    // service observer
+    myLifecycleService.lifecycle.addObserver(MyObserver())
+    ```
+* LifecycleObserver: an interface for observing a Lifecycle
+
+### ViewModel
+
+```kt
+class UserProfileViewModel: ViewModel(){
+    private val _user = MutableLiveData<User>()
+    val user : LiveData<User>
+        get() = _user
+}
+```
+
+* We should use `LiveData` for Views and `MutableLiveData` in ViewModel side.
 
 ```java
-        boolean ready = false;
-        Observable<Boolean> observable = Observable.just(ready);
-        Observer<Boolean> observer = new Observer<Boolean>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-            }
+private MutableLiveData<String> mCurrentName;
+public LiveData<String> getCurrentName(){
+	if(mCurrentName==null)mCurrentName=new MutableLiveData<String>();
+	return mCurrentName;
+```
 
-            @Override
-            public void onNext(Boolean aBoolean) {
-                // DO SOMETHING
-            }
+### View
 
-            @Override
-            public void onError(Throwable e) {
-            }
+```kt
+override fun onCreate(savedInstanceState: Bundle?){
+    val userViewModel = ViewModelProviders.of(this).get(UserProfileViewModel::class.java)
 
-            @Override
-            public void onComplete() {
-            }
-        };
-        observable.subscribe(observer);
+    val binding = ActivityMainBinding.inflate(layoutInflater)
+    binding.viewmodel = userViewModel
+    binding.setLifecycleOwner(this)
+    setContentView(binding.root)
+
+}
+// Meanwhile in another Component
+user.setValue(newUser)  // UI Thread
+user.postValue(newUser) // Bg Thread
+```
+
+```java
+// onCreate(){
+userViewModel = ViewModelProviders.of(this).get(.class);
+userViewModel.init();
+userViewModel.getCurrentName().observe(this,
+    new Observer<List<String>>(){
+        @Override public void onChanged(@Nullable List<String> mList){
+            adapter.notifyDataSetChanged();
+        }
+});
+```
+
+### Binding
+
+```kt
+//onChanged() will trigger this
+userViewModel.user.observe(this,Observer{user->userNameTextView.text = user?.name})
+```
+
+OR
+
+```xml
+<layout>
+    <data>
+        <variable name="viewmodel" type="android.example.com.UserProfileViewModel"/>
+    </data>
+    <TextView android:text="@{viewmodel.user.name}"/>
+```
+
+### Transforming LiveData
+
+* `map()` apply function to change LiveData output
+
+    ```kt
+    //in vm
+    var userNameLiveData = Transformations.map(userLiveData{user->"${user.name} ${user.lastname"})
+    ```
+
+* `switchMap()` apply function that swaps LiveData observer is listening to. (Like Searching, Loged in User)
+
+    ```ky
+    val userNamesResult: LiveData<Result> = Transformations.switchMap(query, resposity.search(it))
+    ```
+
+* `MediatorLiveData`: custom transformations
+
+## RX
+
+```java
+boolean ready = false;
+Observable<Boolean> observable = Observable.just(ready);
+// Observer<Boolean> observer = new Observer<Boolean>() {
+DisposableObserver observer = new DisposableObserver<Boolean>() {
+    @Override
+    public void onSubscribe(Disposable d) {
+        // When someone subscibes
+    }
+
+    @Override
+    public void onNext(Boolean aBoolean) {
+        // When NEXT comes
+    }
+
+    @Override
+    public void onError(Throwable e) {
+        // When NEXT is error
+    }
+
+    @Override
+    public void onComplete() {
+        // When there is no NEXT
+    }
+};
+observable.subscribe(observer);
+// if is DisposableObserver
+observer.dispose();
+```
+
+### Rx Source
+
+```java
+Flowable.fromCallable(()->"H");
+Observable.fromCallable(()->"H");
+Single.fromCallable(()->"H");
+
+Maybe.fromCallable(()->"H");
+Maybe.fromAction(()->System.out.print("H"));
+Maybe.fromRunnable(()->System.out.print("H"));
+
+Completable.fromCallable(()->"H");
+Completable.fromAction(()->System.out.print("H"));
+Completable.fromRunnable(()->System.out.print("H"));
+```
+
+### Rx Retrofit
+
+```java
+@POST("/login")
+@FormUrlEncode
+Observable<String> login(@Field("username") String user);
+```
+
+### Rx Okhttp
+
+```java
+OkHttpClient client;
+Request requet;
+Observable.fromCallable(new Callable<String>(){
+    @Override public String call() throw Exception{
+        return client.newCall(request).execute();
+    }
+});
+```
+
+### Rx Binding (SearchTextView)
+
+```java
+RxTextView.textChanges(search_tv)
+    .filter(s -> s.length() >2)
+    .debounce(100, TimeUnit.MILLISECONDS)
+    .flatMap(s -> makeApiCall(s))
+    .subscribOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(observer);
 ```
 
 ## Caching Retrofit
@@ -301,6 +377,18 @@ class Activty{
     />
 ```
 
+### Test Rx Mockito
+
+```java
+@Test
+public void testGetImage(){
+    Mockito.when(mDataModel.getGreeting()).thenReturn(Observable.just("Hello"));
+    TestSubscriber<Integer> testSubscriber = new TestSubscriber();
+    mViewModel.getImage().subscribe(testSubscriber);
+    testSubscriber.assertNoValues();
+}
+```
+
 ## Resources
 
 * https://androidresources.net/
@@ -312,15 +400,6 @@ class Activty{
 * [Tutorial Futurestud](https://futurestud.io/)
 * https://material.io/icons/#ic_done
 * https://romannurik.github.io/AndroidAssetStudio/index.html
-
-### Iranian Store
-
-* https://developer.myket.ir/applications?type=grid
-* https://cafebazaar.ir/developers/panel/apps/?l=fa
-* http://developer.iranapps.ir/user/login
-* http://www.plazza.ir/repoz
-* http://cando.asr24.com/user/
-* http://dgad.ir/panel/apps/
 
 ### Kotlin
 

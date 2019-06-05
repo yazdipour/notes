@@ -40,10 +40,26 @@ Without Razor
 
 ## Form
 
+### Build Form
+
 ```html
 <form request="post">
-    <input asp-for="email"></label>
+    <input asp-for="email"></label> 
+    <!-- asp-for put this attr in Model.email -->
 ```
+
+OR
+
+```cs
+@using (Html.BeginForm())
+{
+    @Html.Label("Name: ")
+    @Html.TextBoxFor(m=>m.Id) <br/>
+    <button type="submit" value="submit">Submit</button>
+}
+```
+
+### Reciveing
 
 ```cs
 var email2 = Request.Form["email"];
