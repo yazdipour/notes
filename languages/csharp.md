@@ -49,6 +49,8 @@ RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
 dotnet publish -c Release -r win-x86  (--help)
 ```
 
+[خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
+
 ## Extends / Implements
 
 * Java 
