@@ -303,8 +303,8 @@ class x (parentY, parentZ):
 ## SimpleHTTPServer
 
 ```py
-python -m SimpleHTTPServer 8000
-
+python -m SimpleHTTPServer [<portNo>] #py2
+python -m http.server [<portNo>] #py3
 import SimpleHTTPServer
 import SocketServer
 PORT = 8000

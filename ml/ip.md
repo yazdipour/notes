@@ -8,6 +8,7 @@
 * SNR / PSNR: https://mh-salari.me/snr-and-psnr-in-python/
 * Add-gaussian-noise: https://mh-salari.me/add-gaussian-noise-to-image-in-python/
 * Basic-image-operations-opencv https://mh-salari.me/basic-image-operations-opencv/
+* HOG algorithm for face detection
 
 | Action | Description|
 |--- |--- |

@@ -97,9 +97,11 @@ public class BlogController : Controller{
 @{
     Layout = "_Layout";
 }
-@Html.Partial("_Post")
+@Html.Partial("_Post") // default gets parent model
+@Html.Partial("_Post", model)
 
 <!-- // Views/Shared/_Post.cshtml -->
+<!-- PartialView -->
 @inject Models.FormattingService Format
 @model Models.Post
 @section header { <!-- IsSectionDefined Checks this -->
@@ -139,6 +141,72 @@ public class BlogController : Controller{
 </html>
 ```
 
+### ViewComponent
+
+```cs
+///ViewComponents/XViewComponent.cs
+[ViewComponent]
+class XViewComponent : ViewComponent
+    public IViewComponentResult Invoke() => new View();
+
+// USING IT in Home/index.cshtml
+<div>@await (Component.InvokeAsync<ViewComponents.XViewComponent>())</div>
+// View of XViewComponent.cshtml needs to be in
+// Views/Home/Components/XViewComponent.cshtml
+// OR
+// Views/Shared/Components/XViewComponent.cshtml
+```
+
+### ViewStart
+
+Views/_ViewStart.cshtml addes to every view
+
+```cs
+@{
+    Layout = "_Layout";
+}
+```
+
+## Partial Rendering with AJAX
+
+```cs
+// Views/Blog/Index.cshtml
+@if (ViewBag.HasNextPage) {
+    <a class="next" href="@Url.Action("Index", "Blog", new { page = ViewBag.NextPage })"> Next </a>
+// Controllers/BlogController
+[Route("")]
+public IActionResult Index(int page = 0)
+    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+        return PartialView(posts);
+    return View(posts);
+```
+
+```js
+$(function () {
+    $('#mainContent').on('click', '.next a', function () {
+        var url = $(this).attr('href');
+        $('#mainContent').load(url);
+        return false;
+    })
+})
+```
+
+## Injectable Services - Formatter - Converter
+
+```cs
+namespace Models
+    public class FormattingService
+        public string AsReadableDate(DateTime date) => date.ToString("D");
+
+public class Startup
+    public void ConfigureServices(IServiceCollection services)
+        services.AddTransient<FormattingService>();
+
+// cshtml
+@inject Models.FormattingService Format
+Posted @Format.AsReadableDate(Model.Posted)
+```
+
 ## Razor
 
 With Razor
@@ -173,27 +241,40 @@ Without Razor
 
 ![](https://aspblogs.blob.core.windows.net/media/scottgu/Media/image_thumb_448B2810.png)
 
-### HTML Helpers
-
-![](https://aspblogs.blob.core.windows.net/media/scottgu/Media/image_thumb_150C9377.png)
-
 ## Form
 
 ### Build Form
 
+#### HTML Helpers
+
+![](https://aspblogs.blob.core.windows.net/media/scottgu/Media/image_thumb_150C9377.png)
+
 ```html
-<form request="post">
-    <input asp-for="email"></label> 
-    <!-- asp-for put this attr in Model.email -->
+<form asp-action="Create" asp-controller="Blog" request="post">>
+
+    <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+    <!-- ModelOnly, All, None -->
+    <p>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" placeholder="Blog post title" />
+        <span asp-validation-for="Title"></span>
+    </p>
+    <input asp-for="email"></label>
+    <!-- asp-for put this attr in model.email -->
 ```
 
-OR
+#### Tag Helpers
 
 ```cs
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
+
     @Html.Label("Name: ")
     @Html.TextBoxFor(m=>m.Id) <br/>
+    @Html.EditorFor(x => x.Title)
+    @Html.ValidationMessageFor(x => x.Title)
+    
     <button type="submit" value="submit">Submit</button>
 }
 ```
@@ -201,6 +282,7 @@ OR
 ### Reciveing
 
 ```cs
+// In Controller
 var email2 = Request.Form["email"];
 //OR
 [BindProperty]
@@ -211,6 +293,13 @@ public async Task<IActionResult> OnPost()
     Foo(email);
     return Redirect("/");
 }
+//OR
+[HttpPost, Route("/")] //HttpGet for Get part
+public async Task<IActionResult> OnPost(ReturningObjType obj)
+{
+    Foo(email);
+    return new View();
+}
 ```
 
 ## Query
@@ -220,4 +309,141 @@ public async Task<IActionResult> OnPost()
 if(Request.QueryString.HasValue
     && Request.QueryString.Value.Contains("page="))
     string pageInString = Request.Query["page"];
+```
+
+## Validate Input Data
+
+```cs
+[Required]
+[Display(Name = "Post Title")] // for Label in HTML
+[DataType(DataType.Text)] // DataType.Password & MultilineText ...
+[StringLength(100, MinimumLength = 5, ErrorMessage = "Title must be 5 and 100 char long")]
+public string Title { get; set; }
+
+public string Author { get; set; }
+
+[Required]
+[MinLength(100, ErrorMessage = "Blog posts must be at least 100 chars long")]
+[DataType(DataType.MultilineText)]
+public string Body { get; set; }
+
+[Compare("Password", ErrorMessage = "Passwords must match")]
+[Display(Name = "Confirm Password")]
+public string ConfirmPassword { get; set; }
+// Call it in Form to Validate
+@using (Html.BeginForm())
+        @Html.ValidationSummary()
+
+// Get Result
+// In Controller
+[HttpPost, Route("/")]
+public async Task<IActionResult> OnPost(ReturningObjType obj)
+{
+     if (!ModelState.IsValid) return View();
+```
+
+## Entity Framework
+
+### Setup
+
+```cs
+public class BlogDataContext : DbContext
+    public DbSet<Post> Posts { get; set; } //TABLE
+    public BlogDataContext(DbContextOptions<BlogDataContext> options): base(options)
+        => Database.EnsureCreated(); //Connect if DB exists, create if not
+
+// Startup.cs / ConfigureServices
+services.AddDbContext<BlogDataContext>(option => option.UseSqlServer(connectionString););
+//example.
+connectionString = "Server=(localdb)\\mssqllocaldb;Database=ExploreCalifornia;Trusted_Connection=True;"
+```
+
+### Using
+
+```cs
+//BlogController
+private readonly BlogDataContext _db;
+public BlogController(BlogDataContext db) => _db = db;
+//Using to Write
+_db.Posts.Add(post);
+_db.SaveChanges();
+//Using to Read
+var post = _db.Posts.FirstOrDefault(x => x.Key == key);
+var posts = _db.Posts.OrderByDescending(x => x.Posted).Take(5).ToArray();
+```
+
+## API
+
+/Api/CommentsController.cs
+
+```cs
+[Route("api/posts/{postKey}/comments")]
+public class CommentsController : Controller
+    private readonly BlogDataContext _db;
+    public CommentsController(BlogDataContext db) => _db = db;
+// GET: api/values
+[HttpGet]
+public IQueryable<Comment> Get(string postKey) => return _db.Comments.Where(x => x.Post.Key == postKey);
+// GET api/values/5
+[HttpGet("{id}")]
+public Comment Get(long id) => _db.Comments.FirstOrDefault(x => x.Id == id);
+// POST api/values
+[HttpPost]
+public Comment Post(string postKey, [FromBody]Comment comment)
+    var post = _db.Posts.FirstOrDefault(x => x.Key == postKey);
+    comment.Post = post;
+    _db.Comments.Add(comment);
+    _db.SaveChanges();
+    return comment;
+// PUT api/values/5 - To Update Comment
+[HttpPut("{id}")]
+public IActionResult Put(long id, [FromBody]Comment updated)
+// DELETE api/values/5 - To Delete Comment
+[HttpDelete("{id}")]
+public void Delete(long id)
+```
+
+## Identity Services
+
+* Basic Impl  with Login/Reg Page: https://github.com/jchadwick/LearnAspNetCoreMvc/tree/Ch06/06_04_End
+* Add `[Authorize]` before Actions to limit access.
+* Config
+
+```cs
+// Startup.ConfigureServices()
+services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<IdentityDataContext>(); //To store in DB
+services.AddMvc();
+
+// Startup.Configure
+app.UseIdentity();
+app.UseMvc(routes => ...
+```
+
+* Models/IdentityDataContext.cs
+
+```cs
+public class IdentityDataContext : IdentityDbContext<IdentityUser> /// **IdentityDbContext**
+    public IdentityDataContext(DbContextOptions<IdentityDataContext> options) : base(options)
+            => Database.EnsureCreated();
+```
+
+## CSRF (cross-site request forgery)
+
+Add
+
+```html
+<form role="form" asp-action="Login"
+    asp-antiforgery="true">
+<!-- OR ADD THIS AFTER -->
+    @Html.AntiForgeryToken()
+```
+
+Check
+
+```cs
+// AccountController
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Login
 ```
