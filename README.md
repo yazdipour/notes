@@ -15,6 +15,12 @@
 * [IDE](notes/ide.md)
 * [Hardware](notes/hardware.md)
 
+# 3D
+
+* [Concepts](3d/concepts.md)
+* [Unity](3d/unity.md)
+* [VR-AR](3d/vr.md)
+
 # Languages
 
 * [Java](languages/java.md)
