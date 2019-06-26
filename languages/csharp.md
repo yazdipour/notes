@@ -41,6 +41,11 @@ class X{
 }
 ```
 
+## Decompile
+
+* https://github.com/0xd4d/de4dot
+* https://github.com/0xd4d/dnSpy
+
 ## Publish .NetCore App
 
 RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
@@ -49,11 +54,13 @@ RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
 dotnet publish -c Release -r win-x86  (--help)
 ```
 
-[خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
+* [خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
+* https://www.hanselman.com/blog/MakingATinyNETCore30EntirelySelfcontainedSingleExecutable.aspx
+* https://www.hanselman.com/blog/BrainstormingCreatingASmallSingleSelfcontainedExecutableOutOfA
 
 ## Extends / Implements
 
-* Java 
+* Java
     ```java
     public class Lion extends Animal implements Diurnal
     ```
