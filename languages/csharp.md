@@ -5,7 +5,20 @@
 * string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)
 * `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
 * `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
-* `ref` and `out`: same but `ref` must be init before passing to method.
+
+## in/ref/out/this
+
+![ref-in-out-this.png](./assets/csharp/ref-in-out-this.png)
+
+* `this` to use it as extension! 
+    ```cs
+    int foo(this int x)=>x++;
+    myInt.foo();
+    ```
+* `in` method input parameter cannot be modified. `=== ref readonly in parameter`
+* `out` only initialize/fill a parameter (the parameter must be empty) return it out plain
+* `ref` must be init before passing to method / standard parameter (maybe with value), but the function can modifiy it.
+* `ref readonly` can't be used as input parameter, but as returning type, it will return the type ref as readonly variable!
 
 ## Automapper
 
@@ -47,12 +60,6 @@ class X{
 * https://github.com/0xd4d/dnSpy
 
 ## Publish .NetCore App
-
-RuntimeIdentifiers: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
-
-```powershell
-dotnet publish -c Release -r win-x86  (--help)
-```
 
 * [خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
 * https://www.hanselman.com/blog/MakingATinyNETCore30EntirelySelfcontainedSingleExecutable.aspx
