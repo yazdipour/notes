@@ -18,8 +18,10 @@
 
 ### Smoothing a Mesh
 
-* Gourad Shading (fast)
-* Subdivision Surfaces
+![Smoothing](assets/concepts/shading0.png)
+![Smoothing](assets/concepts/shading1.png)
+![Smoothing](assets/concepts/shading2.png)
+![Smoothing](assets/concepts/shading3.png)
 
 ## Texture
 

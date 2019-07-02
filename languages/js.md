@@ -13,6 +13,10 @@
 * https://startreact.com/themes/
 * https://strapmobile.com/docs/react-native-flat-app-theme/v3.0/overview/introduction
 
+## Date
+
+`new Date().toLocaleString("fa-IR-ca-persian")`
+
 ## Cloning
 
 `const clonedObj= Object.assign({},theobj);`

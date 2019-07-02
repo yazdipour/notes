@@ -9,6 +9,13 @@
 * Deep Link: https://programchi.ir/2018/04/06/آموزش-deep-link-در-برنامه-نویسی-اندروید/
 * espresso: https://programchi.ir/2018/08/12/آموزش-espresso-در-برنامه-نویسی-اندروید/
 
+## LruCache
+
+```java
+int availableBytes = ((ActivityManager)getSystemService(Context.ACTIVITY_SERVICE)).getMemoryClass() * 1024 * 1024 / 8;
+LruCache bitmapCache = new LruCache<String, Bitmap>(availableBytes);
+```
+
 ## Speedup Gradle
 
 [Gradle Speedup](assets/android/speedup-gradle.pdf)
