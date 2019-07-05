@@ -6,19 +6,37 @@
 * `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
 * `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
 
-## in/ref/out/this
+## params
+
+```cs
+void foo(params string[] arg){}
+foo("hello","") //foo(new[]{"hello",""})
+foo() //foo(Array.Empty<string>())
+```
+
+## this
+
+to use it as extension!
+
+```cs
+int foo(this int x)=>x++;
+myInt.foo();
+```
+
+## ref/out
 
 ![ref-in-out-this.png](./assets/csharp/ref-in-out-this.png)
 
-* `this` to use it as extension! 
-    ```cs
-    int foo(this int x)=>x++;
-    myInt.foo();
-    ```
-* `in` method input parameter cannot be modified. `=== ref readonly in parameter`
 * `out` only initialize/fill a parameter (the parameter must be empty) return it out plain
 * `ref` must be init before passing to method / standard parameter (maybe with value), but the function can modifiy it.
 * `ref readonly` can't be used as input parameter, but as returning type, it will return the type ref as readonly variable!
+
+## in
+
+* use for method input parameters
+* pass by reference
+* cannot be modified by the method
+* is like, `ref readonly` in parameter
 
 ## Automapper
 
