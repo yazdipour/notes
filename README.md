@@ -15,6 +15,21 @@
 * [IDE](notes/ide.md)
 * [Hardware](notes/hardware.md)
 
+# Principles
+
+* [Programming Principles](principles/principles.md)
+* [Architecture Patterns](principles/architecture.md)
+* [Api Design](principles/api-design.md)
+* [Design-Patterns](principles/design-patterns.md)
+* [Refactoring](principles/refactoring.md)
+* [Regex](principles/regex.md)
+* [Rx](principles/rx.md)
+* [String](principles/string.md)
+* [Code Review](principles/code-review.md)
+* [Test](principles/test.md)
+	* [UnitTest](principles/unit-test.md)
+* [SOCKETS](principles/socket.md)
+
 # 3D
 
 * [Concepts](3d/concepts.md)
@@ -62,20 +77,6 @@
 * [Image Processing](ml/ip.md)
 * [Natural language processing](ml/nlp.md)
 * [Pytorch](ml/pytorch.md)
-
-# Programming Principles
-
-* [Programming Principles](principles/principles.md)
-* [Architecture Patterns](principles/architecture.md)
-* [Api Design](principles/api-design.md)
-* [Design-Patterns](principles/design-patterns.md)
-* [Refactoring](principles/refactoring.md)
-* [Regex](principles/regex.md)
-* [Rx](principles/rx.md)
-* [String](principles/string.md)
-* [Code Review](principles/code-review.md)
-* [Test](principles/test.md)
-	* [UnitTest](principles/unit-test.md)
 
 # CLI
 
