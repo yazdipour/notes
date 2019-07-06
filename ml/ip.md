@@ -68,3 +68,24 @@
     * Motion Trajectory (of objects in the scene) [e.g. extracted by tracking algorithms]
     * Parametric Motion (e.g. motion vectors, which allows description of motion of scene. But it can be more complex models on various objects).
     * Activity which is more of a semantic descriptor.
+
+## Filters
+
+![](./assets/ip/1.png)
+![](./assets/ip/11.png)
+![](./assets/ip/2.png)
+![](./assets/ip/22.png)
+![](./assets/ip/3.png)
+![](./assets/ip/33.png)
+![](./assets/ip/4.png)
+![](./assets/ip/44.png)
+![](./assets/ip/5.png)
+![](./assets/ip/55.png)
+![](./assets/ip/6.png)
+![](./assets/ip/66.png)
+![](./assets/ip/666.png)
+![](./assets/ip/7.png)
+![](./assets/ip/77.png)
+![](./assets/ip/8.png)
+![](./assets/ip/88.png)
+![](./assets/ip/888.png)

@@ -9,7 +9,6 @@
 * [Crawling](notes/crawling.md)
 * [DevOps](notes/devops.md)
 * [Docker](notes/docker.md)
-* [IOT](notes/iot.md)
 * [‍Security](notes/security.md)
 * [GIS](notes/gis.md)
 * [IDE](notes/ide.md)
@@ -21,7 +20,6 @@
 * [Architecture Patterns](principles/architecture.md)
 * [Api Design](principles/api-design.md)
 * [Design-Patterns](principles/design-patterns.md)
-* [Refactoring](principles/refactoring.md)
 * [Regex](principles/regex.md)
 * [Rx](principles/rx.md)
 * [String](principles/string.md)
@@ -29,6 +27,11 @@
 * [Test](principles/test.md)
 	* [UnitTest](principles/unit-test.md)
 * [SOCKETS](principles/socket.md)
+* [Control Engineering](principles/control-engineering.md)
+* [System Engineering](principles/system-engineering.md)
+* [System Identification](principles/system-identification.md)
+* [System Optimization](principles/system-optimization.md)
+* [System Security](principles/system-security.md)
 
 # 3D
 
@@ -65,11 +68,14 @@
 * [Flutter](platforms/flutter.md)
 * [PWA](platforms/pwa.md)
 * [Extensions](platforms/extensions.md)
+* [IOT](platforms/iot.md)
 
-# DB
+# DATA
 
 * [neo4j](db/neo4j.png)
 * [realm](db/realm.png)
+* [Distributed Data Management](db/distributed.md)
+* [Information Systems](db/info-sys.md)
 
 # Machine Leanring
 
@@ -90,6 +96,7 @@
 * [Basics](network/basics.md)
 * [CCNA](network/ccna.md)
 * [MCSE](network/mcse.md)
+* [Mobile](network/mobile.md)
 
 # Math
 

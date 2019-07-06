@@ -18,22 +18,10 @@
 * https://www.ailab.microsoft.com/
 * http://www.fast.ai/
 
-## Contests
-
-* https://www.kaggle.com/
-
-## Online Services
-
-* https://customvision.ai
-
 ## Online IDE/CodeEditors
 
 * https://notebooks.azure.com
 * https://codelabs.developers.google.com/
-
-## NLP
-
-* [Natural Language for Developers](https://wit.ai/)
 
 ## DataSets
 
@@ -130,10 +118,6 @@ https://www.nltk.org/book/
 DATA SCIENCE HANDBOOK
 https://www.thedatasciencehandbook.com/get-the-book#2
 
-## Tools
-
-* [Word2Vec For Anything](https://www.basilica.ai/)
-
 ## Basic Consepts
 
 | --- | --- |
@@ -143,6 +127,10 @@ https://www.thedatasciencehandbook.com/get-the-book#2
 | Batch normalization | Normalization on layer which will help our algorithm to fine min loss faster! (minus avg and divide it with variance) (Have trainable parameters)
 | Data Dividing | Train_Data 70%, Validation/Dev_Data 20%, Test_Data 10%
 | Cross Validation | Split data in 10 parts, use one part as TestData and the rest for training, and then do the same process with another part. ***Not Usable for Deep learning [its expensive]***
+
+## Confusion Matrix
+
+![confusion](confusion-matrix.png)
 
 ## Recommender systems
 
