@@ -61,11 +61,11 @@ MAC in Multi-Channel Scenario
 * Can we apply media access methods from fixed networks?
 Example: CSMA/CD
     * Carrier Sense Multiple Access with Collision Detection (IEEE 802.3)
-    * send as soon as the medium is free (carrier sensing – CS)
+    * send as soon as the medium is free (carrier sensing - CS)
     * listen to the medium, if a collision occurs stop transmission and jam
-    (collision detection – CD)
-* Motivation – hidden and exposed terminals
-* Motivation – near and far terminals
+    (collision detection - CD)
+* Motivation - hidden and exposed terminals
+* Motivation - near and far terminals
 
 #### Access methods SDMA/FDMA/TDMA
 
@@ -122,11 +122,11 @@ at slot boundaries
     * Implicit Reservation (PRMA)
     * Reservation-TDMA
 
-### TDMA: DAMA – Explicit Reservation based on Aloha
+### TDMA: DAMA - Explicit Reservation based on Aloha
 
-### TDMA: DAMA – Implicit Reservation
+### TDMA: DAMA - Implicit Reservation
 
-### TDMA: DAMA – Reservation-TDMA
+### TDMA: DAMA - Reservation-TDMA
 
 ### TDMA: Multiple Access with Collision Avoidance (MACA)
 
@@ -177,15 +177,141 @@ Application to Bluetooth and 802.11 (possible access function)
 * decentralized control of access to medium:
     * disjoint & inconsistent views on shared medium (hidden & exposed terminal)
     * distributed arbitration scheme needed to minimize collisions
-    * solution: RTS/CTS – to derive a joint common view on resource usage
+    * solution: RTS/CTS - to derive a joint common view on resource usage
 
 ## IEEE 802.11 (Layer 2)
 
-file:///C:/Users/Master/Desktop/Advance%20Mobile%20Communications%20Networks/AMCN/AMCN-04-IEEE_802_11-2012-13.pdf
+### 802.11: Architecture of an Infrastructure Network
 
-802.11: Architecture of an Infrastructure Network
+![AIN](./assets/AIN.png)
 
-802.11: Architecture of an Ad-hoc Network
+### 802.11: Architecture of an Ad-hoc Network
+
+![AAN](./assets/AAN.png)
+
+### IEEE Standard 802.11
+
+![802](./assets/802.png)
+
+#### 802.11
+
+* Layers and Functions
+* Physical Layer
+* MAC
+* CSMA/CA Access Method
+* PCF (Polling)
+* MAC Management
+
+#### WLAN: IEEE 802.11b
+
+* Data rate
+    * 1, 2, 5.5, 11 Mbit/s, depending
+on SNR
+    * User data rate max. approx. 6
+Mbit/s
+* Transmission range
+    * 300m outdoor, 30m indoor
+    * Max. data rate ~10m indoor
+* Frequency: Free 2.4 GHz ISM-band
+* Security: Limited, WEP insecure, SSID
+* Cost: 25€ adapter, 100€ base station
+* Availability: Many products, many vendors
+* Connection set-up time: Connectionless/always on
+* QoS: Typ. best effort, no guarantees
+(unless polling is used, limited
+support in products)
+* Manageability: Limited (no automated key
+distribution, sym. encryption)
+* Advantage: many installed systems, lot of experience, available worldwide, free ISM band, many vendors, integrated in laptops, simple system
+* Disadvantage: heavy interference on ISM band, no service guarantees, slow relative speed only
+
+#### WLAN: IEEE 802.11g
+
+* Data rate
+    * 6, 9, 12, 18, 24, 36, 48, 54 Mbit/s, depending on SNR
+    * User throughput (1500 byte packets): 5.3 (6), 18 (24), 24 (36), 32 (54)
+    * 6, 12, 24 Mbit/s mandatory
+* Transmission range: 150m outdoor, 20m indoor 54 Mbit/s up to 6 m
+* Frequency
+    * 2.412~2.472GHz (Europe ETSI)
+    * 2.457~2.462GHz (Spain)
+    * 2.457~2.472GHz (France)
+* Security: Limited, WEP insecure, SSID
+* Cost: 50€ adapter, 200€ base station
+* Availability: Some products, some vendors
+* Connection set-up time: Connectionless/always on
+* Quality of Service: Typ. best effort, no guarantees (same as all 802.11 products)
+* Manageability: Limited (no automated key distribution, sym. encryption)
+* Advantage: free ISM band, compatible with 802.11b standard
+* Disadvantage: heavy interference on ISM band, no service guarantees
+
+#### WLAN: IEEE 802.11a
+
+* Data rate
+    * 6, 9, 12, 18, 24, 36, 48, 54 Mbit/s,
+depending on SNR
+    * User throughput (1500 byte packets):
+5.3 (6), 18 (24), 24 (36), 32 (54)
+    * 6, 12, 24 Mbit/s mandatory
+* Transmission range
+    * 100m outdoor, 10m indoor
+e.g. 54 Mbit/s up to 5 m, 48 up to 12
+m, 36 up to 25 m, 24 up to 30m, 18
+up to 40 m, 12 up to 60 m
+* Frequency: Free 5.15-5.25, 5.25-5.35, 5.725-
+5.825 GHz ISM-band
+* Security: Limited, WEP insecure, SSID
+* Cost: 100€ adapter, 200€ base station
+* Availability: Some products, some vendors
+* Connection set-up time: Connectionless/always on
+* Quality of Service: Typ. best effort, no guarantees (same as all 802.11 products)
+* Manageability: Limited (no automated key distribution, sym. encryption)
+* Advantage: fits into 802.x standards, free ISM band, available, simple system, uses less crowded 5 GHz band
+* Disadvantage: stronger shading due to higher frequency, no service guarantees
+
+### WLAN: IEEE 802.11h     * Regulatory Details
+
+* 4 frequency bands:
+    * 5.150 - 5.250 GHz
+        * 4 usable channels (100 MHz)
+        * indoor only
+        * max. 30mW EIRP (.11a)
+        * TPC (Transmit Power Control) max.
+    60mW EIRP
+        * combined TPC and DCS/DFS (Dynamic Channel Frequency Selection) max. 200mW EIRP
+        * Turbo Mode: combination of two
+    carriers to reach 108 Mbps
+    * 5.250 - 5.350 GHz
+        * 4 usable channels
+        * TPC, DCS/DFS mandatory
+    * 5.470 - 5.725 GHz
+        * indoor and outdoor
+        * max. 1W EIRP
+        * disallowed in US
+        * not supported by all chipsets
+    * 5.725 - 5.825 GHz --> **disallowed in Germany**
+
+### WLAN: IEEE 802.11     * Extensions and developments
+
+* 802.11d: Regulatory Domain Update
+* 802.11e: MAC Enhancements - QoS
+* 802.11f: Inter-Access Point Protocol (IAPP)
+system
+* 802.11h: Spectrum Managed 802.11a (DCS, TPC)
+* 802.11i: Enhanced Security Mechanisms
+* 802.11j: MAC and PHY Specifications for Operation in 4.9-5 GHz Band in Japan
+* **802.11n**: Throughput enhancement to 108-320 Mbps
+* ***NO*** IEEE 802.11o
+* IEEE 802.11p - WAVE - Wireless Access for the Vehicular Environment (such as ambulances and passenger cars)
+* IEEE 802.11r - Fast roaming Working "Task Group r"
+* IEEE 802.11s - ESS Extended Service Set Mesh Networking
+* IEEE 802.11T - Wireless Performance Prediction (WPP) - test methods and metrics Recommendation
+* IEEE 802.11u - Interworking with non-802 networks (for example, cellular)
+* IEEE 802.11v - Wireless network management
+* IEEE 802.11w - Protected Management Frames
+* IEEE 802.11y - 3650-3700 Operation in the U.S.
+
+https://en.wikipedia.org/wiki/IEEE_802.11
 
 ## Mobility Management (Layer 3)
 
