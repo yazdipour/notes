@@ -50,6 +50,100 @@ https://www.youtube.com/results?search_query=Mobile+Communications+Networks&sp=E
 * 4G Mobile Communication Systems
 * 5G Mobile Communication Systems
 
+### Physical Layer Aspects and Channel Characteristics
+
+#### Frequencies
+
+```
+Frequency and wave length:      λ = c / f
+wave length λ, speed of light c ≅ 3x108 m/s, frequency f
+```
+
+#### Signals
+
+![Signals](./assets/Signals.png)
+
+#### Signal propagation
+
+* Signal to Interference (and Noise) Ratio (SINR)
+* Range limited systems (lack of coverage)
+* Interference limited systems (lack of capacity)
+* Information Theory: Channel Capacity
+
+![propagation](./assets/propagation.png)
+
+#### Antennas
+
+* Isotropic radiator: equal radiation in all directions (three dimensional)
+* Simple dipoles
+* Directed and sectorized: Often used for microwave connections or base stations for mobile phones (e.g. radio coverage of a valley)
+* Real antennas are not isotropic radiators
+* Real antennas always have directive effects (vertically and/or horizontally)
+
+#### Multiplexing
+
+* Goal: multiple use of a shared medium
+* Multiplexing in 4 dimensions
+    * space (si)
+    * time (t)
+    * frequency (f)
+    * code (c)
+        * Frequency multiplex
+        * Time and frequency multiplex
+        [Example: GSM (frequency hopping)]
+        * Code multiplex
+
+#### Modulation
+
+* Basic schemes
+    * Amplitude Modulation (AM)
+    * Frequency Modulation (FM)
+    * Phase Modulation (PM)
+* Motivation for modulation
+    * smaller antennas (e.g., λ/4)
+    * Frequency Division Multiplexing
+    * medium characteristics
+    * spectrum availability
+* Analog modulation: shifts center frequency of baseband signal up to the radio carrier
+
+![Modulation](./assets/Modulation.png)
+
+* Digital modulation
+    * digital data is translated into an analog signal (baseband)
+        * ASK
+        * FSK
+            * bandwidth needed for FSK depends on the distance between the carrier frequencies
+        * Advanced FSK
+            * special pre-computation avoids sudden phase shifts
+                * Continuous Phase Modulation (CPM)
+                * MSK (Minimum Shift Keying)
+            * higher bandwidth efficiency using a Gaussian low-pass filter
+                * GMSK (Gaussian MSK), used for GSM and DECT
+        * PSK
+        * Advanced PSK
+            * BPSK (Binary Phase Shift Keying)
+            * QPSK (Quadrature Phase Shift Keying)
+        * QAM (Quadrature Amplitude Modulation)
+
+![DigitalModulation](./assets/DigitalModulation.png)
+
+#### Spread spectrum گسترش طیف
+
+Problem of radio transmission: frequency dependent fading can wipe out narrow
+band signals for duration of the interference
+
+Solution: spread the narrow band signal into a broadband signal using a special
+code
+
+* DSSS (Direct Sequence Spread Spectrum) 1, 2
+* FHSS (Frequency Hopping Spread Spectrum) 1, 2, 3
+
+#### Cellular systems
+
+* Cell structure
+* Fixed/Dynamic frequency assignment
+* Coverage and capacity
+
 ## Medium Access Schemeses (Layer 2)
 
 MAC in Multi-Channel Scenario
@@ -205,8 +299,7 @@ Application to Bluetooth and 802.11 (possible access function)
 #### WLAN: IEEE 802.11b
 
 * Data rate
-    * 1, 2, 5.5, 11 Mbit/s, depending
-on SNR
+    * 1, 2, 5.5, 11 Mbit/s, depending on SNR
     * User data rate max. approx. 6
 Mbit/s
 * Transmission range
