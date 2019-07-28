@@ -6,6 +6,38 @@
 * `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
 * `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
 
+## IObserver
+
+### Via TPL aka Async Await
+
+```cs
+var timeout = 1000;
+var task = BlobCache.LocalMachine.DownloadUrl("http://stackoverflow.com").FirstAsync().ToTask();
+if (await Task.WhenAny(task, Task.Delay(timeout)) == task) {
+    // task completed within timeout
+    //Do Stuff with your byte data here
+    //var result = task.Result;
+} else {
+    // timeout logic
+}
+```
+
+### Via Rx Observables
+
+```cs
+var obs = BlobCache.LocalMachine
+                   .DownloadUrl("http://stackoverflow.com")
+                   .Timeout(TimeSpan.FromSeconds(5))
+                   .Retry(retryCount: 2);
+var result = obs.Subscribe((byteData) =>
+{
+    //Do Stuff with your byte data here
+    Debug.WriteLine("Byte Data Length " + byteData.Length);
+}, (ex) => { 
+    Debug.WriteLine("Handle your exceptions here." + ex.Message);
+});
+```
+
 ## params
 
 ```cs
@@ -191,6 +223,10 @@ var i=^1; //index 1 from last index
 "string".SubString(1..^1);
 ```
 
+## Byte to string
+
+`public static string ByteArrayToString(byte[] result) => System.Text.Encoding.Default.GetString(result);`
+
 ## Base64
 
 ```csharp
@@ -347,3 +383,81 @@ object o = i;   // boxing (Copies the value of i into o)
 o = 123;
 i = (int)o; // unboxing
 ```
+
+## CLI
+
+### Adding Nuget
+
+`dotnet add library package Newtonsoft.Json`
+
+`dotnet add [what project to add it to] package [name of package at nuget.org]`
+
+Sometimes you might be working on an existing project and you just want to restore nugets.
+
+`dotnet restore`
+
+### TEST
+
+Creating a test library
+
+`dotnet new xunit -o test-library`
+
+### Adding references
+
+`dotnet sln add test-library/test-library.csproj`
+
+Add a reference to library in our test-library project, like so:
+
+`dotnet add test-library/test-library.csproj reference library/library.csproj`
+
+`dotnet add [target project] reference [destination project]`
+
+### Running our test/s
+
+We are now ready to run our test and inspect the outcome.
+
+To run the tests, type:
+
+`dotnet test test-library/test-library.csproj`
+
+Let's run the app next
+
+`dotnet run -p console-app/console-app.csproj`
+
+### Debugging
+
+```js
+//.vscode/launch.json
+
+{
+  "name": ".NET Core Launch (console)",
+  "type": "coreclr",
+  "request": "launch",
+  "preLaunchTask": "build",
+  // If you have changed target frameworks, make sure to update the program path.
+  "program": "${workspaceFolder}/test-library/bin/Debug/netcoreapp2.2/test-library.dll",
+  "args": [],
+  // We need to change the property "program" to point to our console app and also the "cwd".
+  "cwd": "${workspaceFolder}/test-library",
+  // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+  "console": "internalConsole",
+  "stopAtEntry": false
+}
+```
+
+Looking at our entry in launch.json we see there is a property `"preLaunchTask": "build"` that points out a task that should run before our debug. This task resides in `tasks.json`. Heading over to that file we noticed that it looked like this:
+
+```js
+{
+  "label": "build",
+  "command": "dotnet",
+  "type": "process",
+  "args": [
+      "build",
+      "${workspaceFolder}/test-library/test-library.csproj"
+  ],
+  "problemMatcher": "$tsc"
+}
+```
+
+[src](https://dev.to/dotnet/how-you-can-get-started-w)
