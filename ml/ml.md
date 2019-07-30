@@ -17,6 +17,7 @@
 * http://playground.tensorflow.org
 * https://www.ailab.microsoft.com/
 * http://www.fast.ai/
+* https://deepai.org/
 
 ## Online IDE/CodeEditors
 

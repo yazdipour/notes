@@ -6,7 +6,7 @@
 * https://www.bountysource.com/
 * https://0x00sec.org/
 
-## Wifi 
+## Wifi
 
 * [LinSSID: Graphical wireless scanning for Linux](https://sourceforge.net/projects/linssid/)
 
@@ -75,6 +75,13 @@ smb // so scan
 * https://ctftime.org/ctf-wtf/
 * https://www.cybersecuritychallenge.org.uk/
 * http://onhex.ir/
+
+### HackingRF
+
+* https://andrewmohawk.com/2015/08/31/hacking-fixed-key-remotes-with-only-rfcat/
+* https://andrewmohawk.com/2012/07/15/rtlsdr-my-first-sdr/
+* https://www.andrewmohawk.com/2012/09/06/hacking-fixed-key-remotes/
+* https://www.andrewmohawk.com/2017/02/14/remote-jamming-detector-on-the-cheap/
 
 ### RFCAT
 
