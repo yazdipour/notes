@@ -3,6 +3,16 @@
 * [create-custom-icon-fonts](https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-app-1c518febbda1)
 * [best-practices](https://github.com/futurice/windows-app-development-best-practices)
 
+## CSS Windows Theme Changed triger
+
+```css
+@media (prefers-colors-scheme: dark){}
+```
+
+## Open Emoji Keyboard
+
+`CoreInputView.GetForCurrentView().TryShow(CoreInputViewKind.Emoji);`
+
 ## Run on UI Thread
 
 ```c#

@@ -11,6 +11,10 @@ Gray hLine | `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />
 Drop Shadow on Android Bottom Navigation | https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/
 FontAwesome | https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/
 
+## Optimize X.Android Build
+
+https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/
+
 ## Native Forms
 
 ```C#
