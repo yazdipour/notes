@@ -88,7 +88,7 @@
 
 * [Vim](cli/vim.md)
 * [Linux](cli/linux.md)
-* [Powershell](cli/powershell.md)
+* [Powershell / Windows](cli/powershell.md)
 * [Git](cli/git.md)
 
 # Network
