@@ -1,8 +1,12 @@
 # Books
 
+## Paid
+
+* [In Germany](https://www.medimops.de/)
+
 ## CS Book Review
 
-https://mustread.tech/books
+* https://mustread.tech/books
 
 ## Search Query
 

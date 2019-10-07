@@ -1,5 +1,11 @@
 # Jobs
 
+* [airbnb](https://careers.airbnb.com/)
+* [github](https://boards.greenhouse.io/github/)
+* [giphy](https://boards.greenhouse.io/giphy)
+* [twilio](https://boards.greenhouse.io/twilio)
+* [monzo](https://boards.greenhouse.io/monzo)
+* [patreon](https://boards.greenhouse.io/patreon)
 * https://endyloop.com/
 * https://whoishiring.io/
 * https://www.indeed.com/

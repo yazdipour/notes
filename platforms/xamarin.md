@@ -1,19 +1,20 @@
 # Xamarin.Forms
 
-| Subjects | QuickRef |
-|---|---|
-Shell | https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx
-Persian Calender | https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms
-Improve BuildTimes | https://github.com/brminnick/ImproveXamarinBuildTimes
-ConnectionView | https://xamgirl.com/handling-connection-changes-in-xamarin-forms/
-Read File | `var txt = File.ReadAllText("x.txt");`
-Gray hLine | `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
-Drop Shadow on Android Bottom Navigation | https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/
-FontAwesome | https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/
+## QuickRef
 
-## Optimize X.Android Build
-
-https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/
+* [Shell](https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx)
+* [Persian Calender](https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms)
+* [Improve BuildTimes](https://github.com/brminnick/ImproveXamarinBuildTimes)
+* [ConnectionView](https://xamgirl.com/handling-connection-changes-in-xamarin-forms/)
+* Read File: `var txt = File.ReadAllText("x.txt");`
+* Gray hLine: `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
+* [Drop Shadow on Android Bottom Navigation](https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/)
+* [FontAwesome](https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/)
+* [Optimize Android Build](https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/)
+* [Modernizing iOS Apps for Dark Mode with Xamarin](https://devblogs.microsoft.com/xamarin/modernizing-ios-apps-dark-mode-xamarin/)
+* [Hyperlink in Xamarin.Forms Label](https://xamarinhelp.com/hyperlink-in-xamarin-forms-label/)
+* [Hyperlink in Xamarin.Forms Label2](http://www.xamboy.com/2019/09/17/hashtags-detection-in-xamarin-forms/)
+* [Dark/Light Theme](https://danielhindrikes.se/index.php/2019/10/03/darkmode-and-lightmode-with-mergeddictionaries/)
 
 ## Native Forms
 

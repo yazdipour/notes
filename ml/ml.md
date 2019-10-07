@@ -1,5 +1,6 @@
 # ML, DL
 
+* https://paperswithcode.com/sota
 * Facial Recongnition Database: https://www.kairos.com/blog/60-facial-recognition-databases
 * Gensim (مانند LDA، LSI و یا Word2Vec) https://radimrehurek.com/gensim/
 * https://keras.io/
@@ -18,6 +19,10 @@
 * https://www.ailab.microsoft.com/
 * http://www.fast.ai/
 * https://deepai.org/
+
+## Job
+
+* https://ai-jobs.net/
 
 ## Online IDE/CodeEditors
 

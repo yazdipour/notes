@@ -15,7 +15,8 @@
 
 ## Date
 
-`new Date().toLocaleString("fa-IR-ca-persian")`
+* `new Date().toLocaleString("fa-IR-ca-persian")`
+* https://date-fns.org/
 
 ## Cloning
 

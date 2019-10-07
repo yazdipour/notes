@@ -5,6 +5,7 @@
 * string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)
 * `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
 * `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
+* open vs in different suffix `visualstudio /RootSuffix name`
 
 ## IObserver
 

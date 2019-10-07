@@ -9,6 +9,23 @@
 * Deep Link: https://programchi.ir/2018/04/06/آموزش-deep-link-در-برنامه-نویسی-اندروید/
 * espresso: https://programchi.ir/2018/08/12/آموزش-espresso-در-برنامه-نویسی-اندروید/
 
+## SSL OkHttp
+
+```java
+X509TrustManager trustManager;
+SSLSocketFactory sslSocketFactory;
+CustomTrust customTrust = new CustomTrust();
+trustManager = customTrust.getTrustManager();
+sslSocketFactory = customTrust.getSslSocketFactory();
+OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
+                .connectTimeout(timeOut, TimeUnit.SECONDS)
+                .readTimeout(timeOut, TimeUnit.SECONDS)
+                .sslSocketFactory(sslSocketFactory, trustManager)
+                .hostnameVerifier((s, sslSession) -> true)
+                .writeTimeout(timeOut, TimeUnit.SECONDS);
+if (BuildConfig.DEBUG) HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+```
+
 ## LruCache
 
 ```java

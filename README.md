@@ -59,6 +59,7 @@
 
 # Platforms
 
+* [Web](platforms/web.md)
 * [ASP](platforms/asp.md)
 * [Unity](platforms/unity.md)
 * [UWP](platforms/uwp.md)
