@@ -43,6 +43,7 @@ IoT](https://hub.packtpub.com/25-datasets-deep-learning-iot/)
 * https://rajpurkar.github.io/SQuAD-explorer/
 * https://www.datasetlist.com/
 * https://www.visualdata.io/
+* https://www.datasetlist.com/
 
 ## Book
 
@@ -497,6 +498,12 @@ rainDrop.index.name = "Cities"
 |from numpy.random import randn randn(24).reshape(4, 6)||
 |blender = np.random.permutation(4)||
 |shaker = np.random.randint(0, 3, size=10)|Random array from 0,1,2|
+
+* Reshaping/Resizing
+
+A numpy array can be reshaped and resized.
+Reshaping with np.reshape returns a new array with a modified shape and resizing with np.resize modifies the original array.
+A third function np.ravel returns a flattened array.
 
 ```py
 dframe2 = DataFrame(np.arange(16).reshape(4, 4)

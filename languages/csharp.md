@@ -112,6 +112,7 @@ class X{
 
 ## Publish .NetCore App
 
+* [Creating a Single EXE Application with .NET Core](https://www.telerik.com/blogs/creating-a-single-exe-application-with-net-core)
 * [خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
 * https://www.hanselman.com/blog/MakingATinyNETCore30EntirelySelfcontainedSingleExecutable.aspx
 * https://www.hanselman.com/blog/BrainstormingCreatingASmallSingleSelfcontainedExecutableOutOfA

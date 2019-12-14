@@ -11,10 +11,15 @@
 * [Drop Shadow on Android Bottom Navigation](https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/)
 * [FontAwesome](https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/)
 * [Optimize Android Build](https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/)
-* [Modernizing iOS Apps for Dark Mode with Xamarin](https://devblogs.microsoft.com/xamarin/modernizing-ios-apps-dark-mode-xamarin/)
 * [Hyperlink in Xamarin.Forms Label](https://xamarinhelp.com/hyperlink-in-xamarin-forms-label/)
 * [Hyperlink in Xamarin.Forms Label2](http://www.xamboy.com/2019/09/17/hashtags-detection-in-xamarin-forms/)
+* [Loading Shadow](https://www.syncfusion.com/blogs/post/introducing-xamarin-forms-shimmer.aspx)
+
+## Theme
+
+* [Modernizing iOS Apps for Dark Mode with Xamarin](https://devblogs.microsoft.com/xamarin/modernizing-ios-apps-dark-mode-xamarin/)
 * [Dark/Light Theme](https://danielhindrikes.se/index.php/2019/10/03/darkmode-and-lightmode-with-mergeddictionaries/)
+* [Xamarin: Creating a Dark Mode Splash Screen](https://codetraveler.io/2019/10/11/creating-a-dark-mode-splash-screen/)
 
 ## Native Forms
 
