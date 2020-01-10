@@ -2,6 +2,7 @@
 
 * [create-custom-icon-fonts](https://medium.com/@Niels9001/create-custom-icon-fonts-and-use-them-in-your-uwp-app-1c518febbda1)
 * [best-practices](https://github.com/futurice/windows-app-development-best-practices)
+* [UWP app load even faster?](https://twitter.com/Arlodottxt/status/1206299970435010560?s=19)
 
 ## CSS Windows Theme Changed triger
 

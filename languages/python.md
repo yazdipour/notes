@@ -9,6 +9,15 @@
 * [Writing Comments in Python](https://realpython.com/python-comments-guide/)
 * [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
 
+## VENV
+
+```cmd
+cd projDir
+pip install virtualenv
+virtualenv venvName
+\venvName\Scripts\active
+```
+
 ## Naming convention
 
 ```py
