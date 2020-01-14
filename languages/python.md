@@ -9,6 +9,13 @@
 * [Writing Comments in Python](https://realpython.com/python-comments-guide/)
 * [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
 
+![structure](./assets/py/struct.jpg)
+
+## WebPy
+
+![webpy](./assets/py/webpy.jpg)
+![webpy](./assets/py/webpy.jpg)
+
 ## VENV
 
 ```cmd
