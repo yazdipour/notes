@@ -11,6 +11,26 @@
 * If you want to run the next only if the previous succeeded: `process1 && process2 && process3`
 * If you want to run them simultaneously: `process1&; process2&; process3&`
 
+## Tmux
+
+```bash
+>> tmux new -s shahriar //new session by name
+>> tmux ls //show all open tmux
+>> tmux att //attach to last tmux
+>> tmux att -t 1 //attach to tmux1
+```
+
+|Shortcut|Action|
+|--|--|
+|ctrl+b ➡ | to change pane
+|ctrl+b ctrl+➡ | to resize pane
+|ctrl+b z | zoom in/out
+|ctrl+b c | to create new windows
+|ctrl+b s | to see windows
+|ctrl+b t | shows time
+|ctrl+b % | Split ||
+|ctrl+b " | Split -
+
 ## Dir
 
 ![Dir](assets/dir.png)
