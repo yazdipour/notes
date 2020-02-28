@@ -1,6 +1,9 @@
 # Notes
 
 * [Book](notes/book.md)
+* [Deutsch](notes/languages/deutsch.md)
+
+
 * [Blockchain](notes/blockchain.md)
 * [BitTech](notes/biotech.md)
 * [Algorithm](notes/algorithm.md)

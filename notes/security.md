@@ -6,6 +6,8 @@
 * https://www.bountysource.com/
 * https://0x00sec.org/
 
+`X-Forwarded-Host: bing.com`
+
 ## Wifi
 
 * [LinSSID: Graphical wireless scanning for Linux](https://sourceforge.net/projects/linssid/)
@@ -125,8 +127,6 @@ run
 
 ## Mobile Subjects
 
-- BurpS
-
 - DIVA Android
 
 - MobSF
@@ -135,8 +135,6 @@ run
 
 - DrozerMobile Apps
 
-- BurpS
-
 - DIVA Android
 
 - MobSF
@@ -144,3 +142,13 @@ run
 - AppUse (commercially available)
 
 - Drozer
+
+## XSS
+
+* [XSS Archive](./xss.md)
+* https://github.com/gbrindisi/xsssniper
+* https://github.com/haroonawanofficial/XSS-Finder
+* https://github.com/M4cs/traxss
+* XSS Hunder
+* Sleepy Puppy
+* KnoXSS

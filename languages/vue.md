@@ -1,5 +1,6 @@
 # Vue
 
+* Vue with TS https://blog.logrocket.com/how-to-write-a-vue-js-app-completely-in-typescript/
 * Vue Electron Like: https://dev.to/vuevixens/building-a-desktop-app-with-vue-nwjs-1f9e
 * `v-on:` == @
 * `v-bind:` == :
