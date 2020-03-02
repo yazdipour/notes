@@ -38,6 +38,7 @@
 
 # 3D
 
+* [Resources](3d/resources.md)
 * [Concepts](3d/concepts.md)
 * [Unity](3d/unity.md)
 * [VR-AR](3d/vr.md)
@@ -112,7 +113,6 @@
 # UI
 
 * [UI](ui/ui.md)
-* [3D](ui/3d.md)
 * [Css](ui/css.md)
 * [Sass](ui/sass.md)
 

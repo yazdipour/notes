@@ -145,7 +145,7 @@ run
 
 ## XSS
 
-* [XSS Archive](./xss.md)
+* [XSS Archive](notes/xss.md)
 * https://github.com/gbrindisi/xsssniper
 * https://github.com/haroonawanofficial/XSS-Finder
 * https://github.com/M4cs/traxss
