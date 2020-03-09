@@ -72,6 +72,7 @@ smb // so scan
 
 ### HackingRF
 
+* [SDR on WSL](http://happysat.nl/Windows_WSL/index.html#Install_XFCE4_Desktop_)
 * https://andrewmohawk.com/2015/08/31/hacking-fixed-key-remotes-with-only-rfcat/
 * https://andrewmohawk.com/2012/07/15/rtlsdr-my-first-sdr/
 * https://www.andrewmohawk.com/2012/09/06/hacking-fixed-key-remotes/
@@ -145,6 +146,7 @@ run
 
 ## XSS
 
+* [Portswigger XSS cheat sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 * [XSS Archive](notes/xss.md)
 * https://github.com/gbrindisi/xsssniper
 * https://github.com/haroonawanofficial/XSS-Finder
