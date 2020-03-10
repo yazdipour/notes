@@ -16,6 +16,9 @@
 
 ## Sensors
 
+![Sensors](assets/iot/sensors.jpg)
+![Sensors](assets/iot/sensors2.jpg)
+
 ### Ultrasonic
 
 ![hc-sr04](https://cdn-images-1.medium.com/max/1600/1*ODZShyJXz7Hi_J9VEbGa-Q.jpeg)
@@ -86,3 +89,27 @@ void loop() {
 A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. 
 
 ![Potentiometers](https://cdn.instructables.com/F20/QNR1/IQTTBQS1/F20QNR1IQTTBQS1.MEDIUM.jpg)
+
+### LCD
+
+![lcd](http://3.bp.blogspot.com/-Wr0Giky7hzE/UGSraHrADBI/AAAAAAAAAf4/8xYgCTcqdM4/s1600/lcd-sharp-ir-sensor-arduino.jpg)
+
+```cpp
+//  http://www.arduino.cc/en/Tutorial/LiquidCrystal
+#include <LiquidCrystal.h>
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, world!");
+}
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 1000);
+}
+```
