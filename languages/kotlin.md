@@ -1,5 +1,8 @@
 # Kotlin
 
+* https://youtu.be/6P20npkvcb8
+* https://kotlinlang.org/docs/reference/
+
 ## Basic
 
 ```kt
@@ -25,9 +28,11 @@ val myvar = when (myChar){
     'a'-> "hey"
     'b','c'-> "heyhey"
 }
+```
 
-<!-- LOOP -->
+## Loop
 
+```kt
 for (j in 1..4) print(j) //RANGE
 
 var x:Int = 0
@@ -40,6 +45,11 @@ do {
     x = x + 10
     println("I am inside Do block---"+x)
 } while(x <= 50)
+
+for (i in 1 until 9 step.2){}
+for (i in 9 downTo 1){}
+
+for (child in e.children){do(child)} == e.children.forEach(::do)
 ```
 
 ## Array
@@ -133,7 +143,13 @@ class B : A() { fun getValue() : Int { return i } }
 class internalExample {
    internal val i = 1
    internal fun doSomething(){}
-//These two fields can be accessible only inside the package under 
+//These two fields can be accessible only inside the package under
+```
+
+## Object
+
+```kt
+
 ```
 
 ## Setter Getter
@@ -210,9 +226,11 @@ mylist
    .filter{
       it.stratsWith('J')
    }
+   .also{print("done")}
    .map{
       it.length
    }
+   .also{print("done")}
    .forEach{
       println(it)
    }
@@ -222,6 +240,7 @@ mylist
 var map = mylist.associate{it to it.length}
 map.forEach{
       println("${it.value} , ${it.key}")
+      println("$it")
    }
 ```
 
@@ -237,7 +256,16 @@ class genericsExample<T>(input:T)
 
 ## Delegation
 
+https://www.tutorialspoint.com/kotlin/kotlin_delegation.htm
+
 “by” / by lazy / Delegetion.Observable()
+
+```kt
+val myVar: String by lazy {
+   "Hello"
+}
+//if myVar is null will set and return Hello, if not, only return the value
+```
 
 ## lambda
 
@@ -271,4 +299,18 @@ try {
    e.printStackTrace();
 } finally {
 }
+```
+
+## Null
+
+```kt
+var b: String? = "abc"
+b = null // ok
+println(b?.length)
+
+//!! or NPE-lovers: the not-null assertion operator (!!) converts any value to a non-null type and throws an exception if the value is null.
+val l = b!!.length
+
+//Safe Casts - Regular casts may result into a ClassCastException if the object is not of the target type. Another option is to use safe casts that return null if the attempt was not successful
+val aInt: Int? = a as? Int
 ```
