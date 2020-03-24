@@ -122,27 +122,31 @@ run
 
 ## XSS ( Stored)
 
-# Mobile Security
+## Mobile PenTest Tools
 
-[Hack Android Game / Unity + Inject changes]([https://memoryleaks.ir/hack-fallout-shelter-and-android-app/](https://memoryleaks.ir/hack-fallout-shelter-and-android-app/)
+* DIVA Android
+* MobSF
+* AppUse
+* Drozer
 
-## Mobile Subjects
+## Android
 
-- DIVA Android
+* https://owasp.org/www-project-mobile-top-10/
+* [Hack Android Game / Unity + Inject changes]([https://memoryleaks.ir/hack-fallout-shelter-and-android-app/](https://memoryleaks.ir/hack-fallout-shelter-and-android-app/)
 
-- MobSF
+### ADB
 
-- AppUse (commercially available)
-
-- DrozerMobile Apps
-
-- DIVA Android
-
-- MobSF
-
-- AppUse (commercially available)
-
-- Drozer
+```sh
+adb connect [ip address]
+adb devices
+adb shell
+adb —s [special Id] shell
+adb Install [app-name)
+adb umnstall [package name]
+adb push [filename] [directory to be sent]
+adb pull [filename]
+adb logcat
+```
 
 ## XSS
 

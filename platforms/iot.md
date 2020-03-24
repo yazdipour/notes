@@ -14,6 +14,10 @@
 - https://azure-samples.github.io/raspberry-pi-web-simulator/
 - [Fritzing](http://fritzing.org/home/) is an open-source hardware initiative that makes electronics accessible as a creative material for anyone
 
+## RPi
+
+* [A server for the Raspberry Pi with access to the digital GPIO pins via RESTful JSON and Socket.io](https://github.com/projectweekend/Pi-GPIO-Server)
+
 ## Sensors
 
 ![Sensors](assets/iot/sensors.jpg)
@@ -112,4 +116,22 @@ void loop() {
   // print the number of seconds since reset:
   lcd.print(millis() / 1000);
 }
+```
+
+## MQTT
+
+```sh
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+
+mosquitto -p 1883 //to start -d as daemon
+sudo service mosquitto start //to start as a service
+//The stop/start scripts start the mosquitto broker in the background and also use the default mosquitto.conf file in the /etc/mosquitto/ folder.
+
+mosquitto_pub -t mytopic -m {\”status\”:\”off\”} -h 192.168.0.104
+// -d debug option to see sending process
+// -u username and -P password flags
+// -q 1 QOS flag
+
+mosquitto_sub -t mytopic
 ```

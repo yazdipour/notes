@@ -156,3 +156,7 @@
 * https://30secondsofcode.org/
 * https://exercism.io
 * https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_213
+
+## Did not understand
+
+* https://medium.com/@csharpwriter/introduction-to-option-type-in-csharp-a4d540988411
