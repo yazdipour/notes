@@ -1,22 +1,12 @@
 # JS
 
-* [Find up to date snippets for common JavaScript use cases](https://codetogo.io/)
-
-## Obfuscator
-
-* http://javascriptobfuscator.com/
-
-## React
-
-* https://nativebase.io/
-* https://redux.js.org/
-* https://startreact.com/themes/
-* https://strapmobile.com/docs/react-native-flat-app-theme/v3.0/overview/introduction
+- [Find up to date snippets for common JavaScript use cases](https://codetogo.io/)
+- [Obfuscator](http://javascriptobfuscator.com/)
 
 ## Date
 
-* `new Date().toLocaleString("fa-IR-ca-persian")`
-* https://date-fns.org/
+- `new Date().toLocaleString("fa-IR-ca-persian")`
+- https://date-fns.org/
 
 ## Cloning
 
@@ -30,11 +20,35 @@ in SSR
 (-) More Complex and involved build setup
 (-) More server side load on Server
 
+## Var, Let, and Const
+
+- `var` variables can be updated and re-declared within its scope; `let` variables can be updated but not re-declared; c`onst variables can neither be updated nor re-declared.
+- While `var` and `let` can be declared without being initialised, `const` must be initialised during declaration.
+
+`var` - OldWay :The scope is global when a var variable is declared outside a function. This means that any variable that is declared with var outside a function block is available for use in the whole window.
+
+`let`: Unlikevar, a let variable cannot be re-declared within its scope.
+
+```js
+// ok
+let greeting = "say Hi";
+greeting = "say Hello instead";
+
+//this will return an error.
+let greeting = "say Hi";
+let greeting = "say Hello instead"; //error: Identifier 'greeting' has already been declared
+```
+
+`Const`:
+
+- Variables declared with the const maintain constant values.
+- const cannot be updated or re-declared
+
 ## TypeScript Loading External Modules
 
 ```js
-System.defaultJSExtensions=true;
-System.import('app')
+System.defaultJSExtensions = true;
+System.import("app");
 ```
 
 # DevTools
@@ -48,7 +62,11 @@ System.import('app')
 ## Colorful Console Log
 
 ```js
-console.log("%c%s","color: red; background: yellow; font-size: 24px;","WARNING!");
+console.log(
+  "%c%s",
+  "color: red; background: yellow; font-size: 24px;",
+  "WARNING!"
+);
 ```
 
 ## Debuging
@@ -61,9 +79,9 @@ debugger; //to set breakpoint
 
 This very simple feature acts like a history of the selected elements inside the Elements tab. Where, if you use it inside the integrated console you can have fast and direct access to the current element you have selected up to the 5th last element you have selected.
 
-## $_
+## \$\_
 
-With $_ you can get the result of the last executed statement without needing any copy and paste.
+With \$\_ you can get the result of the last executed statement without needing any copy and paste.
 
 ## monitor()
 
@@ -75,6 +93,6 @@ getDialogue('main');
 console out: "function getDialogue called with arguments: main"
 ```
 
-## $() and $$()
+## $() and $\$()
 
-$() for CSS selector. Use $$() you would like to get all links inside a list. `$$('ul.links a');`
+$() for CSS selector. Use $\$() you would like to get all links inside a list. `$$('ul.links a');`

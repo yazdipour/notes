@@ -120,6 +120,12 @@ void loop() {
 
 ## MQTT
 
+- Python Impl https://gist.github.com/yazdipour/a5706e8bf904435a80d558e053fb79d1
+- Android Impl https://github.com/yazdipour/MQTT-Kotlin-Sample
+- Xamarin Impl https://github.com/Rikharthu/xamarin-MqttController
+- Arduino https://github.com/256dpi/arduino-mqtt
+- HelloWorld (Arduino, Java, C#, Python) https://github.com/DeveloperKahvesi/Mqtt
+
 ```sh
 sudo apt-get install mosquitto
 sudo apt-get install mosquitto-clients

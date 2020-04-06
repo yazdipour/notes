@@ -5,30 +5,30 @@ https://docs.docker.com/engine/examples/dotnetcore/
 
 ## OnWindows
 
-* https://www.dotnettips.info/post/2947/%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-docker-%d8%a8%d8%b1-%d8%b1%d9%88%db%8c-%d9%88%db%8c%d9%86%d8%af%d9%88%d8%b2-%d9%82%d8%b3%d9%85%d8%aa-%d8%a7%d9%88%d9%84-container-%da%86%db%8c%d8%b3%d8%aa
-* https://www.dotnettips.info/search/label/docker#/page/1/date/desc
+- https://www.dotnettips.info/post/2947/%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7-docker-%d8%a8%d8%b1-%d8%b1%d9%88%db%8c-%d9%88%db%8c%d9%86%d8%af%d9%88%d8%b2-%d9%82%d8%b3%d9%85%d8%aa-%d8%a7%d9%88%d9%84-container-%da%86%db%8c%d8%b3%d8%aa
+- https://www.dotnettips.info/search/label/docker#/page/1/date/desc
 
 ## Concepts
 
 ### Images
 
-* Images are readonly templates used to create containers.
-* Images are created with the docker build command.
-* Images are composed of layers of other images.
-* Images are stored in a Docker registry.
+- Images are readonly templates used to create containers.
+- Images are created with the docker build command.
+- Images are composed of layers of other images.
+- Images are stored in a Docker registry.
 
 ### Containers
 
-* If an image is a class, then a container is an instance of a class - a runtime object.
-* Containers are light weight and portable encapsulations of an environment in which to run applications.
-* Containers are created from images. Inside a container, it has all the binaries and dependencies needed to run the application.
+- If an image is a class, then a container is an instance of a class - a runtime object.
+- Containers are light weight and portable encapsulations of an environment in which to run applications.
+- Containers are created from images. Inside a container, it has all the binaries and dependencies needed to run the application.
 
 ### Registries and Repositories
 
-* A registry is where we store our images.
-* You can host your own registry, or you can use Docker’s public registry which is called DockerHub.
-* Inside a registry, images are stored in repositories.
-* Docker repository is a collection of different docker images with the same name, that have different tags, each tag usually represents a different version of the image.
+- A registry is where we store our images.
+- You can host your own registry, or you can use Docker’s public registry which is called DockerHub.
+- Inside a registry, images are stored in repositories.
+- Docker repository is a collection of different docker images with the same name, that have different tags, each tag usually represents a different version of the image.
 
 ## Command
 
@@ -68,7 +68,7 @@ docker tag [cont_id] shery/debian:tag
 # Push to docker hub
 docker push shery/debian:tag
 # to run command inside running container/login in to container
-docker -it [con_id] [bash command]
+docker exec -it [running_cont_id] [command do sth]
 # --link 2 containers
 docker run -d -op 5000:5000 --link redis [container]/dockerapp:v1
 ```
@@ -86,19 +86,19 @@ docker run -d -op 5000:5000 --link redis [container]/dockerapp:v1
 
 ### Dockerfile
 
-* Each instruction will create a new image layer to the image.
-* Instructions specify what to do when building the image.
+- Each instruction will create a new image layer to the image.
+- Instructions specify what to do when building the image.
 
 1. Create Dockerfile
-    ```Dockerfile
-    FROM debian:jessie
-    RUN apt install -y git && apt install -y vim
-    ```
+   ```Dockerfile
+   FROM debian:jessie
+   RUN apt install -y git && apt install -y vim
+   ```
 2. `docker build -t shery/debian:1.0 ./path`
-    * `./path` = path to the build context.
-    * When build starts, docker client would pack all the files in the build context into a tarball then transfer the tarball file to the daemon.
-    * By default, docker would search for the Dockerfile in the build context path. Ca specify dockerfile path with `-f df_path`.
-    * Can add `--no-cache=true` to forbid docker use your image as cache, for creating future images.
+   - `./path` = path to the build context.
+   - When build starts, docker client would pack all the files in the build context into a tarball then transfer the tarball file to the daemon.
+   - By default, docker would search for the Dockerfile in the build context path. Ca specify dockerfile path with `-f df_path`.
+   - Can add `--no-cache=true` to forbid docker use your image as cache, for creating future images.
 
 #### FROM
 
@@ -110,11 +110,11 @@ Can be any bash command
 
 #### CMD
 
-* CMD instruction specifies what command you want to run when the container starts up.
-* If we don't specify CMD instruction in the Dockerfile, Docker will use the default command defined in the base image.
-* **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
-* You can specify the command in either form which is preferred or in shell form.
-* `CMD ["echo","hello"]`
+- CMD instruction specifies what command you want to run when the container starts up.
+- If we don't specify CMD instruction in the Dockerfile, Docker will use the default command defined in the base image.
+- **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
+- You can specify the command in either form which is preferred or in shell form.
+- `CMD ["echo","hello"]`
 
 #### COPY
 
@@ -122,8 +122,8 @@ Can be any bash command
 
 #### ADD
 
-* Similar to COPY, but also allow you to download file and copy to container.
-* ADD also has the ability to automatically unpack compressed files.
+- Similar to COPY, but also allow you to download file and copy to container.
+- ADD also has the ability to automatically unpack compressed files.
 
 #### EXPOSE
 
@@ -151,8 +151,8 @@ README-secret.md
 
 ### Docker Compose
 
-* a tool for defining and running multi-container Docker apps.
-* `docker-compose.yml`
+- a tool for defining and running multi-container Docker apps.
+- `docker-compose.yml`
 
 ```docker
 version: '3'
@@ -168,7 +168,7 @@ services:
     image: "redis:alpine"
 ```
 
-* To build containers
+- To build containers
 
 ```
 $ docker-compose up [-d to run on background]
@@ -206,22 +206,22 @@ EXPOSE 80
 
 ### Types
 
-* Closed/None Network
+- Closed/None Network
   - Disconnected from network
   - `docker run --net none`
-* Bridge Network (Default - docker0)
+- Bridge Network (Default - docker0)
   - Default IP Range from 172.17.0.0 to 172.17.255.255
   - We can access other containers from the same bridge network
-* Host/Open Network
+- Host/Open Network
   - Like OS Host network
   - `docker run --net host`
-* Overlay Network
+- Overlay Network
   - Multi-host, which is handled by kube/swarm
 
 ### Inspect Network
 
-* `docker network ls`
-* `docker network inspect [NAME]`
+- `docker network ls`
+- `docker network inspect [NAME]`
 
 ### Create network
 
@@ -231,8 +231,8 @@ EXPOSE 80
 
 So that they can ping each other from different ip range.
 
-* `docker network connect [network_name1] [network_name2]`
-* `docker network disconnect [network_name1] [network_name2]`
+- `docker network connect [network_name1] [network_name2]`
+- `docker network disconnect [network_name1] [network_name2]`
 
 ### Compose
 
@@ -350,5 +350,5 @@ docker-machine create \
 
 ### “Extends” keywords in Docker Compose File
 
-* The extends keyword enables sharing of common configurations among different files or even different projects entirely
-* Extending services is useful if you have several different environments that reuse a common set of configuration options
+- The extends keyword enables sharing of common configurations among different files or even different projects entirely
+- Extending services is useful if you have several different environments that reuse a common set of configuration options
