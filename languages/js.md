@@ -1,5 +1,6 @@
 # JS
 
+- [JavaScript benchmarks](https://perf.link/)
 - [Find up to date snippets for common JavaScript use cases](https://codetogo.io/)
 - [Obfuscator](http://javascriptobfuscator.com/)
 

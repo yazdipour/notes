@@ -2,10 +2,29 @@
 
 ## Popular QA
 
-* string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)
-* `void implClass(string name): base(name){}`  or `void implClass(string name): base(staticFoo(name)){}`
-* `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
-* open vs in different suffix `visualstudio /RootSuffix name`
+- string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)
+- `void implClass(string name): base(name){}` or `void implClass(string name): base(staticFoo(name)){}`
+- `bool checkIsPowerOf2(ulong n)=> n!=0 && (n&(n-1)==0);`
+- open vs in different suffix `visualstudio /RootSuffix name`
+
+## Sealed Classes
+
+- The sealed modifier prevents other classes from inheriting from `sealed class B {}`.
+- You can also use the sealed modifier on a method or property that overrides a virtual method or property in a base class. This enables you to allow classes to derive from your class and prevent them from overriding specific virtual methods or properties.
+
+## Delegates
+
+C# delegates are similar to pointers to functions, in C or C++. A delegate is a reference type variable that holds the reference to a method. The reference can be changed at runtime.
+
+```cs
+delegate int NumberChanger(int n);
+public static int AddNum(int p) {
+   num += p;
+   return num;
+}
+NumberChanger nc1 = new NumberChanger(AddNum);
+nc1(25);
+```
 
 ## IObserver
 
@@ -34,7 +53,7 @@ var result = obs.Subscribe((byteData) =>
 {
     //Do Stuff with your byte data here
     Debug.WriteLine("Byte Data Length " + byteData.Length);
-}, (ex) => { 
+}, (ex) => {
     Debug.WriteLine("Handle your exceptions here." + ex.Message);
 });
 ```
@@ -60,16 +79,16 @@ myInt.foo();
 
 ![ref-in-out-this.png](./assets/csharp/ref-in-out-this.png)
 
-* `out` only initialize/fill a parameter (the parameter must be empty) return it out plain
-* `ref` must be init before passing to method / standard parameter (maybe with value), but the function can modifiy it.
-* `ref readonly` can't be used as input parameter, but as returning type, it will return the type ref as readonly variable!
+- `out` only initialize/fill a parameter (the parameter must be empty) return it out plain
+- `ref` must be init before passing to method / standard parameter (maybe with value), but the function can modifiy it.
+- `ref readonly` can't be used as input parameter, but as returning type, it will return the type ref as readonly variable!
 
 ## in
 
-* use for method input parameters
-* pass by reference
-* cannot be modified by the method
-* is like, `ref readonly` in parameter
+- use for method input parameters
+- pass by reference
+- cannot be modified by the method
+- is like, `ref readonly` in parameter
 
 ## Automapper
 
@@ -94,10 +113,10 @@ Student st = Mapper.Map<Student>(new Person{FName="",LName=""});
 
 ## Dynamic Type
 
-* A dynamic type escapes type checking at compile time; instead, it resolves type at run time.
-* A method can have parameters of the dynamic type.
-* The dynamic types do not have intellisense support in visual studio.
-* Like variables in JS! They can be anything!
+- A dynamic type escapes type checking at compile time; instead, it resolves type at run time.
+- A method can have parameters of the dynamic type.
+- The dynamic types do not have intellisense support in visual studio.
+- Like variables in JS! They can be anything!
 
 ```cs
 class X{
@@ -105,35 +124,31 @@ class X{
 }
 ```
 
-## Decompile
-
-* https://github.com/0xd4d/de4dot
-* https://github.com/0xd4d/dnSpy
-
 ## Publish .NetCore App
 
-* [Creating a Single EXE Application with .NET Core](https://www.telerik.com/blogs/creating-a-single-exe-application-with-net-core)
-* [خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
-* https://www.hanselman.com/blog/MakingATinyNETCore30EntirelySelfcontainedSingleExecutable.aspx
-* https://www.hanselman.com/blog/BrainstormingCreatingASmallSingleSelfcontainedExecutableOutOfA
+- [Creating a Single EXE Application with .NET Core](https://www.telerik.com/blogs/creating-a-single-exe-application-with-net-core)
+- [خروجی گرفتن از برنامه‌های NET Core 3. بدون وابستگی به فریم‌ورک و در یک فایل Exe](https://www.dotnettips.info/post/3059/خروجی-گرفتن-از-برنامه‌های-net-core-3-بدون-وابستگی-به-فریم‌ورک-و-در-یک-فایل-exe)
+- https://www.hanselman.com/blog/MakingATinyNETCore30EntirelySelfcontainedSingleExecutable.aspx
+- https://www.hanselman.com/blog/BrainstormingCreatingASmallSingleSelfcontainedExecutableOutOfA
 
 ## Extends / Implements
 
-* Java
-    ```java
-    public class Lion extends Animal implements Diurnal
-    ```
+- Java
 
-* C#
-    ```C#
-    public class Lion : Animal, // base class must go first
-                        Diurnal // then interface(s) if any
-    ```
+  ```java
+  public class Lion extends Animal implements Diurnal
+  ```
+
+- C#
+  ```C#
+  public class Lion : Animal, // base class must go first
+                      Diurnal // then interface(s) if any
+  ```
 
 ## Abstract
 
-* No impl & must overriden in subclass.
-* Can't call `baseClass.abstractFunc()`, Cause there is no impl.
+- No impl & must overriden in subclass.
+- Can't call `baseClass.abstractFunc()`, Cause there is no impl.
 
 ```c#
 abstract class absClass{
@@ -145,7 +160,7 @@ class implClass : absClass{
 
 ## Virtual
 
-* Can be overriden in subclass / Not forced.
+- Can be overriden in subclass / Not forced.
 
 ```c#
 class MyBaseClass
@@ -253,7 +268,7 @@ private static string Print(Task<HttpResponseMessage> httpTask)
         Console.WriteLine("Result: " + t.Result);
         result = t.Result;
     });
-    continuation.Wait();  
+    continuation.Wait();
     return result;
 }
 ```
@@ -276,8 +291,8 @@ var result = task.Result;
 
 ## Func<T, TResult>
 
-* **Func<TResult\>** — matches a method that takes no arguments, and returns value of type TResuIt.
-* **Func<T..., TResult>** — matches a method that takes no argument of type T, and returns value of type TResuIt.
+- **Func<TResult\>** — matches a method that takes no arguments, and returns value of type TResuIt.
+- **Func<T..., TResult>** — matches a method that takes no argument of type T, and returns value of type TResuIt.
 
 ```csharp
 Func<int, int> addOne = n => n+1;
@@ -344,7 +359,7 @@ string greeting = animal switch
 {
     Dog d => $"hello dog {d.Name}",
     Cat c when c.Name == "Lemmy" => $"Hello motorcat!",
-    Cat c => $"hello cat {c.Name}",                
+    Cat c => $"hello cat {c.Name}",
     _ => string.Empty
 };
 
@@ -360,22 +375,23 @@ void newSwitch(People p){
 
 ## Struct vs Class
 
-* Struct (a value type)
-    1. Defining a struct instead of a class if instances of the type are small and commonly short-lived or are commonly embedded in other objects.
-    1. **X DO NOT** provide a default constructor for a struct.
-    1. **X DO NOT** define mutable value types.
-    1. **✓ DO ensure** that a state where all instance data is set to zero, false, or null (as appropriate) is valid.
-    1. **✓ DO implement** IEquatable<T> on value types.
-    1. **X DO NOT** explicitly extend ValueType. In fact, most languages prevent this.
+- Struct (a value type)
 
-* Class (a reference type)
+  1. Defining a struct instead of a class if instances of the type are small and commonly short-lived or are commonly embedded in other objects.
+  1. **X DO NOT** provide a default constructor for a struct.
+  1. **X DO NOT** define mutable value types.
+  1. **✓ DO ensure** that a state where all instance data is set to zero, false, or null (as appropriate) is valid.
+  1. **✓ DO implement** IEquatable<T> on value types.
+  1. **X DO NOT** explicitly extend ValueType. In fact, most languages prevent this.
 
-* **Differences**
-    0. Reference type assignments copy the reference, whereas value type assignments copy the entire value.
-    1. Reference types are passed by reference, whereas value types are passed by value.
-    2. Reference types are allocated on the heap and garbage-collected, whereas value types are allocated either on the stack or inline in containing types and deallocated when the stack unwinds or when their containing type gets deallocated. Therefore, allocations and deallocations of value types are in general cheaper than allocations and deallocations of reference types.
-    3. Arrays of reference types are allocated out-of-line, meaning the array elements are just references to instances of the reference type residing on the heap. Value type arrays are allocated inline, meaning that the array elements are the actual instances of the value type. Therefore, allocations and deallocations of value type arrays are much cheaper than allocations and deallocations of reference type arrays. In addition, in a majority of cases value type arrays exhibit much better locality of reference.
-    4. `memory usage`. Value types get boxed when cast to a reference type or one of the interfaces they implement. They get unboxed when cast back to the value type. Because boxes are objects that are allocated on the heap and are garbage-collected, too much boxing and unboxing can have a negative impact on the heap, the garbage collector, and ultimately the performance of the application. In contrast, no such boxing occurs as reference types are cast.
+- Class (a reference type)
+
+- **Differences**
+  0. Reference type assignments copy the reference, whereas value type assignments copy the entire value.
+  1. Reference types are passed by reference, whereas value types are passed by value.
+  2. Reference types are allocated on the heap and garbage-collected, whereas value types are allocated either on the stack or inline in containing types and deallocated when the stack unwinds or when their containing type gets deallocated. Therefore, allocations and deallocations of value types are in general cheaper than allocations and deallocations of reference types.
+  3. Arrays of reference types are allocated out-of-line, meaning the array elements are just references to instances of the reference type residing on the heap. Value type arrays are allocated inline, meaning that the array elements are the actual instances of the value type. Therefore, allocations and deallocations of value type arrays are much cheaper than allocations and deallocations of reference type arrays. In addition, in a majority of cases value type arrays exhibit much better locality of reference.
+  4. `memory usage`. Value types get boxed when cast to a reference type or one of the interfaces they implement. They get unboxed when cast back to the value type. Because boxes are objects that are allocated on the heap and are garbage-collected, too much boxing and unboxing can have a negative impact on the heap, the garbage collector, and ultimately the performance of the application. In contrast, no such boxing occurs as reference types are cast.
 
 ## Boxing
 

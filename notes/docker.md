@@ -17,6 +17,8 @@ https://docs.docker.com/engine/examples/dotnetcore/
 - Images are composed of layers of other images.
 - Images are stored in a Docker registry.
 
+An instance of an image is called a container. You have an image, which is a set of layers as you describe. If you start this image, you have a running container of this image. You can have many running containers of the same image.
+
 ### Containers
 
 - If an image is a class, then a container is an instance of a class - a runtime object.
@@ -33,6 +35,12 @@ https://docs.docker.com/engine/examples/dotnetcore/
 ## Command
 
 ```shell
+# sample
+docker run --rm -p 6379:6379 --name redis -v /home/data:/data redis redis-server --appendonly yes
+docker run --rm --network [networkName] --name [ - hostname] -v /home/data:/data redis redis-server --appendonly yes
+
+docker exec -it redis redis-cli
+docker exec -it [contianer] bash
 # DockerHub Auth
 docker login
 # List of Running images
@@ -50,7 +58,7 @@ docker run -i -t busybox:1.2
 # --name x, will name your container, by default will name sth random
 # -p host_port:container_port (access via host_port)
 docker run -d --rm --name xyz -p 8888:8080 busybox:1.2
-# -v
+# -v VOLUME - linknig host directory to our container
 docker run -p 80:80 -v /DirectPath/toProjSource:/var/www/html/ x:tag # Run Docker with float source (Update server on Code Change)
 docker run [container_built_run]
 
@@ -62,6 +70,8 @@ docker log [container id]
 docker images
 # to stop
 docker stop [container id]
+# remove all stopped containers
+docker container prune
 
 # Rename/Tag different name
 docker tag [cont_id] shery/debian:tag
@@ -171,7 +181,7 @@ services:
 - To build containers
 
 ```
-$ docker-compose up [-d to run on background]
+$ docker-compose up [-d to run on background as deamon]
 $ docker-compose down
 $ docker-compose stop # Stop all
 $ docker-compose logs [con_name]

@@ -24,6 +24,10 @@ APPEND key1 value1 //append to the end of the previous key1 value
 
 https://redis.io/topics/persistence
 
+Run redis with `--appendonly yes`
+
+or
+
 ```rs
 <!-- Snapshotting -->
 SAVE // save snapshoot
