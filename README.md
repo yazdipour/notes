@@ -1,19 +1,17 @@
 # Notes
 
-- [Book](notes/book.md)
-- [Deutsch](notes/languages/deutsch.md)
-
-* [Blockchain](notes/blockchain.md)
-* [BitTech](notes/biotech.md)
-* [Algorithm](notes/algorithm.md)
-* [Cloud](notes/cloud.md)
-* [CI/CD](notes/cicd.md)
-* [Crawling](notes/crawling.md)
-* [DevOps](notes/devops.md)
-* [Docker](notes/docker.md)
-* [‍Security](notes/security.md)
-* [GIS](notes/gis.md)
-* [IDE](notes/ide.md)
+- [Book Resource](notes/book.md)
+- [Blockchain](notes/blockchain.md)
+- [BitTech](notes/biotech.md)
+- [Algorithm](notes/algorithm.md)
+- [Cloud](notes/cloud.md)
+- [CI/CD](notes/cicd.md)
+- [Crawling](notes/crawling.md)
+- [DevOps](notes/devops.md)
+- [Docker](notes/docker.md)
+- [‍Security](notes/security.md)
+- [GIS](notes/gis.md)
+- [IDE](notes/ide.md)
 
 # Principles
 
@@ -156,6 +154,6 @@
 - https://exercism.io
 - https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_213
 
-## Did not understand
+### JS
 
-- https://medium.com/@csharpwriter/introduction-to-option-type-in-csharp-a4d540988411
+- [Functional JS](https://egghead.io/courses/professor-frisby-introduces-composable-functional-javascript)
