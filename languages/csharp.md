@@ -1,5 +1,7 @@
 # CSharp
 
+C# -> roslyn compiler -> CLR[.exe/.dll] -> JIT Compiler -> Jitted Native Executable
+
 ## Popular QA
 
 - string is alias of System.String (Use String for Class mothods and ref / Use string for Variables)

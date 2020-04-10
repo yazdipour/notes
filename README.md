@@ -1,20 +1,7 @@
-# Notes
-
-- [Book Resource](notes/book.md)
-- [Blockchain](notes/blockchain.md)
-- [BitTech](notes/biotech.md)
-- [Algorithm](notes/algorithm.md)
-- [Cloud](notes/cloud.md)
-- [CI/CD](notes/cicd.md)
-- [Crawling](notes/crawling.md)
-- [DevOps](notes/devops.md)
-- [Docker](notes/docker.md)
-- [‍Security](notes/security.md)
-- [GIS](notes/gis.md)
-- [IDE](notes/ide.md)
-
 # Principles
 
+- [‍Security](notes/security.md)
+- [Docker](notes/docker.md)
 - [Programming Principles](principles/principles.md)
 - [Architecture Patterns](principles/architecture.md)
 - [Api Design](principles/api-design.md)
@@ -133,8 +120,6 @@
 - [networking](business/networking.md)
 - [Program/Project Management](business/pm.md)
 
----
-
 ## Tools
 
 - [lib4dev](http://www.lib4dev.com/)
@@ -143,3 +128,15 @@
 - [cheatsheet](https://guif.re/)
 - [slacklist](https://slacklist.info/)
 - [Draw Diagrams](https://www.draw.io/)
+
+# Notes
+
+- [Book Resource](notes/book.md)
+- [Blockchain](notes/blockchain.md)
+- [BitTech](notes/biotech.md)
+- [Algorithm](notes/algorithm.md)
+- [Cloud](notes/cloud.md)
+- [CI/CD](notes/cicd.md)
+- [DevOps](notes/devops.md)
+- [GIS](notes/gis.md)
+- [IDE](notes/ide.md)
