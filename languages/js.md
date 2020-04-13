@@ -4,6 +4,13 @@
 - [Find up to date snippets for common JavaScript use cases](https://codetogo.io/)
 - [Obfuscator](http://javascriptobfuscator.com/)
 
+## JSON
+
+```js
+JSON.stringify(obj);
+JSON.parse(str);
+```
+
 ## Date
 
 - `new Date().toLocaleString("fa-IR-ca-persian")`

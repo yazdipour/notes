@@ -1,7 +1,7 @@
 # Kotlin
 
-* https://youtu.be/6P20npkvcb8
-* https://kotlinlang.org/docs/reference/
+- https://youtu.be/6P20npkvcb8
+- https://kotlinlang.org/docs/reference/
 
 ## Basic
 
@@ -57,6 +57,9 @@ for (child in e.children){do(child)} == e.children.forEach(::do)
 ```kt
 val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
 var arr: Array<Int> = arrayOf(2,5)
+val nulls = arrayOfNulls<String>(size) //equivalent in Java: new String[size]
+val strings = Array(size) { "n = $it" }
+val boxedInts = arrayOfNulls<Int>(size) //equivalent in Java: new Integer[size]
 
 var arr = arrayOf("a","ge")
 var lst = listOf("a","ge")  //immutable by default
