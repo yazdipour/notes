@@ -23,16 +23,13 @@
         repo: "https://github.com/yazdipour/notes",
         basePath: "https://raw.githubusercontent.com/yazdipour/notes/master/",
         logo: "favicon.png",
-        search: "auto",
+        search: {
+          depth: 2
+        }
         loadNavbar: true,
         loadSidebar: false,
         themeColor: "#C4E538",
-        auto2top: true,
-        // ,
-        // markdown: {
-        //   smartypants: true,
-        //   baseUrl: 'https://raw.githubusercontent.com/yazdipour/notes/master/',
-        // }
+        auto2top: true
       };
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
