@@ -24,12 +24,10 @@
         basePath: "https://raw.githubusercontent.com/yazdipour/notes/master/",
         logo: "favicon.png",
         search: {
-          depth: 2
-        }
-        loadNavbar: true,
-        loadSidebar: false,
+          depth: 6,
+        },
         themeColor: "#C4E538",
-        auto2top: true
+        auto2top: true,
       };
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
