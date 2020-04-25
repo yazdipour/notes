@@ -31,6 +31,7 @@
 
 ## DataSets
 
+* http://datasetsearch.research.google.com
 * Iran Open DataSets: https://virgool.io/@NimaShafiezadeh/فهرست-سایتهای-ایرانی-که-دادههای-باز-منتشر-میکنند-zenlqrfgddkt
 * https://gallery.azure.ai/
 * [[2 Million Politicians tweet Dataset](https://pastebin.com/1beXduu0)

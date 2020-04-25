@@ -4,9 +4,9 @@ https://java-design-patterns.com/patterns/
 
 ## Samples
 
-* Lynda Course in Java https://github.com/derekwzheng/design-patterns
-* https://github.com/iluwatar/java-design-patterns/
-* https://sourcemaking.com/design_patterns/ 
+- Lynda Course in Java https://github.com/derekwzheng/design-patterns
+- https://github.com/iluwatar/java-design-patterns/
+- https://sourcemaking.com/design_patterns/
 
 ## Creational Patterns
 
@@ -14,18 +14,18 @@ all about class instantiation
 
 ### Object Pool / Resource Pool
 
-* Significant performance boost
-* it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
-* How? Have to have `public abstract class ObjectPool<T>` with some abstract methods of managing pool of objects. Then Classes need to extends `ObjectPool<X>` to impl reusability and ... logics base on the usage.
-* More Details: https://sourcemaking.com/design_patterns/object_pool
-* Sample: https://sourcemaking.com/design_patterns/object_pool/java
+- Significant performance boost
+- it is most effective in situations where the cost of initializing a class instance is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.
+- How? Have to have `public abstract class ObjectPool<T>` with some abstract methods of managing pool of objects. Then Classes need to extends `ObjectPool<X>` to impl reusability and ... logics base on the usage.
+- More Details: https://sourcemaking.com/design_patterns/object_pool
+- Sample: https://sourcemaking.com/design_patterns/object_pool/java
 
 ### Prototype
 
 Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
-* More Details: https://sourcemaking.com/design_patterns/prototype
-* Sample2: https://sourcemaking.com/design_patterns/prototype/java/2
+- More Details: https://sourcemaking.com/design_patterns/prototype
+- Sample2: https://sourcemaking.com/design_patterns/prototype/java/2
 
 ```java
 //PrototypeFactory
@@ -61,8 +61,8 @@ private final String NAME = "Tom";
 
 ### Factory Method (Abstract Factory Similar)
 
-* Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
-* Sample: https://sourcemaking.com/design_patterns/factory_method/java/1
+- Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+- Sample: https://sourcemaking.com/design_patterns/factory_method/java/1
 
 ```java
 public class PizzaFactory1 extends IPizzaFactory{
@@ -112,8 +112,8 @@ public class Singleton {
 
 ### Builder
 
-* Instead of Passing all obj property by Constructor, 
-* Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+- Instead of Passing all obj property by Constructor,
+- Separate the construction of a complex object from its representation so that the same construction process can create different representations.
 
 ```c#
 // Usage
@@ -135,7 +135,7 @@ define ways to compose objects to obtain new functionality.
 
 ### Adapter
 
-* We have Line,Rectangle Classes with no parent and with same `Draw()` method. Now we create `IShape` interface with `DrawAdapter & LineAdapter` implementing `IShape`.
+- We have Line,Rectangle Classes with no parent and with same `Draw()` method. Now we create `IShape` interface with `DrawAdapter & LineAdapter` implementing `IShape`.
 
 ```java
 class Line {
@@ -206,35 +206,35 @@ public class Mocha extends CondimentDecorator {
 
 ### Bridge (Handle-Body Pattern)
 
-* Separates interface from its implementation.
-* Ex. We have `Switch` interface, but in each Class we have different impl of `Switch`.
-![Bridge](https://sourcemaking.com/files/v2/content/patterns/Bridge_example.png)
+- Separates interface from its implementation.
+- Ex. We have `Switch` interface, but in each Class we have different impl of `Switch`.
+  ![Bridge](https://sourcemaking.com/files/v2/content/patterns/Bridge_example.png)
 
 ### Composite
 
-* A tree structure of simple and composite objects
-* 1-to-many "has a" up the "is a" hierarchy
+- A tree structure of simple and composite objects
+- 1-to-many "has a" up the "is a" hierarchy
 
 ### Facade
 
-* A single class that represents an entire subsystem
-* Wrap a complicated subsystem with a simpler interface.
+- A single class that represents an entire subsystem
+- Wrap a complicated subsystem with a simpler interface.
 
 ### Flyweight
 
-* Use sharing to support large numbers of fine-grained objects efficiently.
+- Use sharing to support large numbers of fine-grained objects efficiently.
 
 ### Proxy
 
-* Just a wrapper for other libraries!
-* X_LIBRARY <---> PROXY <---> MyApp
-* Provide a surrogate or placeholder for another object to control access to it.
-* Sample https://sourcemaking.com/design_patterns/proxy/java/1
+- Just a wrapper for other libraries!
+- X_LIBRARY <---> PROXY <---> MyApp
+- Provide a surrogate or placeholder for another object to control access to it.
+- Sample https://sourcemaking.com/design_patterns/proxy/java/1
 
 ## Behavioral Patterns
 
-* most specifically concerned with communication between objects.
-* https://sourcemaking.com/design_patterns/behavioral_patterns
+- most specifically concerned with communication between objects.
+- https://sourcemaking.com/design_patterns/behavioral_patterns
 
 ### Chain of Responsibility
 
@@ -254,14 +254,14 @@ Defines simplified communication between classes
 
 ### Memento
 
-* Capture and restore an object’s internal state
-* Promote undo or rollback to full object status.
-* A magic cookie that encapsulates a "check point" capability.
-* https://sourcemaking.com/design_patterns/memento/
+- Capture and restore an object’s internal state
+- Promote undo or rollback to full object status.
+- A magic cookie that encapsulates a "check point" capability.
+- https://sourcemaking.com/design_patterns/memento/
 
 ### Template
 
-* Defer the exact steps of an algorithm to a subclass
+- Defer the exact steps of an algorithm to a subclass
 
 ### Visitor
 
@@ -298,7 +298,7 @@ public class DinerMenuIterator implements Iterator<String> {
     public String next() { return list[position++]; }
 
     public boolean hasNext() { return !(position >= list.length || list[position] == null);}
-  
+
     public void remove() {
         if (position <= 0)
             throw new IllegalStateException
@@ -347,16 +347,16 @@ public class SoldState implements State {
 
 ### Observer
 
-* A way of notifying change to a number of classes. Publisher will send changes to Subscribers, like News Mail Services.
-* It is loosely coupled
-* Can Impl by yourself, but there are lots of prewritten libraries we can use.
-* Observable = Publisher = Subject
-    * `registerObserver()`
-    * `removeObserver()`
-    * `notifyObserver()`
-    * `setChanged()`
-* Observer = Subscriber = Dependent
-    * `update()`
+- A way of notifying change to a number of classes. Publisher will send changes to Subscribers, like News Mail Services.
+- It is loosely coupled
+- Can Impl by yourself, but there are lots of prewritten libraries we can use.
+- Observable = Publisher = Subject
+  - `registerObserver()`
+  - `removeObserver()`
+  - `notifyObserver()`
+  - `setChanged()`
+- Observer = Subscriber = Dependent
+  - `update()`
 
 Sample WeatherData Publisher
 
@@ -395,7 +395,7 @@ public class StatisticsDisplay implements Observer {
 
 Difference between Observer, Pub/Sub
 
-![](assets/observer-pub.jpg)
+![observer publisher](assets/observer-pub.jpg)
 
 Observer/Observable pattern is mostly implemented in a synchronous way, i.e. the observable calls the appropriate method of all its observers when some event occurs. The Publisher/Subscriber pattern is mostly implemented in an asynchronous way (using message queue).
 
@@ -403,9 +403,9 @@ In the Observer/Observable pattern, the observers are aware of the observable. W
 
 ### Strategy (x Has y Behavior)
 
-* In Parent Class, put behaviors with Interfaces so you cloud be able to modify behaviors in Child class.
-* Ex. in IDuck, we have IFlyBehavior object, so that in the RubberDuck class, you set its custom behavior like, FlyBehaviorRubber.
-* It's all about using Interfaces when you want to change implementations.
+- In Parent Class, put behaviors with Interfaces so you cloud be able to modify behaviors in Child class.
+- Ex. in IDuck, we have IFlyBehavior object, so that in the RubberDuck class, you set its custom behavior like, FlyBehaviorRubber.
+- It's all about using Interfaces when you want to change implementations.
 
 ```java
 public abstract class Duck {
