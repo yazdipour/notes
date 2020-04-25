@@ -1,13 +1,13 @@
 # Python
 
-* http://pythonfiddle.com/
-* https://github.com/Junnplus/awesome-python-books
-* https://radimrehurek.com/gensim/
-* https://www.pythonsheets.com/
-* https://godjango.com/
-* [An A-Z of useful Python tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747)
-* [Writing Comments in Python](https://realpython.com/python-comments-guide/)
-* [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
+- http://pythonfiddle.com/
+- https://github.com/Junnplus/awesome-python-books
+- https://radimrehurek.com/gensim/
+- https://www.pythonsheets.com/
+- https://godjango.com/
+- [An A-Z of useful Python tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747)
+- [Writing Comments in Python](https://realpython.com/python-comments-guide/)
+- [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
 
 ![structure](./assets/py/struct.jpg)
 
@@ -16,7 +16,7 @@
 ![webpy](./assets/py/webpy.jpg)
 ![webpy](./assets/py/webpy.jpg)
 
-## VENV
+## vEnv
 
 ```cmd
 cd projDir
@@ -61,8 +61,11 @@ Var=8 if(1==1) else 9 # ?:
 import sys; sys.argv # Get Input from CLI
 x, _, y = (1,2,3) # x=1, y=3
 x, *_, y = (1,2,3,4,5,6) # x=1, y=6, ignores in between
+```
 
-# String - immutable
+## String - immutable
+
+```py
 # ' for words | " for sentence | """ for multiline in CLI
 f'Hello {obj}' # string format
 import re # Regex Lib
@@ -76,8 +79,11 @@ mStr.strip("-") # trim - from start & end
 mStr.lstrip() # left trim
 mStr.rstrip() # right trim
 mStr[2]= 'a' # ERROR - immutable
+```
 
-# Raise Exception
+## Raise Exception
+
+```py
 raise <ExpType>, 'msg' # one way
 assert(condition) # or if assert(false) then will raises exception
 # Try Catch
@@ -89,7 +95,11 @@ else:
 	# if no exception appeared
 finally:
 	# run this no matter what
-# ARRAY
+```
+
+## ARRAY
+
+```py
 arr.remove(obj)
 del arr[1:3] #[1,2,3,4,5] >> [1,5]
 list(mTuple) # tuple to list
@@ -101,13 +111,20 @@ x = [1, 2, 3]; x.extend([4, 5]) # [1, 2, 3, 4, 5]
 l.pop(obj) # return and remove
 b = a # copy by reference
 b = a[:] # copy by value
+```
 
-# TUPLE - immutable
+## TUPLE - immutable
+
+```py
 tuple(mList) # list to tuple
 def foo(*items): # like foo(int.. items) in JAVA
 	for i in items:
 		print(i)
-# DICTIONARY
+```
+
+## DICTIONARY
+
+```py
 zipped = zip(keysArr, valueArr) # [1,2],[3,4] > [(1,3), (2,4)]
 (keysArr, valueArr) = *zipped # unzipping
 d.items()
@@ -117,7 +134,7 @@ def f(**dic):
 		print(i,dic[i]2)
 ```
 
-## __name__
+## **name**
 
 ```py
 # when run as the main program.
@@ -126,7 +143,7 @@ __name__ = "__main__" ### python foo.py
 __name__ = "foo" ### import foo
 ```
 
-## __str__, __repr__ functions
+## **str**, **repr** functions
 
 ```py
 def __repr__(self):
@@ -186,7 +203,7 @@ def foo():
 def foo(*arg):
 ```
 
-## * & **
+## \* & \*\*
 
 ```python
 >>> def z(x):print(x);
@@ -259,11 +276,14 @@ print(b is c) #False
 ```
 
 > ### برابری Equality
+>
 > توی پایتون وقتی می‌خواهیم ببینم دو آبجکت با هم برابر هستند یا خیر، از عملگرهای == و =! استفاده می‌کنیم.
+>
 > ### هویت Identity
-> در مقابل‌ این عملگرها، دوتا عملگر دیگه هم داریم که is و is not هستند. is بررسی می‌کنه که آیا این آبجکت دقیقا یک آبجکت هستند یا نه. دقت کنید،  یعنی اون دو متغییر دقیقاً در یک مکان از حافظه قرار گرفتند 
+>
+> در مقابل‌ این عملگرها، دوتا عملگر دیگه هم داریم که is و is not هستند. is بررسی می‌کنه که آیا این آبجکت دقیقا یک آبجکت هستند یا نه. دقت کنید، یعنی اون دو متغییر دقیقاً در یک مکان از حافظه قرار گرفتند
 
-## _, __
+## \_, \_\_
 
 ```python
 class X:

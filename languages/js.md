@@ -1,5 +1,6 @@
 # JS
 
+- [Recom Plugins](https://twitter.com/hunter1371/status/1253957347648704512)
 - [JavaScript benchmarks](https://perf.link/)
 - [Find up to date snippets for common JavaScript use cases](https://codetogo.io/)
 - [Obfuscator](http://javascriptobfuscator.com/)

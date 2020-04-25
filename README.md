@@ -30,8 +30,9 @@
 
 - [Java](languages/java.md)
 - [Js](languages/js.md)
-  _ [VueJS](languages/vue.md)
-  _ [TypeScript](languages/ts.md)
+  - [VueJS](languages/vue.md)
+  - [TypeScript](languages/ts.md)
+  - [React](languages/react.md)
 - [Php](languages/php.md)
 - [Cpp](languages/cpp.md)
 - [C#](languages/csharp.md)
