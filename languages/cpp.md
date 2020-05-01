@@ -6,6 +6,20 @@
 
 Using `gdb` http://users.ece.utexas.edu/~adnan/gdb-refcard.pdf
 
+- `b` - Puts a breakpoint at the current line
+- `d N` - Deletes breakpoint number N
+- `info break` - list breakpoints
+- `c` - Continues running the program until the next breakpoint or error
+- `r` - Runs the program until a breakpoint or error
+- `f` - Runs until the current function is finished
+- `s` - Runs the next line of the program
+- `n` - Like s, but it does not step into functions
+- `p var` - Prints the current value of the variable "var"
+- `bt` - Prints a stack trace
+- `u` - Goes up a level in the stack
+- `d` - Goes down a level in the stack
+- `q` - Quits gdb
+
 ## Pointer
 
 - `*(adr)` deref_func = return val inside adr
