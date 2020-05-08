@@ -2,10 +2,11 @@
 
 - [UI Inspiration](https://www.designnotes.co/)
 - [awwwards](https://awwwards.com/)
+- <https://github.com/bradtraversy/design-resources-for-developers>
 
 ## Fonts
 
-- https://fonts.adobe.com/collections/fonts-for-clean-stylish-web-experiences
+- <https://fonts.adobe.com/collections/fonts-for-clean-stylish-web-experiences>
 
 ## Color
 

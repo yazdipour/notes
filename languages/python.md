@@ -130,8 +130,8 @@ zipped = zip(keysArr, valueArr) # [1,2],[3,4] > [(1,3), (2,4)]
 d.items()
 d.has_key(k); d.fromkeys(ks)
 def f(**dic):
-	for i in dic:
-		print(i,dic[i]2)
+ for i in dic:
+  print(i,dic[i]2)
 ```
 
 ## **name**
@@ -141,6 +141,14 @@ def f(**dic):
 __name__ = "__main__" ### python foo.py
 # when it's imported from another module.
 __name__ = "foo" ### import foo
+#
+# EXAMPLE
+#
+print "Always executed"
+if __name__ == "__main__":
+ print "Executed when invoked directly"
+else:
+ print "Executed when imported"
 ```
 
 ## **str**, **repr** functions

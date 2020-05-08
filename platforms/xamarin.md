@@ -2,24 +2,23 @@
 
 ## QuickRef
 
-* [Shell](https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx)
-* [Persian Calender](https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms)
-* [Improve BuildTimes](https://github.com/brminnick/ImproveXamarinBuildTimes)
-* [ConnectionView](https://xamgirl.com/handling-connection-changes-in-xamarin-forms/)
-* Read File: `var txt = File.ReadAllText("x.txt");`
-* Gray hLine: `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
-* [Drop Shadow on Android Bottom Navigation](https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/)
-* [FontAwesome](https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/)
-* [Optimize Android Build](https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/)
-* [Hyperlink in Xamarin.Forms Label](https://xamarinhelp.com/hyperlink-in-xamarin-forms-label/)
-* [Hyperlink in Xamarin.Forms Label2](http://www.xamboy.com/2019/09/17/hashtags-detection-in-xamarin-forms/)
-* [Loading Shadow](https://www.syncfusion.com/blogs/post/introducing-xamarin-forms-shimmer.aspx)
+- [Shell](https://nicksnettravels.builttoroam.com/post/2019/04/12/Shell-in-v4-of-XamarinForms-and-Visual-Studio-2019.aspx)
+- [Persian Calender](https://www.dotnettips.info/post/2955/تقویم-شمسی-در-xamarin-forms)
+- [Improve BuildTimes](https://github.com/brminnick/ImproveXamarinBuildTimes)
+- [ConnectionView](https://xamgirl.com/handling-connection-changes-in-xamarin-forms/)
+- Read File: `var txt = File.ReadAllText("x.txt");`
+- Gray hLine: `<BoxView HeightRequest="1" Margin="15,0" BackgroundColor="#eee" />`
+- [Drop Shadow on Android Bottom Navigation](https://montemagno.com/xamarin-forms-drop-shadow-elevation-on-android-bottom-navigation-tabbedpage/)
+- [Optimize Android Build](https://devblogs.microsoft.com/xamarin/optimize-xamarin-android-builds/)
+- [Hyperlink in Xamarin.Forms Label](https://xamarinhelp.com/hyperlink-in-xamarin-forms-label/)
+- [Hyperlink in Xamarin.Forms Label2](http://www.xamboy.com/2019/09/17/hashtags-detection-in-xamarin-forms/)
+- [Loading Shadow](https://www.syncfusion.com/blogs/post/introducing-xamarin-forms-shimmer.aspx)
 
 ## Theme
 
-* [Modernizing iOS Apps for Dark Mode with Xamarin](https://devblogs.microsoft.com/xamarin/modernizing-ios-apps-dark-mode-xamarin/)
-* [Dark/Light Theme](https://danielhindrikes.se/index.php/2019/10/03/darkmode-and-lightmode-with-mergeddictionaries/)
-* [Xamarin: Creating a Dark Mode Splash Screen](https://codetraveler.io/2019/10/11/creating-a-dark-mode-splash-screen/)
+- [Modernizing iOS Apps for Dark Mode with Xamarin](https://devblogs.microsoft.com/xamarin/modernizing-ios-apps-dark-mode-xamarin/)
+- [Dark/Light Theme](https://danielhindrikes.se/index.php/2019/10/03/darkmode-and-lightmode-with-mergeddictionaries/)
+- [Xamarin: Creating a Dark Mode Splash Screen](https://codetraveler.io/2019/10/11/creating-a-dark-mode-splash-screen/)
 
 ## Native Forms
 
@@ -32,7 +31,7 @@ NavigationController.PushViewController(settingsController, true);
 
 ## XAMLC and Compiled Bindings (x:Bind)
 
-https://xamarinhelp.com/improving-xamarin-forms-startup-performance/
+<https://xamarinhelp.com/improving-xamarin-forms-startup-performance/>
 
 ```c#
 [assembly:XamlCompilation (XamlCompilationOptions.Compile)]
@@ -58,11 +57,11 @@ Forms.Init(this,bundle);
 
 ## CollectionView
 
-* Better than ListView
-* Uses RecyclerView on Android
-* You provide the layout: Grid, Horizontal, Vertical, FlexLayout
-* Context Menu
-* Gestures
+- Better than ListView
+- Uses RecyclerView on Android
+- You provide the layout: Grid, Horizontal, Vertical, FlexLayout
+- Context Menu
+- Gestures
 
 ```c#
 <CollectionView x:Name="Spaces"/>
@@ -88,8 +87,8 @@ Spaces.ItemsSource = items;
 
 ```cs
 Device.OnPtatform (
-	IOS: () =>{ new Thickness(Padding = new Thickness(0,20,0,0);},
-	Android: ( ) => {}
+ IOS: () =>{ new Thickness(Padding = new Thickness(0,20,0,0);},
+ Android: ( ) => {})
 
 #if __ANDROID__
 Using …
@@ -114,14 +113,14 @@ Using …
 We got IProductsService(interface), ProductsService(impl) and our ViewModel constructor depends on IProductsService.
 `public ProductsViewModel(IProductsService productsService){}`
 
-* To access ViewModel Dependecy in View `page.xaml.cs` (The Easy Way)
+- To access ViewModel Dependecy in View `page.xaml.cs` (The Easy Way)
 
 ```c#
 BindingContext = ServiceLocator.Current.GetInstance(typeof(ProductsViewModel));
 // OR ?NotSure? BindingContext = ServiceLocator.Current.GetInstance<ProductViewModel>();
 ```
 
-* And we have to link interface and its impl inside DependecyLocator/IoC in `App.xaml.cs` class.
+- And we have to link interface and its impl inside DependecyLocator/IoC in `App.xaml.cs` class.
 
 ```c#
 public App(ITextToSpeech textToSpeech){
@@ -157,16 +156,16 @@ in Unit Test
 
 ## Dependency_Service
 
-DependencyService allows apps to call into platform-specific functionality from shared code. 
+DependencyService allows apps to call into platform-specific functionality from shared code.
 
-* 1st Create Interface in SharedProj
+- 1st Create Interface in SharedProj
 
 ```c#
 public interface ITextToSpeech {
     void Speak ( string text ); //note that interface members are public by default
 ```
 
-* 2nd Implement per Platform
+- 2nd Implement per Platform
 
 ```c#
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -177,7 +176,7 @@ namespace UsingDependencyService.iOS
         public void Speak (string text)
 ```
 
-* 3rd Use it
+- 3rd Use it
 
 ```C#
 DependencyService.Get<ITextToSpeech>().Speak("Hello");
@@ -185,19 +184,21 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello");
 
 ## Font
 
-* https://montemagno.com/using-font-icons-in-xamarin-forms-goodbye-images-hello-fonts/
-* ANDROID: Copy Fonts inside Android>Assets. Set Build action: AndroidAsset 
-* IOS: Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
+- [FontAwesome](https://www.tsjdev-apps.de/fontawesome-in-xamarin-forms-apps/)
+- <https://dansiegel.net/post/2020/05/07/icon-fonts-made-easy>
+- <https://montemagno.com/using-font-icons-in-xamarin-forms-goodbye-images-hello-fonts/>
+- ANDROID: Copy Fonts inside Android>Assets. Set Build action: AndroidAsset
+- IOS: Copy Fonts inside iOS>Resources and `Fonts provided by application:xx-Medium.ttf`.
 
 ```xml
-In BundleResource 
+In BundleResource
 <key>UIAppFonts</key>
 <array>
   <string>IndieFlower.ttf</string>
 </array>
 ```
 
-* Usage
+- Usage
 
 ```xml
 <!-- App.xaml -->
@@ -230,7 +231,7 @@ image.GestureRecognizers.Add(tapGestureRecognizer);
 ```xml
 <Image>
     <Image.GestureRecognizers>
-        <TapGestureRecognizer 
+        <TapGestureRecognizer
             Command="{Binding Source={x:Reference Root}, Path=BindingContext.JobSelectedCommand}"
             CommandParameter="{Binding Id}" NumberOfTapsRequired="1" />
   </Image.GestureRecognizers>
@@ -272,7 +273,7 @@ public App()
 
 Behaviors are written for a specific control type (or a superclass that can apply to many controls), and they should only be added to a compatible control.
 
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/creating
+<https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/creating>
 
 ```xml
 <Entry Placeholder="Enter a System.Double">
@@ -310,7 +311,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 ```cs
 public MainPage() {
-    Initializecomponent(); 
-    if(Device.Idiom == TargetIdiom.Desktop) this.Content = new DesktopView(); 
+    Initializecomponent();
+    if(Device.Idiom == TargetIdiom.Desktop) this.Content = new DesktopView();
     else this.Content = new DefaultView();
 ```

@@ -1,4 +1,6 @@
-# Principles
+# Shahriar's Notes
+
+## Principles
 
 - [‍Security](notes/security.md)
 - [Docker](notes/docker.md)
@@ -13,20 +15,23 @@
 - [Test](principles/test.md)
   - [UnitTest](principles/unit-test.md)
 - [SOCKETS](principles/socket.md)
-- [Control Engineering](principles/control-engineering.md)
-- [System Engineering](principles/system-engineering.md)
-- [System Identification](principles/system-identification.md)
-- [System Optimization](principles/system-optimization.md)
-- [System Security](principles/system-security.md)
+- [Blockchain](notes/blockchain.md)
+- [BitTech](notes/biotech.md)
+- [Algorithm](notes/algorithm.md)
+- [Cloud](notes/cloud.md)
+- [CI/CD](notes/cicd.md)
+- [DevOps](notes/devops.md)
+- [GIS](notes/gis.md)
+- [IDE](notes/ide.md)
 
-# 3D
+## 3D
 
 - [Resources](3d/resources.md)
 - [Concepts](3d/concepts.md)
 - [Unity](3d/unity.md)
 - [VR-AR](3d/vr.md)
 
-# Languages
+## Languages
 
 - [Java](languages/java.md)
 - [Js](languages/js.md)
@@ -35,8 +40,8 @@
   - [React](languages/react.md)
 - [Php](languages/php.md)
 - [Cpp](languages/cpp.md)
-- [C#](languages/csharp.md)
-- [F#](languages/fsharp.md)
+- [C##](languages/csharp.md)
+- [F##](languages/fsharp.md)
 - [Go](languages/go.md)
 - [Swift / iOS](languages/swift.md)
 - [Python](languages/python.md)
@@ -45,7 +50,7 @@
 - [Kotlin](languages/kotlin.md)
 - [Rust](languages/rust.md)
 
-# Platforms
+## Platforms
 
 - [Web](platforms/web.md)
 - [ASP](platforms/asp.md)
@@ -59,7 +64,7 @@
 - [Extensions](platforms/extensions.md)
 - [IOT](platforms/iot.md)
 
-# DATA
+## Data Store
 
 - [redis](db/redis.md)
 - [neo4j](db/neo4j.png)
@@ -67,41 +72,42 @@
 - [Distributed Data Management](db/distributed.md)
 - [Information Systems](db/info-sys.md)
 
-# Machine Leanring
+## Data Science
 
 - [Machine Leanring](ml/ml.md)
 - [Image Processing](ml/ip.md)
 - [Natural language processing](ml/nlp.md)
 - [Pytorch](ml/pytorch.md)
+- [Hadoop](ml/hadoop.md)
 
-# CLI
+## CLI
 
 - [Vim](cli/vim.md)
 - [Linux](cli/linux.md)
 - [Powershell / Windows](cli/powershell.md)
 - [Git](cli/git.md)
 
-# Network
+## Network
 
 - [Basics](network/basics.md)
 - [CCNA](network/ccna.md)
 - [MCSE](network/mcse.md)
 - [Mobile](network/mobile.md)
 
-# Math
+## Math
 
 - [Math](math/math.md)
 - [Latex](math/latex.md)
 - [Maple](math/maple.md)
 - [Matlab](math/matlab.md)
 
-# UI
+## UI
 
 - [UI](ui/ui.md)
 - [Css](ui/css.md)
 - [Sass](ui/sass.md)
 
-# Job/Interview
+## Job/Interview
 
 1. [Jobs](job/jobs.md)
 1. [Hackathons](job/hackathons.md)
@@ -113,7 +119,7 @@
 1. [Apple](job/Apple.md)
 1. [Facebook](job/Facebook.md)
 
-# Business
+## Business
 
 - [business](business/business.md)
 - [law](business/law.md)
@@ -130,15 +136,4 @@
 - [cheatsheet](https://guif.re/)
 - [slacklist](https://slacklist.info/)
 - [Draw Diagrams](https://www.draw.io/)
-
-# Notes
-
 - [Book Resource](notes/book.md)
-- [Blockchain](notes/blockchain.md)
-- [BitTech](notes/biotech.md)
-- [Algorithm](notes/algorithm.md)
-- [Cloud](notes/cloud.md)
-- [CI/CD](notes/cicd.md)
-- [DevOps](notes/devops.md)
-- [GIS](notes/gis.md)
-- [IDE](notes/ide.md)
