@@ -1,15 +1,19 @@
 # Architecture / Compound Patterns
 
-* Android MVC, MVP, and MVVM: https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
-* MVVM Example: https://medium.com/@husayn.hakeem/android-by-example-mvvm-data-binding-introduction-part-1-6a7a5f388bf7
+- Android MVC, MVP, and MVVM: https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/
+- MVVM Example: https://medium.com/@husayn.hakeem/android-by-example-mvvm-data-binding-introduction-part-1-6a7a5f388bf7
+
+## MVU
+
+![mvu-mvvm](assets/mvu-mvvm.jpg)
 
 ## MVC
 
-* Combines Strategy, Observer and Composite patterns
-![mvp_blueprint](assets/mvc_blueprint.png)
-* Model — the data layer, responsible for managing the business logic and handling network or database API.
-* View — the UI layer — a visualisation of the data from the Model.
-* Controller — the logic layer, gets notified of the user’s behavior and updates the Model as needed.
+- Combines Strategy, Observer and Composite patterns
+  ![mvp_blueprint](assets/mvc_blueprint.png)
+- Model — the data layer, responsible for managing the business logic and handling network or database API.
+- View — the UI layer — a visualisation of the data from the Model.
+- Controller — the logic layer, gets notified of the user’s behavior and updates the Model as needed.
 
 Two types of MVC:
 
@@ -25,9 +29,9 @@ For the cases when the Controller is not the only class that modifies the Model,
 
 ## MVC - Android
 
-* The Activities, Fragments and Views should be the Views
-* The Controllers should be separate classes that don’t extend or use any Android class, and same for the Models.
-* One problem arises when connecting the Controller to the View, since the Controller needs to tell the View to update. In the **passive Model** MVC architecture, the Controller needs to hold a reference to the View. The easiest way of doing this, while focusing on testing, is to have a BaseView interface, that the Activity/Fragment/View would extend. So, the Controller would have a reference to the BaseView.
+- The Activities, Fragments and Views should be the Views
+- The Controllers should be separate classes that don’t extend or use any Android class, and same for the Models.
+- One problem arises when connecting the Controller to the View, since the Controller needs to tell the View to update. In the **passive Model** MVC architecture, the Controller needs to hold a reference to the View. The easiest way of doing this, while focusing on testing, is to have a BaseView interface, that the Activity/Fragment/View would extend. So, the Controller would have a reference to the BaseView.
 
 ## MVC - Web
 
@@ -54,19 +58,19 @@ For the cases when the Controller is not the only class that modifies the Model,
 
 ![mvp_blueprint](assets/mvp_blueprint.png)
 
-* Model - the data layer. Responsible for handling the business logic and communication with the network and database layers.
-* View - the UI layer. Displays the data and notifies the Presenter about user actions.
-* Presenter - retrieves the data from the Model, applies the UI logic and manages the state of the View, decides what to display and reacts to user input notifications from the View.
+- Model - the data layer. Responsible for handling the business logic and communication with the network and database layers.
+- View - the UI layer. Displays the data and notifies the Presenter about user actions.
+- Presenter - retrieves the data from the Model, applies the UI logic and manages the state of the View, decides what to display and reacts to user input notifications from the View.
 
 ## MVP - Android
 
-* Model: The retrieval of tasks is done with the help of RxJava:
+- Model: The retrieval of tasks is done with the help of RxJava:
 
 ```java
 public Observable<List<Task>> getTasks(){  ...
 ```
 
-* ModelTest: The Model receives as parameters in the constructor interfaces of the local and remote data sources, making the Model completely independent from any Android classes and thus easy to unit test with JUnit
+- ModelTest: The Model receives as parameters in the constructor interfaces of the local and remote data sources, making the Model completely independent from any Android classes and thus easy to unit test with JUnit
 
 ```java
 @Mock
@@ -89,7 +93,7 @@ public void getTasks_requestsAllTasksFromLocalDataSource() {
 }
 ```
 
-* View: The View works with the Presenter to display the data and it notifies the Presenter about the user’s actions. All Views implement the same BaseView interface that allows setting a Presenter.
+- View: The View works with the Presenter to display the data and it notifies the Presenter about the user’s actions. All Views implement the same BaseView interface that allows setting a Presenter.
 
 ```java
 public interface BaseView<T> {
@@ -124,7 +128,7 @@ public void Tasks_ShowsNonEmptyMessage() throws Exception {
 }
 ```
 
-* Presenter: The Presenter and its corresponding View are created by the Activity. References to the View and to the TaskRepository - the Model - are given to the constructor of the Presenter. In the implementation of the constructor, the Presenter will call the setPresenter method of the View. This can be simplified when using a dependency injection framework that allows the injection of the Presenters in the corresponding views, reducing the coupling of the classes.
+- Presenter: The Presenter and its corresponding View are created by the Activity. References to the View and to the TaskRepository - the Model - are given to the constructor of the Presenter. In the implementation of the constructor, the Presenter will call the setPresenter method of the View. This can be simplified when using a dependency injection framework that allows the injection of the Presenters in the corresponding views, reducing the coupling of the classes.
 
 All Presenters implement the same BasePresenter interface.
 
@@ -152,19 +156,19 @@ public void loadNonEmptyTasksFromRepository_CallViewToDisplay() {
 
 ## MVVM
 
-* The View - that informs the ViewModel about the user’s actions
-* The ViewModel - exposes streams of data relevant to the View
-* The DataModel - abstracts the data source. The ViewModel works with the DataModel to get and save the data.
+- The View - that informs the ViewModel about the user’s actions
+- The ViewModel - exposes streams of data relevant to the View
+- The DataModel - abstracts the data source. The ViewModel works with the DataModel to get and save the data.
 
 ![mvvm_blueprint](assets/mvvm_blueprint.png)
 
 ## MVVM - Android
 
-* DataModel: The DataModel exposes data easily consumable through event streams - RxJava’s Observables + hold the entire business logic.
+- DataModel: The DataModel exposes data easily consumable through event streams - RxJava’s Observables + hold the entire business logic.
 
-* ViewModel: The ViewModel retrieves the necessary data from the DataModel, applies the UI logic and then exposes relevant data for the View to consume. Similar to the DataModel, the ViewModel exposes the data via Observables.
+- ViewModel: The ViewModel retrieves the necessary data from the DataModel, applies the UI logic and then exposes relevant data for the View to consume. Similar to the DataModel, the ViewModel exposes the data via Observables.
 
-* View: It can be an Activity, a Fragment or any custom Android View. For Activities and Fragments.
+- View: It can be an Activity, a Fragment or any custom Android View. For Activities and Fragments.
 
 We are binding and unbinding from the event sources on `onResume() and onPause()`.
 
@@ -197,7 +201,7 @@ If the MVVM View is a **custom Android View**, the binding is done in the constr
         super.onDetachedFromWindow();
 ```
 
-* Testability: Consider the following example where the ViewModel just exposes some data from the DataModel:
+- Testability: Consider the following example where the ViewModel just exposes some data from the DataModel:
 
 ```java
 public class ViewModel {
@@ -249,7 +253,7 @@ public class TicTacToeViewModel implements ViewModel {
 
     private Board model;
 
-    /* 
+    /*
      * These are observable variables that the viewModel will update as appropriate
      * The view components are bound directly to these objects and react to changes
      * immediately, without the ViewModel needing to tell it to do so. They don't

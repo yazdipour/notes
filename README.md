@@ -67,8 +67,8 @@
 ## Data Store
 
 - [redis](db/redis.md)
-- [neo4j](db/neo4j.png)
-- [realm](db/realm.png)
+- [neo4j](db/neo4j.md)
+- [realm](db/realm.md)
 - [Distributed Data Management](db/distributed.md)
 - [Information Systems](db/info-sys.md)
 

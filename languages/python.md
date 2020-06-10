@@ -8,6 +8,7 @@
 - [An A-Z of useful Python tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747)
 - [Writing Comments in Python](https://realpython.com/python-comments-guide/)
 - [Look Ma, No For-Loops: Array Programming With NumPy](https://realpython.com/numpy-array-programming/#.W9dFkY85HMs.twitter)
+- [Rich for rich text and beautiful formatting in the terminal](https://github.com/willmcgugan/rich)
 
 ![structure](./assets/py/struct.jpg)
 

