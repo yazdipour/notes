@@ -26,8 +26,10 @@
 
 ## Center
 
+![center](assets/css/center.jpg)
+
 ```css
-.center {
+.force-center {
   text-align: center !important;
   align-items: center !important;
   align-self: center !important;
@@ -91,3 +93,8 @@ html {
 - Use WOFF2 Font
 - Add `<link rel="preload">`
 - Add `@font-face` declaration with `font-display: swap;`
+
+
+## Grid
+
+![center](assets/css/css-grid.png)

@@ -62,4 +62,8 @@ CREATE (a)-[r:BATSMAN_OF {Matches:5, Avg:90.75}]->(b)
 RETURN a,b
 ```
 
+## To see DB Structure
+
+`CALL db.schema.visualization()`
+
 ![](neo4j.png)
