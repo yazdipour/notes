@@ -54,6 +54,7 @@
 
 - [Web](platforms/web.md)
 - [Django](platforms/django.md)
+- [Flask](platforms/flask.md)
 - [ASP](platforms/asp.md)
 - [Unity](platforms/unity.md)
 - [UWP](platforms/uwp.md)
