@@ -1,5 +1,14 @@
 # Visualization
 
+## Matplotlib
+
+matplotlib (the de-facto standard), activated with
+
+- `%matplotlib inline` – Here’s a Dataquest Matplotlib Tutorial.
+- `%matplotlib notebook` provides interactivity but can be a little slow, since rendering is done server-side.
+
+From <https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/>
+
 ## Seaborn
 
 Seaborn is another module for creating diagrams. As with pandas, matplotlib is used in the background, i.e. many settings can be made via matplotlib and used for the actual graphic Seaborn.
