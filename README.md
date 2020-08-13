@@ -73,12 +73,14 @@
 - [realm](db/realm.md)
 - [Distributed Data Management](db/distributed.md)
 - [Information Systems](db/info-sys.md)
+- [Elasticsearch](db/elasticsearch.md)
 
 ## Data Science
 
 - [Machine Leanring](ml/ml.md)
 - [Image Processing](ml/ip.md)
-- [Natural language processing](ml/nlp.md)
+- [NLP](ml/nlp.md)
+- [Tensorflow](ml/tensorflow.md)
 - [Pytorch](ml/pytorch.md)
 - [Hadoop](ml/hadoop.md)
 
