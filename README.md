@@ -79,6 +79,8 @@
 
 - [Machine Leanring](ml/ml.md)
 - [Image Processing](ml/ip.md)
+- [Graph Analysis](ml/graph-analysis.md)
+- [Visualization](ml/visualization.md)
 - [NLP](ml/nlp.md)
 - [Tensorflow](ml/tensorflow.md)
 - [Pytorch](ml/pytorch.md)
