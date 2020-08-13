@@ -153,3 +153,4 @@
 - [slacklist](https://slacklist.info/)
 - [Draw Diagrams](https://www.draw.io/)
 - [Book Resource](notes/book.md)
+- [Keyboard Switches](notes/keyboard_switches.jpg)
