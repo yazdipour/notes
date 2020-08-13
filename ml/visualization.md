@@ -23,3 +23,7 @@ plt.show()
 
 citieslocs = cities.join(locs, rsuffix="Stadtc") sns.relplot(x="Lon" ,y="Lat", data = citieslocs, hue="Landkreis", size="Einwohner",sizes=(200,500))
 ```
+
+## Plot
+
+![plot](assets/plot.png)

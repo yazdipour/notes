@@ -66,7 +66,7 @@
 - [Extensions](platforms/extensions.md)
 - [IOT](platforms/iot.md)
 
-## Data Store
+## Data
 
 - [redis](db/redis.md)
 - [neo4j](db/neo4j.md)
@@ -74,18 +74,27 @@
 - [Distributed Data Management](db/distributed.md)
 - [Information Systems](db/info-sys.md)
 - [Elasticsearch](db/elasticsearch.md)
+- [Hadoop](db/hadoop.md)
 
 ## Data Science
 
 - [Machine Leanring](ml/ml.md)
+- Tools
+  - [Pandas](ml/pandas.md)
+  - [Numpy](ml/numpy.md)
+  - [Tensorflow](ml/tensorflow.md)
+  - [Pytorch](ml/pytorch.md)
 - [Image Processing](ml/ip.md)
 - [Graph Analysis](ml/graph-analysis.md)
 - [Visualization](ml/visualization.md)
 - [Parallelized Pre/Processing](ml/parallel.md)
 - [NLP](ml/nlp.md)
-- [Tensorflow](ml/tensorflow.md)
-- [Pytorch](ml/pytorch.md)
-- [Hadoop](ml/hadoop.md)
+- [Shallow Learning](ml/shallow.md)
+  - [Preprocessing](ml/preprocessing.md)
+  - [SVM](ml/svm.md)
+- [Deep Learning](ml/deep.md)
+  - [NN](ml/nn.md)
+  - [LSTM](ml/LSTM.md)
 
 ## CLI
 
