@@ -1,5 +1,21 @@
 # Tensorflow
 
+## Tensor
+
+| rank                                                                                                                                            | object                                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0                                                                                                                                               | scalar                                                                                                                                              |
+| 1                                                                                                                                               | vector                                                                                                                                              |
+| 2                                                                                                                                               | <img src="https://mathworld.wolfram.com//images/equations/TensorRank/Inline11.gif" class="inlineformula" width="35" height="15" alt="N×N" /> matrix |
+| <img src="https://mathworld.wolfram.com//images/equations/TensorRank/Inline12.gif" class="inlineformula" width="22" height="15" alt="&gt;=3" /> | tensor                                                                                                                                              |
+
+Why is it called TensorFlow?
+
+- "stateful dataflow graphs"
+- Sessions provides execution environments for Graphs to flow
+- Tensors trained via mutation of Variables
+- Models asked to make Predictions after Training
+
 ## Keras
 
 - Saving checkpoints while training model in Keras

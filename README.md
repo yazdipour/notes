@@ -78,6 +78,7 @@
 
 ## Data Science
 
+- [Statistics](ml/statistics.md)
 - [Machine Leanring](ml/ml.md)
 - Tools
   - [Pandas](ml/pandas.md)
@@ -153,4 +154,4 @@
 - [slacklist](https://slacklist.info/)
 - [Draw Diagrams](https://www.draw.io/)
 - [Book Resource](notes/book.md)
-- [Keyboard Switches](notes/keyboard_switches.jpg)
+- [Keyboard Switches](https://github.com/yazdipour/notes/raw/master/notes/keyboard_switches.jpg)
