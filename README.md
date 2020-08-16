@@ -132,7 +132,6 @@
 1. [Questions](job/Questions.md)
 1. [Questions_Farsi](job/QuestionsFa.md)
 1. [Microsoft](job/MicrosftInternship.md)
-1. [Java](job/Java.md)
 1. [Apple](job/Apple.md)
 1. [Facebook](job/Facebook.md)
 
