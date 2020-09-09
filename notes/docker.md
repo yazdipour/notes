@@ -125,13 +125,14 @@ To specify base image
 
 #### RUN
 
-Can be any bash command
+* Can be any bash command
+* Only runs when building the image
 
 #### CMD
 
+- **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
 - CMD instruction specifies what command you want to run when the container starts up.
 - If we don't specify CMD instruction in the Dockerfile, Docker will use the default command defined in the base image.
-- **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
 - You can specify the command in either form which is preferred or in shell form.
 - `CMD ["echo","hello"]`
 
