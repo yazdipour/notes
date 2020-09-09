@@ -83,6 +83,15 @@ docker exec -it [running_cont_id] [command do sth]
 docker run -d -op 5000:5000 --link redis [container]/dockerapp:v1
 ```
 
+### Remove Image / Containers
+
+```sh
+docker system prune -a #remove any stopped containers and all unused images
+docker rmi Image Image #Removing Docker Images
+docker image prune #Remove dangling images
+docker rm ID_or_Name ID_or_Name #Removing Containers
+```
+
 ## Build Image
 
 ### Manually
