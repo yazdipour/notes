@@ -83,6 +83,15 @@ docker exec -it [running_cont_id] [command do sth]
 docker run -d -op 5000:5000 --link redis [container]/dockerapp:v1
 ```
 
+### Remove Image / Containers
+
+```sh
+docker system prune -a #remove any stopped containers and all unused images
+docker rmi Image Image #Removing Docker Images
+docker image prune #Remove dangling images
+docker rm ID_or_Name ID_or_Name #Removing Containers
+```
+
 ## Build Image
 
 ### Manually
@@ -116,13 +125,14 @@ To specify base image
 
 #### RUN
 
-Can be any bash command
+* Can be any bash command
+* Only runs when building the image
 
 #### CMD
 
+- **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
 - CMD instruction specifies what command you want to run when the container starts up.
 - If we don't specify CMD instruction in the Dockerfile, Docker will use the default command defined in the base image.
-- **The CMD instruction doesn’t run when building the image, it only runs when the container starts up.**
 - You can specify the command in either form which is preferred or in shell form.
 - `CMD ["echo","hello"]`
 
