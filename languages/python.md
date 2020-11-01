@@ -20,10 +20,14 @@
 ## vEnv
 
 ```cmd
-cd projDir
-pip install virtualenv
-virtualenv venvName
-\venvName\Scripts\active
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+sudo apt install python3-pip
+sudo pip3 install virtualenv
+virtualenv -p python3 env3
+# Step : Activate your new Python 3 environment. There are two ways to do this
+. env3/bin/activate # or source env3/bin/activate which does exactly the same thing
+\venvName\Scripts\active #windows
+deactivate
 ```
 
 ## Naming convention

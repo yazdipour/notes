@@ -1,5 +1,30 @@
 # Java
 
+## Basic Spring Controller Test
+
+```java
+@RunWith(SpringRunner.class)
+@WebMvcTest(LoggingController.class)
+class LoggingControllerTest {
+
+    @Autowired
+    private MockMvc mvc;
+
+    @Test
+    void testLog() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/"))
+                .andExpect(content().string("Check out the Logs to see the output..."));
+
+      //   mvc.perform(get(VERSION + USERS + "all")
+      //           .with(user("blaze").password("Q1w2e3r4"))
+      //           .contentType(APPLICATION_JSON))
+      //           .andExpect(status().isOk())
+      //           .andExpect(jsonPath("$", hasSize(1)))
+      //           .andExpect(jsonPath("$[0].address", is(user.getAddress())));
+    }
+}
+```
+
 ## Genrice
 
 ```java

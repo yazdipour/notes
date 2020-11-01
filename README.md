@@ -18,7 +18,6 @@
 - [Blockchain](notes/blockchain.md)
 - [BitTech](notes/biotech.md)
 - [Algorithm](notes/algorithm.md)
-- [Cloud](notes/cloud.md)
 - [CI/CD](notes/cicd.md)
 - [DevOps](notes/devops.md)
 - [GIS](notes/gis.md)
@@ -30,6 +29,11 @@
 - [Concepts](3d/concepts.md)
 - [Unity](3d/unity.md)
 - [VR-AR](3d/vr.md)
+
+## Cloud
+
+- [Cloud](cloud/cloud.md)
+- [Azure](cloud/azure.md)
 
 ## Languages
 
