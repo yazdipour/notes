@@ -137,14 +137,17 @@ Set the admin kubeconfig with `az aks get-credentials -a --resource-group <RG_NA
 
 ## Terraform
 
-https://www.terraform.io/intro/index.html
+Providers: https://www.terraform.io/docs/providers/index.html
+
 https://github.com/HoussemDellai/Terraform-Demo/blob/master/app-service-variables/main.tf
 
 ```sh
 terraform init
-terraform plan
-terraform apply -auto-approve
-terraform detroy
+terraform plan # create an executable plan
+terraform apply -auto-approve #execute the plan
+terraform detroy #destroy the resources /infrastructure
+
+terraform refresh #query infrastructure provider to get current state
 ```
 
 ## Helm
@@ -157,3 +160,14 @@ helm create x
 helm package x
 helm install x //to deply to kub
 ```
+
+## Kub Service SSL
+
+https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
+
+https://www.youtube.com/watch?v=5S_395VKMqs
+1 https://cert-manager.io/docs/installation/kubernetes/
+
+2 https://cert-manager.io/docs/concepts/issuer/
+
+helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.4 --set installCRDs=true
