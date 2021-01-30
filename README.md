@@ -34,6 +34,7 @@
 
 - [Cloud](cloud/cloud.md)
 - [Azure](cloud/azure.md)
+- [Kubernetes](cloud/kube.md)
 
 ## Languages
 
