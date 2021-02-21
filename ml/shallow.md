@@ -8,7 +8,7 @@ ex. Spam Mail Detector
 
 ex. Getting down from Mount. Height from ground. Goal is to get down easiest way. (Height is the error in Data Mining algorithms)
 
-## Regression Linear
+## Linear Regression
 
 ex. Predict House prize based on other houses properties and prize -> Draw random line -> try minimize error using Gradient Descent (least square).
 

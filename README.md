@@ -84,23 +84,25 @@
 ## Data Science
 
 - [Statistics](ml/statistics.md)
-- [Machine Leanring](ml/ml.md)
+- [Machine Learning](ml/machinelearning.md)
+  - [Shallow Learning](ml/shallow.md)
+  - [Preprocessing](ml/preprocessing.md)
+  - [SVM](ml/svm.md)
+  - [Machine Learning Resources](ml/ml.md)
+  - [NLP](ml/nlp.md)
+  - [Image Processing](ml/ip.md)
+  - [Graph Analysis](ml/graph-analysis.md)
+  - [Parallelized Pre-Processing](ml/parallel.md)
+- [Deep Learning](ml/deep.md)
+  - [NN](ml/nn.md)
+  - [LSTM](ml/LSTM.md)
 - Tools
+  - [Jupyter](ml/jupyter.md)
   - [Pandas](ml/pandas.md)
   - [Numpy](ml/numpy.md)
   - [Tensorflow](ml/tensorflow.md)
   - [Pytorch](ml/pytorch.md)
-- [Image Processing](ml/ip.md)
-- [Graph Analysis](ml/graph-analysis.md)
-- [Visualization](ml/visualization.md)
-- [Parallelized Pre/Processing](ml/parallel.md)
-- [NLP](ml/nlp.md)
-- [Shallow Learning](ml/shallow.md)
-  - [Preprocessing](ml/preprocessing.md)
-  - [SVM](ml/svm.md)
-- [Deep Learning](ml/deep.md)
-  - [NN](ml/nn.md)
-  - [LSTM](ml/LSTM.md)
+  - [Visualization](ml/visualization.md)
 
 ## CLI
 

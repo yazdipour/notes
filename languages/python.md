@@ -68,6 +68,18 @@ x, _, y = (1,2,3) # x=1, y=3
 x, *_, y = (1,2,3,4,5,6) # x=1, y=6, ignores in between
 ```
 
+## deque
+
+A double-ended queue, or deque, has the feature of adding and removing elements from either end.
+
+```py
+screens = deque(maxlen=2)
+screens.append("a")
+screens.append("b")
+screens.append("c")
+# >>b,c
+```
+
 ## String - immutable
 
 ```py

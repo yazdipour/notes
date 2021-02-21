@@ -180,6 +180,32 @@ NE Type and Examples
 
 _From [\_https://pythonprogramming.net/named-entity-recognition-nltk-tutorial/?completed=/chinking-nltk-tutorial/_](https://pythonprogramming.net/named-entity-recognition-nltk-tutorial/?completed=/chinking-nltk-tutorial/)
 
+#### Named Entity Recognition with Stanford NER Tagger (alternative to NLTK's NER)
+
+A big benefit of the Stanford NER tagger is that is provides us with a few different models for pulling out named entities. We can use any of the following:
+
+- 3 class model for recognizing locations, persons, and organizations
+- 4 class model for recognizing locations, persons, organizations, and miscellaneous entities
+- 7 class model for recognizing locations, persons, organizations, times, money, percents, and dates
+
+```py
+from nltk.tag import StanfordNERTagger
+from nltk.tokenize import word_tokenize
+
+st = StanfordNERTagger('/usr/share/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz',
+        '/usr/share/stanford-ner/stanford-ner.jar', encoding='utf-8')
+
+text = 'While in France, Christine Lagarde discussed short-term stimulus efforts in a recent interview with the Wall Street Journal.'
+
+tokenized_text = word_tokenize(text)
+classified_text = st.tag(tokenized_text)
+
+print(classified_text)
+
+# ----------------
+# [('While', 'O'), ('in', 'O'), ('France', 'LOCATION'), (',', 'O'), ('Christine', 'PERSON'), ('Lagarde', 'PERSON'), ('discussed', 'O'), ('short-term', 'O'), ('stimulus', 'O'), ('efforts', 'O'), ('in', 'O'), ('a', 'O'), ('recent', 'O'), ('interview', 'O'), ('with', 'O'), ('the', 'O'), ('Wall', 'ORGANIZATION'), ('Street', 'ORGANIZATION'), ('Journal', 'ORGANIZATION'), ('.', 'O')]
+```
+
 ### Lemmatizing
 
 A very similar operation to stemming is called lemmatizing. The major difference between these is, as you saw earlier, stemming can often create non-existent words, whereas lemmas are actual words.

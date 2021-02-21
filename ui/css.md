@@ -13,6 +13,7 @@
 - [Collection of Links for FrontEnd Developers](http://simurai.com/blog/2014/10/01/front-links)
 - [SVG backgrounds](https://www.svgbackgrounds.com)
 - [svgeez](https://svgeez.com)
+- [Ez Dark Light CSS](https://christianheilmann.com/2021/01/26/css-is-awesome-a-dark-light-mode-switch-with-preference-detection-in-15-lines-of-css/)
 
 ## Frameworks
 
@@ -93,7 +94,6 @@ html {
 - Use WOFF2 Font
 - Add `<link rel="preload">`
 - Add `@font-face` declaration with `font-display: swap;`
-
 
 ## Grid
 
