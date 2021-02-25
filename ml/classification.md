@@ -102,9 +102,11 @@ ypre=model.predict(xtest)
 accuracy=metrics.accuracy_score(yte,ypre)
 ```
 
-## SVM (Support vector machine)
+## SVM (Support vector machine) - SVC_lassifier
 
-- [Binary Classifier] - Possible for MultiClass: use one class vs others & ...
+- [Simply Binary Classifier] - Possible for MultiClass:
+  1. OVR - One Vs Rest [default]
+  1. OVO - One Vs One
 - Like LR find the best divider. The line with maximum distance from the classes. -> Find maximum distance with Gradient Descent or other algothims!
 - The best separating hyperplane is defined as the hyperplane that contains the "widest" margin between support vectors. The hyperplane may also be referred to as a decision boundary.
 - PROS: Good at dealing with high DIM data + Works well on small data sets
@@ -128,7 +130,7 @@ confidence = clf.score(X_test, y_test)
 
 ### Support Vector Assertions
 
-<https://pythonprogramming.net/support-vector-assertions-machine-learning-tutorial/?completed=/vector-basics-machine-learning-tutorial/>
+<https://pythonprogramming.net/support-vector-assertions-machine-learning-tutorial/>
 
 ![SVM](https://pythonprogramming.net/static/images/machine-learning/svm-projection-classification.png)
 

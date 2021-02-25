@@ -93,7 +93,6 @@
   - [Parallelized Pre-Processing](ml/parallel.md)
 - [Deep Learning](ml/deep.md)
   - [NN](ml/nn.md)
-  - [LSTM](ml/LSTM.md)
   - [NLP](ml/nlp.md)
   - [Image Processing](ml/ip.md)
 - Tools

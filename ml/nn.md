@@ -1,15 +1,7 @@
 # Neural Networks
 
-Divide classes auto with weird shapes. (Is above Line1->TRUE | Is above Line2->FALSE ::-> TRUE ....)
+![nn](https://pythonprogramming.net/static/images/machine-learning/artificial-neuron-model-sigmoid-activiation-function.png)
 
-- Perceptron (The biological neuron)
-  - Simple Perceptron can handle Linear problems.
-  - MLP (Multi layer perseptron) can handle more.
-  - PARTS
-  - Input + BIAS (To avoid cases with ZERO inputs)
-  - Output
-  - Activation Function
-  - Weights
 - Neurons and Activation Functions
   - StepFunction: `z = wx + b (b for bias)` (Cons: Little changes doesn't have effect on final result)
   - Sigmoid (Curved Step fuction): `f(x)= 1/1+e^-x` (Cons: In near infinity, Derivative is close to 0)
