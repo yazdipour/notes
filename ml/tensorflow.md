@@ -210,7 +210,7 @@ plt.show()
 
 ## X
 
-- dropout??
+- dropout?? https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dropout
   max_pooling2d
   layers
   estimators
