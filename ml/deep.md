@@ -3,6 +3,19 @@
 - When there is >=3 hidden layers in NN.
 - Layers Count := | InputLayer + HiddenLayer |
 
+## Activation Function
+
+![Activation Function](assets/activation.jpg)
+![Activation Function](assets/vanishingGrad.jpg)
+![Activation Function](assets/dyingRelu.jpg)
+
+- <https://youtu.be/s-V7gKrsels>
+- Usually use `softmax` activiation function at the last layer which it will normalize the result for us.
+- For Regression: Don't need activation funciton.
+- Use a nonlinear activation function for CNN.
+- `reLu/Leaky reLu` typically used for activation function.
+- `Leaky reLu` avoids the `dying reLu` problem.
+
 ## RNN - Recurrent Neural Network
 
 ![](https://pythonprogramming.net/static/images/machine-learning/recurrent-neural-network-basics.png)
@@ -18,6 +31,11 @@ More Details <https://youtu.be/yZv_yRgOvMg>
 This way (BPTT - Back Propagation Through Time) has speed and storage problem. So we use Teacher Forcing to fix the issue.
 
 ![](assets/cnn/rnn2.jpg)
+
+![](assets/cnn/rnn_1.jpg)
+![](assets/cnn/rnn_2.jpg)
+![](assets/cnn/rnn_3.jpg)
+![](assets/cnn/rnn_4.jpg)
 
 ## seq2seq
 
@@ -56,6 +74,16 @@ Recurring data goes through what is referred to as the Keep Gate or Forget Gate,
 - Sigmoid and Tahn activation function are useful in LSTM
 - [MNIST - RNN with LSTM cell example in TensorFlow](https://pythonprogramming.net/rnn-tensorflow-python-machine-learning-tutorial/)
 - To understand LSTM http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+- More Details <https://youtu.be/QciIcRxJvsM>
+
+![lstm](assets/cnn/lstm2.jpg)
+![lstm](assets/cnn/lstm3.jpg)
+
+## GRU
+
+Like LSTM but simpler
+
+![](assets/cnn/gru.jpg)
 
 ## CNN - Convolutional Neural Network
 
@@ -69,12 +97,12 @@ Convolution -> Pooling -> Convolution -> Pooling -> Fully Connected Layer -> Out
 
 ![](https://pythonprogramming.net/static/images/machine-learning/max-pooling-example.png)
 
-## Convolutional Layer
+### Convolutional Layer
 
 ![](assets/cnn/cnn.jpg)
 ![](assets/cnn/cnn2.jpg)
 
-## Pooling Layer
+### Pooling Layer
 
 - Stide = How many pixel to skip
 
@@ -88,19 +116,6 @@ Convolution -> Pooling -> Convolution -> Pooling -> Fully Connected Layer -> Out
 - [3D CNN on medical imaging data (CT Scans) for Kaggle](https://pythonprogramming.net/3d-convolutional-neural-network-machine-learning-tutorial/#Kaggle-Competition)
 - [Classifying Cats vs Dogs with a CNN on Kaggle](https://pythonprogramming.net/convolutional-neural-network-kats-vs-dogs-machine-learning-tutorial/)
 - [Using a NN to solve OpenAI's CartPole balancing environment](https://pythonprogramming.net/openai-cartpole-neural-network-example-machine-learning-tutorial/)
-
-## Activation Function
-
-![Activation Function](assets/activation.jpg)
-![Activation Function](assets/vanishingGrad.jpg)
-![Activation Function](assets/dyingRelu.jpg)
-
-- <https://youtu.be/s-V7gKrsels>
-- Usually use `softmax` activiation function at the last layer which it will normalize the result for us.
-- For Regression: Don't need activation funciton.
-- Use a nonlinear activation function for CNN.
-- `reLu/Leaky reLu` typically used for activation function.
-- `Leaky reLu` avoids the `dying reLu` problem.
 
 ## CapsuleNet
 
