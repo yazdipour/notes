@@ -379,6 +379,12 @@ _From [\_https://pythonprogramming.net/sklearn-scikit-learn-nltk-tutorial/?compl
 
 From <https://pythonprogramming.net/combine-classifier-algorithms-nltk-tutorial/?completed=/sklearn-scikit-learn-nltk-tutorial>
 
+## BLEU Score
+
+BLEU (bilingual evaluation understudy) is an algorithm for evaluating the quality of text which has been machine-translated from one natural language to another.
+
+BLEU’s strength is that it correlates well with human judgment by averaging out individual sentence judgment errors over a test corpus, rather than attempting to devise the exact human judgment for every sentence.
+
 ## Overall Tutorial
 
 - [Youtube](https://www.youtube.com/channel/UCyv-PL-QgkAXEfDRcKrYMeA/videos)

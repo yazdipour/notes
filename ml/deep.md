@@ -41,12 +41,6 @@ This way (BPTT - Back Propagation Through Time) has speed and storage problem. S
 
 ![](assets/cnn/seq2seq.jpg)
 
-### Encoder Decoder
-
-![](assets/cnn/encoder-decoder.jpg)
-
-Seq 2 Vec 2 Seq: Used in Translation which they may have different input and ouput size.
-
 ## seq2vec
 
 ![](assets/cnn/seq2vec.jpg)
@@ -59,11 +53,59 @@ Seq 2 Vec 2 Seq: Used in Translation which they may have different input and oup
 
 - Eg. Image Captioning
 
+## Encoder Decoder
+
+![](assets/cnn/encoder-decoder.jpg)
+
+Seq 2 Vec 2 Seq: Used in Translation which they may have different input and ouput size.
+
+## AutoEncoder
+
+<https://youtube.com/playlist?list=PLTl9hO2Oobd9ZXfLjfXpJ0zgZGeJQZ09a>
+
+![](assets/cnn/ae.jpg)
+
+Output is not important, but the vector is what we care about.
+
+Types:
+
+- Sparce AutoEncoder
+- Denoising AutoEncoder
+- Variational Autoencoders
+
+Used in:
+
+- Image Segmentation
+- Semantic Hashing
+- Neural Inpainting (eg. Removing Watermarks)
+
+## VAE - Variational Autoencoders
+
+- **VAE is a GAN and AE.**
+- AE Can't generate new data because we dont know how to assign values to the vector during the generation phase. (VAE is the solution)
+
+![](assets/cnn/ae-gen.jpg)
+
+How VAE solve this:
+
+![](assets/cnn/vae2.jpg)
+![](assets/cnn/vae3.jpg)
+
+![](assets/cnn/var-vs-norm.jpg)
+![](assets/cnn/var-vs-gan.jpg)
+
+## GAN - Generative adversarial network
+
+![gan](assets/cnn/gan.jpg)
+
 ## BERT
 
-![](assets/cnn/bert.jpg)
+![bert](assets/cnn/bert.jpg)
 
 - Useful in Text Translation/Summarization because we have the future words.
+
+![attention](assets/cnn/attention.jpg)
+![googletrans](assets/cnn/googletrans.jpg)
 
 ## LSTM - Long Short Term Memory
 
