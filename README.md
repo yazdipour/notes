@@ -45,8 +45,8 @@
   - [React](languages/react.md)
 - [Php](languages/php.md)
 - [Cpp](languages/cpp.md)
-- [C##](languages/csharp.md)
-- [F##](languages/fsharp.md)
+- [C#](languages/csharp.md)
+- [F#](languages/fsharp.md)
 - [Go](languages/go.md)
 - [Swift / iOS](languages/swift.md)
 - [Python](languages/python.md)
@@ -95,6 +95,7 @@
   - [NN](ml/nn.md)
   - [NLP](ml/nlp.md)
   - [Image Processing](ml/ip.md)
+  - [Computer Vision](ml/cv.md)
 - Tools
   - [Jupyter](ml/jupyter.md)
   - [Pandas](ml/pandas.md)

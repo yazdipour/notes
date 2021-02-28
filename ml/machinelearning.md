@@ -1,15 +1,8 @@
 # ML
 
-## Points
+## Confusion Matrix
 
-- `model.summery()` will print model structure > ex. FC | (NONE `is mini_batch`, 64).
-
-## Convert Text to Number
-
-```py
-CATEGORIES = ["Dog", "Cat"]
-class_num = CATEGORIES.index("Cat") #1
-```
+![confusion](assets/confusion-matrix.png)
 
 ## Loss Function
 
@@ -62,8 +55,20 @@ Gradient descent optimization algorithms
 
 ## Batch Normalization
 
+Normalization on layer which will help our algorithm to fine min loss faster! (minus avg and divide it with variance) (Have trainable parameters)
+
 ![batch](assets/batch/1.jpg)
 ![batch](assets/batch/2.jpg)
 ![batch](assets/batch/3.jpg)
 
 Like Dropout, but does not replace it and we still use dropout for better results.
+
+### Layer Normalization
+
+![](assets/normz.jpg)
+
+## PCA - Principal Component Analysis
+
+<https://youtu.be/9oSkUej63y>
+
+![pca](assets/pca.png)

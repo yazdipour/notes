@@ -1,26 +1,20 @@
 # ML
 
+## Dictionary
+
+- MLP = Mutli layer perseptron
+- Ensemble learning = multi time trying and group of models votes for final result!
+- Cross Validation = Split data in 10 parts, use one part as TestData and the rest for training, and then do the same process with another part. **_Not Usable for Deep learning [its expensive]_**
+
 ## Topics
 
-- Gensin Library
-- Persian Stuff:
-  - Hazm - NLP Preprocessor
-  - Word2Vec-Doc2Vec
 - ResNet50
 - Xception
-- Corpora:
-
-  - Bijankhan
-  - Persica
-  - Hamshahri 1/2
-  - Tnews
-
 - https://paperswithcode.com/sota
 - Facial Recongnition Database: https://www.kairos.com/blog/60-facial-recognition-databases
 - Gensim (مانند LDA، LSI و یا Word2Vec) https://radimrehurek.com/gensim/
 - https://keras.io/
 - 100DaysOfMLCode: https://github.com/harshitahluwalia7895/100DaysOfMLCode
-- Basic Concepts: https://github.com/yazdipour/notes/blob/master/assets/BasicConcepts.png
 - WGet Kaggle Datasets in Google Driver:https://mh-salari.me/wqet-download/
 - http://www.r2d3.us/visual-intro-to-machine-learning-part-1/
 - https://github.com/xviniette/FlappyLearning
@@ -34,10 +28,6 @@
 - https://www.ailab.microsoft.com/
 - http://www.fast.ai/
 - https://deepai.org/
-
-## Job
-
-- https://ai-jobs.net/
 
 ## DataSets
 
@@ -135,51 +125,3 @@ https://www.nltk.org/book/
 
 DATA SCIENCE HANDBOOK
 https://www.thedatasciencehandbook.com/get-the-book#2
-
-## Basic Consepts
-
-| ---                 | ---                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| MLP                 | Mutli layer perseptron                                                                                                                                                         |
-| Ensemble learning   | multi time trying and group of models votes for final result!                                                                                                                  |
-| Batch normalization | Normalization on layer which will help our algorithm to fine min loss faster! (minus avg and divide it with variance) (Have trainable parameters)                              |
-| Data Dividing       | Train_Data 70%, Validation/Dev_Data 20%, Test_Data 10%                                                                                                                         |
-| Cross Validation    | Split data in 10 parts, use one part as TestData and the rest for training, and then do the same process with another part. **_Not Usable for Deep learning [its expensive]_** |
-
-## Confusion Matrix
-
-![confusion](assets/confusion-matrix.png)
-
-## Recommender systems
-
-- Content-based filtering : Consider properties of Object and content of it
-- Collaborative filtering : Use users opinion
-- Hybrid Recommender systems
-
-## Discriminative
-
-1. Regression
-2. Logistic regression
-3. decision tree (Hunt)
-4. neural network(traditional network, deep network)
-5. Support Vector Machine(SVM)
-
-## Generative
-
-1. Hidden Markov model
-2. Naive bayes
-3. K-nearest neighbor(KNN)
-4. Generative adversarial networks(GANs)
-
-## ImageNet Models
-
-- Classic: LeNet5, AlexNet, ZFNet, VGG(Nice structure, Bad Memory usage)
-- Inception: (Idea: use )
-- ResNet
-
-## Image Classification
-
-A core task in Computer Vision
-
-- Challenges: Illumination, Deformation, Occlusion, Background clutter, Intraclass variation
-- Never use pure k-Nearest Neighbor on images. Cause: Distance metrics on level of whole images can be very unintuitive
