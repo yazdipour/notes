@@ -13,6 +13,14 @@
 
 _From [\_https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/_](https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/)
 
+## Language modeling
+
+Language modeling is the task of predicting the next word in a sentence, given all previous words. Language models have become a vital part of the NLP pipeline now, as they provide the backbone to various downstream tasks. Language models capture general aspects of the input text that is almost universally useful.
+
+- ULMFiT
+- ELMo
+- XLNet
+
 ### Stopwords
 
 ```py

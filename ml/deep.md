@@ -260,6 +260,27 @@ Convolution -> Pooling -> Convolution -> Pooling -> Fully Connected Layer -> Out
 - [Classifying Cats vs Dogs with a CNN on Kaggle](https://pythonprogramming.net/convolutional-neural-network-kats-vs-dogs-machine-learning-tutorial/)
 - [Using a NN to solve OpenAI's CartPole balancing environment](https://pythonprogramming.net/openai-cartpole-neural-network-example-machine-learning-tutorial/)
 
+### Dropout Layer
+
+- Randomly turning off neurouns in layers.
+- Dropblock <https://www.youtube.com/watch?v=GcvGxXePI2
+
+![Dropout](assets/cnn/dropout.jpg)
+
+## CycleGAN
+
+- <https://www.youtube.com/watch?v=NyAosnNQv_U>
+- https://junyanz.github.io/CycleGAN/
+
+Cycle consistent adversarial networks for unpaired image-image translation. Some image-image translation problems include:
+
+- Season Transfer
+- Object Transfiguration
+- Style transfer
+- Photo Enhancement
+
+![](https://junyanz.github.io/CycleGAN/images/teaser.jpg)
+
 ## What Filters learns
 
 <https://youtu.be/eL80Im8Hq0k>
@@ -288,9 +309,27 @@ We determine the IoU for each of the object masks and our mask. The largest IoU 
 
 ## Depthwise Separable Convolution
 
-A faster method of convolution with less computation power & parameters.
+- A faster method of convolution with less computation power & parameters.
+- Performing convolution with significantly less multiplication operation.
+- Basiclly we are applying different filters to each individual channel (in Std Conv we apply to all).
+
+## Masked R-CNN - Mask Region based Convolution Neural Networks
+
+![masked](assets/cnn/maskedrcnn.jpg)
+
+- Object Detection + Semantic Segmentation = Instance Segmentation
+- Masked R-CNN achieves Instance Segmentation
+- Faster R-CNN + FCN = Masked R-CNN
+- Rol Align preserves spatial orientation of features with no loss of data
 
 ## CapsuleNet
+
+## Few Shot Learning
+
+- There are applications wherein we neither have enough data for each class and the total number classes is huge as well as dynamically changing. Thus, the cost of data collection and periodical re-training is too high. On the other hand, in a one shot classification, we require only one training example for each class.
+- One Shot Learning with Siamese Networks using Keras <https://towardsdatascience.com/one-shot-learning-with-siamese-networks-using-keras-17f34e75bb3d>
+
+![few shot](assets/cnn/few.jpg)
 
 ## Siamese
 

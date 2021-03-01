@@ -4,6 +4,13 @@
 
 ![confusion](assets/confusion-matrix.png)
 
+## Precision, Recall & F-Measure
+
+<https://youtu.be/j-EB6RqqjGI>
+
+![](assets/measure1.jpg)
+![](assets/measure2.jpg)
+
 ## Loss Function
 
 <https://youtu.be/QBbC3Cjsnjg>
