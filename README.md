@@ -85,6 +85,7 @@
 
 - [Statistics](ml/statistics.md)
 - [Machine Learning](ml/machinelearning.md)
+  - [Code](ml/code.md)
   - [Preprocessing](ml/preprocessing.md)
   - [Classification](ml/classification.md)
   - [Clustering](ml/clustering.md)
@@ -96,6 +97,7 @@
   - [NLP](ml/nlp.md)
   - [Image Processing](ml/ip.md)
   - [Computer Vision](ml/cv.md)
+- [AI - Reinforcement Learning](ml/ai.md)
 - Tools
   - [Jupyter](ml/jupyter.md)
   - [Pandas](ml/pandas.md)
@@ -103,6 +105,18 @@
   - [Tensorflow](ml/tensorflow.md)
   - [Pytorch](ml/pytorch.md)
   - [Visualization](ml/visualization.md)
+- CheatSheet
+  - [Standford Deep](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-deep-learning)
+  - [Standford Unsupervised](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-unsupervised-learning)
+  - [Standford Supervised](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning)
+  - [Standford Tips CS229](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks)
+  - [Standford CNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
+  - [Standford RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
+  - [Standford Tips CS230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-deep-learning-tips-and-tricks)
+  - [Standford AI](https://stanford.edu/~shervine/teaching/cs-221/)
+  - [Standford Statistics](https://stanford.edu/~shervine/teaching/cme-106/cheatsheet-statistics)
+  - [Standford Probability](https://stanford.edu/~shervine/teaching/cme-106/cheatsheet-probability)
+  - [Standford Ordinary Differential Equations](https://stanford.edu/~shervine/teaching/cme-102/)
 
 ## CLI
 
@@ -144,11 +158,15 @@
 
 ## Business
 
-- [business](business/business.md)
-- [law](business/law.md)
-- [management](business/management.md)
-- [money](business/money.md)
-- [networking](business/networking.md)
+- [business]
+<!-- (business/business.md) -->
+- [law]
+<!-- (business/law.md) -->
+- [management]
+<!-- (business/management.md) -->
+- [networking]
+<!-- (business/networking.md) -->
+- [Money](business/money.md)
 - [Program/Project Management](business/pm.md)
 
 ## Tools

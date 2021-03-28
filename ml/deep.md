@@ -11,7 +11,7 @@
 ![Activation Function](assets/dyingRelu.jpg)
 
 - <https://youtu.be/s-V7gKrsels>
-- Usually use `softmax` activiation function at the last layer which it will normalize the result for us.
+- Usually use `softmax` activiation function at the last layer which it will normalize the result for us. ( all 0 to 1)
 - For Regression: Don't need activation funciton.
 - Use a nonlinear activation function for CNN.
 - `reLu/Leaky reLu` typically used for activation function.
@@ -22,6 +22,11 @@
 - RNNs are the Feed Forward Neural Networks that are rolled out over time.
 - Unlike normal Neural Networks, RNNs are designed to take a series of inputs with no predetermined limit on size. “Series” as in any input of that sequence has some relationship with their neighbour’s or have some influence on them.
 - Basic feed forward networks “remember” things too, but they remember the things they learnt during training. While RNNs learn similarly while training, in addition, they remember things learnt from prior input(s) while generating output(s).
+- Types of gatesHere are the different types of gates that we encounter in a typical recurrent neural network:
+  - Input gate: Write to cell or not?
+  - Forget gate: Erase a cell or not?
+  - Gate: How much to write to cell?
+  - Output : How much to reveal cell?
 - <https://colah.github.io/posts/2015-08-Understanding-LSTMs/>
 
 ![RNN](https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
@@ -75,7 +80,8 @@ Seq 2 Vec 2 Seq: Used in Translation which they may have different input and oup
 
 ![](assets/cnn/ae.jpg)
 
-Output is not important, but the vector is what we care about.
+- Some examples are in the form of compressing the number of input features and noise reduction.
+- Output is not important, but the vector is what we care about.
 
 Types:
 
@@ -153,17 +159,21 @@ Cycle consistent adversarial networks for unpaired image-image translation. Some
 
 ## Transformer
 
+![](https://raw.githubusercontent.com/thunlp/PLMpapers/master/PLMfamily.jpg)
+
 - An encoder decoder architecture based on attention layers.
 - One main difference is that the **input sequence can be passed parallelly**, so that **GPU** can be utilized effectively, and the speed of training can also be increased. And it is based on the multi-headed attention layer, vanishing gradient issue is also overcome by a large margin.
   ![Transformer](assets/trans/tr.jpg)
+
 - <https://youtu.be/TQQlZhbC5ps>
+- Implementation https://nlp.seas.harvard.edu/2018/04/03/attention.html
 
 ![Transformer](https://miro.medium.com/max/875/1*57LYNxwBGcCFFhkOCSnJ3g.png)
 
 ### Encoder Block
 
 ![Encoder](assets/trans/tr_en.jpg)
-Embedding Space: It’s like an open space or dictionary where words of similar meanings are grouped together or are present close to each other in that space.
+**Embedding Space - Word Embedding**: It’s like an open space or dictionary where words of similar meanings are grouped together or are present close to each other in that space.
 ![Embedding](assets/trans/tr2.jpg)
 But one other issue: every word in different sentences has different meanings. So, to solve this issue, we take the help of Positional Encoders. It is a vector that gives context according to the position of the word in a sentence.
 ![Embedding](assets/trans/tr3.jpg)
@@ -195,6 +205,35 @@ Now it is passed through a Softmax Layer, which transforms the input into a prob
 
 - Useful in Text Translation/Summarization because we have the future words.
 - Created by stacking multiple encoders of Transformer.
+
+### Word Embedding
+
+- Play with code <https://colab.research.google.com/drive/1yFphU6PW9Uo6lmDly_ud9a6c4RCYlwdX>
+- BERT is pre-trained and has fixed Vocabulary.
+- It breaks down unknown words into subwords.
+
+![](assets/subword.jpg)
+
+### Input Formatting
+
+- **[SEP]**, to mark the end of a sentence, or the **separation** between two sentences
+- **[CLS]**, at the beginning of our text. This token is used for **classification** tasks, but BERT expects it no matter what your application is.
+- **[PAD]** Padding
+- **[UNK]** Unknown Char
+- **[MASK]**
+- Tokens that conform with the fixed vocabulary used in BERT
+- **The Token IDs** for the tokens, from BERT’s tokenizer
+- **Mask IDs** to indicate which elements in the sequence are tokens and which are padding elements
+- **Segment IDs** used to distinguish different sentences
+- **Positional Embeddings** used to show token position within the sequence
+
+### Advantages of Fine-Tuning
+
+BERT already encodes a lot about our language.
+
+1. Quicker Development
+2. Less Data Required
+3. Better Results
 
 ![bert](assets/trans/bert1.jpg)
 ![bert](assets/trans/bert2.jpg)
@@ -239,11 +278,13 @@ Made by Stacking Decoders
 
 ## LSTM - Long Short Term Memory
 
+LSTM network is a type of RNN model that avoids the vanishing gradient problem by adding 'forget' gates.
+
 <https://colah.github.io/posts/2015-08-Understanding-LSTMs/>
 
 ![](https://pythonprogramming.net/static/images/machine-learning/long-short-term-memory-cell-LSTM.png)
 
-Recurring data goes through what is referred to as the Keep Gate or Forget Gate, basically which decides what to keep and what to remove from the recurring data. From here, we get to the new input data, determining what new to add from it, then, finally, we decide what our new output will be.
+Recurring data goes through what is referred to as the Keep Gate or Forget Gate, basically which decides what to keep and zwhat to remove from the recurring data. From here, we get to the new input data, determining what new to add from it, then, finally, we decide what our new output will be.
 
 - Sigmoid and Tahn activation function are useful in LSTM
 - [MNIST - RNN with LSTM cell example in TensorFlow](https://pythonprogramming.net/rnn-tensorflow-python-machine-learning-tutorial/)
@@ -349,6 +390,10 @@ We determine the IoU for each of the object masks and our mask. The largest IoU 
 
 ## Time series
 
+<https://www.kaggle.com/freespirit08/time-series-for-beginners-with-arima>
+
+Time Series is a series of observations taken at specified time intervals usually equal intervals. Analysis of the series helps us to predict future values based on previous observed values. In Time series, we have only 2 variables, time & the variable we want to forecast.
+
 ![Time series](assets/ts.jpg)
 ![Time series](assets/ts2.jpg)
 
@@ -365,6 +410,41 @@ We determine the IoU for each of the object masks and our mask. The largest IoU 
 - siamese lstm
 - siamese bi-lstm
 - siamese CapsuleNet
+
+## Inception Network (also known as GoogLeNet)
+
+![](https://miro.medium.com/max/800/1*KMdg-mRHZCCwGoa3qwJJag.jpeg)
+
+This is a historically significant CNN design, having won the ImageNet recognition competition in 2014. The Inception model is also significant because it uses 12 times fewer parameters than the AlexNet.
+
+Before further explaining how the Inception block works, we will quickly comment on the difference between Inception and other popular advanced CNN designs such as ResNet and DenseNet. ResNet and DenseNet increase the capacity of CNNs by increasing the depth of the network. This is done by adding shortcut connections that combat problems with feature redundancy.
+
+Contrastingly, the Inception network focuses on the **width** of each layer, oppossed to the **depth** of the overall network. In more concrete terms, the Inception network presented in this paper contains 22 parametric layers, whereas ResNets or Highway networks usually contain over 100 layers.
+
+### Inception Block: To shrink the depth of the feature map
+
+![Inception Block](https://paperswithcode.com/media/methods/Screen_Shot_2020-06-22_at_3.22.39_PM.png)
+
+(a). Stacking many different layers together. The Inception module copies the original input and feeds this same input to each of the different operations.
+
+(b). we see that the input is initially passed through a 1x1 convolution before the 3x3, 5x5, and max-pool. This is done in order to reduce computational complexity, remember that a 1x1 convolution preserves the spatial dimensions of feature maps but can be used to decrease/increase the depth with the number of filters maps hyper-parameter.
+
+### Intermediate Classifiers to Solve Vanishing Gradient
+
+![Intermediate Classifiers](https://miro.medium.com/max/1250/1*Z_tzA_tY41GaDX3zH1mzaw.png)
+
+Intermediate Classifiers forces the intermediate features learned in this network to have discriminative features for the task at hand. With respect to the mechanisms used for implementation, the loss from each intermediate classifier is nerfed by a factor of 0.3 when updating the parameters via backpropagation.
+
+## DenseNet
+
+- <https://towardsdatascience.com/understanding-and-visualizing-densenets-7f688092391a>
+- Counter-intuitively, by connecting this way DenseNets require fewer parameters than an equivalent traditional CNN, as there is no need to learn redundant feature maps.
+- Furthermore, some variations of ResNets have proven that many layers are barely contributing and can be dropped. In fact, the number of parameters of ResNets are big because every layer has its weights to learn. Instead, DenseNets layers are very narrow (e.g. 12 filters), and they just add a small set of new feature-maps.
+- Another problem with very deep networks was the problems to train, because of the mentioned flow of information and gradients. DenseNets solve this issue since each layer has direct access to the gradients from the loss function and the original input image.
+
+![DEnse](https://miro.medium.com/max/474/1*GeK21UAbk4lEnNHhW_dgQA.png)
+
+![Dense](https://paperswithcode.com/media/methods/Screen_Shot_2020-06-20_at_11.35.53_PM_KroVKVL.png)
 
 ## CapsuleNet
 
