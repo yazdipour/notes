@@ -18,18 +18,6 @@
   </head>
 
   <body>
-    <!-- <style>
-      .markdown-section p.tip,
-      .markdown-section tr:nth-child(2n) {
-        background-color: #282828 !important;
-      }
-
-      .sidebar,
-      body {
-        background-color: #181a1b !important;
-      }
-
-    </style> -->
     <div id="app"></div>
     <script>
       window.$docsify = {
@@ -42,6 +30,15 @@
         },
         themeColor: "#5EFE982",
         auto2top: true,
+        dark: {
+          accent: '#45aaf2',
+          background: '#111',
+          highlightColor: '#f7b731'
+        },
+        light: {
+          accent: '#2d98da',
+          highlightColor: '#f7b731'
+        },
       };
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
