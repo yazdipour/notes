@@ -171,11 +171,8 @@
 
 ## Tools
 
-- [lib4dev](http://www.lib4dev.com/)
-- [CodeScreen](https://carbon.now.sh)
-- [startup name check](https://startupnamecheck.com/)
-- [cheatsheet](https://guif.re/)
-- [slacklist](https://slacklist.info/)
-- [Draw Diagrams](https://www.draw.io/)
+- [Carbon Code Pic Share](https://carbon.now.sh)
+- [Startup name check](https://startupnamecheck.com/)
+- [Guifre Security Cheatsheet](https://guif.re/)
 - [Book Resource](notes/book.md)
 - [Keyboard Switches](https://github.com/yazdipour/notes/raw/master/notes/keyboard_switches.jpg)
