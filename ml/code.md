@@ -9,3 +9,19 @@
 import glob
 file_list = glob.glob('../hindi_*')
 ```
+
+<!-- tabs:start -->
+
+#### ** English **
+
+Hello!
+
+#### ** French **
+
+Bonjour!
+
+#### ** Italian **
+
+Ciao!
+
+<!-- tabs:end -->
