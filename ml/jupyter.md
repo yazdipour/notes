@@ -1,4 +1,23 @@
-# Jupyter Tricks
+# CoLab
+
+- To download from Google Drive:
+
+```py
+# https://drive.google.com/uc?id=[url_id]
+!gdown --id [url_id]
+```
+
+- To get less output
+
+```txt
+!pip install -qq transformers
+
+-q:   hide WARNING messages
+-qq:  hide WARNING and ERROR messages
+-qqq: hide all messages
+```
+
+# Jupyter
 
 - Multicursor support with `ALT`
 - Big data analysis

@@ -95,83 +95,9 @@ cp ~/.kube/config .
 
 ```
 
-## Get kubectl
-
-```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin/kubectl
-
-cd ../..
-
-kubectl create ns example-app
-
-# lets create some resources.
-kubectl apply -n example-app -f secrets/secret.yaml
-kubectl apply -n example-app -f configmaps/configmap.yaml
-kubectl apply -n example-app -f deployments/deployment.yaml
-
-# remember to change the `type: LoadBalancer`
-kubectl apply -n example-app -f services/service.yaml
-
-```
-
 ## Clean up
 
 ```sh
 az group delete -n $RESOURCEGROUP
 az ad sp delete --id $SERVICE_PRINCIPAL
 ```
-
-## Start the Kubernetes dashboard
-
-`az aks browse --resource-group myResourceGroup --name myAKSCluster`
-
-### Signin
-
-Set the admin kubeconfig with `az aks get-credentials -a --resource-group <RG_NAME> --name <CLUSTER_NAME>`
-
-### Create an AKS cluster with ACR integration
-
-`az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr myACRName`
-
-## Terraform
-
-https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks?toc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Faks%2Ftoc.json&bc=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fbread%2Ftoc.json
-
-Providers: https://www.terraform.io/docs/providers/index.html
-
-https://github.com/HoussemDellai/Terraform-Demo/blob/master/app-service-variables/main.tf
-
-```sh
-terraform init
-terraform plan # create an executable plan
-terraform apply -auto-approve #execute the plan
-terraform detroy #destroy the resources /infrastructure
-
-terraform refresh #query infrastructure provider to get current state
-terraform state list
-terraform state show x
-```
-
-## Helm
-
-https://github.com/helm/charts/tree/master/stable
-https://www.youtube.com/watch?v=DczwTQE5T2M
-
-```sh
-helm create x
-helm package x
-helm install x //to deply to kub
-```
-
-## Kub Service SSL
-
-https://docs.microsoft.com/en-us/azure/application-gateway/ingress-controller-expose-service-over-http-https
-
-https://www.youtube.com/watch?v=5S_395VKMqs
-1 https://cert-manager.io/docs/installation/kubernetes/
-
-2 https://cert-manager.io/docs/concepts/issuer/
-
-helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.4 --set installCRDs=true

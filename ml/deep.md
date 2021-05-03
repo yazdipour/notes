@@ -4,6 +4,8 @@
 - Layers Count := | InputLayer + HiddenLayer |
 - Best Blog Resource: <https://colah.github.io/>
 
+![](https://raw.githubusercontent.com/Foroozani/Deep-Neural-Nets/main/images/DL.png)
+
 ## Activation Function
 
 ![Activation Function](assets/activation.jpg)
@@ -159,8 +161,6 @@ Cycle consistent adversarial networks for unpaired image-image translation. Some
 
 ## Transformer
 
-![](https://raw.githubusercontent.com/thunlp/PLMpapers/master/PLMfamily.jpg)
-
 - An encoder decoder architecture based on attention layers.
 - One main difference is that the **input sequence can be passed parallelly**, so that **GPU** can be utilized effectively, and the speed of training can also be increased. And it is based on the multi-headed attention layer, vanishing gradient issue is also overcome by a large margin.
   ![Transformer](assets/trans/tr.jpg)
@@ -203,9 +203,6 @@ Now it is passed through a Softmax Layer, which transforms the input into a prob
 
 ![bert](assets/cnn/bert.jpg)
 
-- Useful in Text Translation/Summarization because we have the future words.
-- Created by stacking multiple encoders of Transformer.
-
 ### Word Embedding
 
 - Play with code <https://colab.research.google.com/drive/1yFphU6PW9Uo6lmDly_ud9a6c4RCYlwdX>
@@ -213,19 +210,6 @@ Now it is passed through a Softmax Layer, which transforms the input into a prob
 - It breaks down unknown words into subwords.
 
 ![](assets/subword.jpg)
-
-### Input Formatting
-
-- **[SEP]**, to mark the end of a sentence, or the **separation** between two sentences
-- **[CLS]**, at the beginning of our text. This token is used for **classification** tasks, but BERT expects it no matter what your application is.
-- **[PAD]** Padding
-- **[UNK]** Unknown Char
-- **[MASK]**
-- Tokens that conform with the fixed vocabulary used in BERT
-- **The Token IDs** for the tokens, from BERT’s tokenizer
-- **Mask IDs** to indicate which elements in the sequence are tokens and which are padding elements
-- **Segment IDs** used to distinguish different sentences
-- **Positional Embeddings** used to show token position within the sequence
 
 ### Advantages of Fine-Tuning
 

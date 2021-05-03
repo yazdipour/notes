@@ -1,5 +1,9 @@
 # ML
 
+## OneHot Coding
+
+![onehot](https://jalammar.github.io/images/t/one-hot-vocabulary-example.png)
+
 ## Confusion Matrix
 
 ![confusion](assets/confusion-matrix.png)
@@ -105,4 +109,9 @@ It is usually done after a fully connected/convolutional layer and before a non-
 
 <https://youtu.be/9oSkUej63y>
 
-![pca](assets/pca.png)
+### Dimensionality Reduction
+
+Two methods:
+
+1. Feature Selection (Lasso, Chi-Squared Selection)
+2. Feature Extraction (PCA, Kernel PCA, Latent Semantic Analysis)

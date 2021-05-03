@@ -35,6 +35,8 @@
 - [Cloud](cloud/cloud.md)
 - [Azure](cloud/azure.md)
 - [Kubernetes](cloud/kube.md)
+- [Terraform](cloud/terraform.md)
+- [Helm](cloud/helm.md)
 
 ## Languages
 
@@ -83,6 +85,7 @@
 
 ## Data Science
 
+- [Tools](ml/tools.md)
 - [Statistics](ml/statistics.md)
 - [Machine Learning](ml/machinelearning.md)
   - [Code](ml/code.md)

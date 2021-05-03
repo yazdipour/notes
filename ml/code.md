@@ -10,6 +10,12 @@ import glob
 file_list = glob.glob('../hindi_*')
 ```
 
+## Read one Row of a big DF
+
+```py
+data = next(iter(df))
+```
+
 <!-- tabs:start -->
 
 #### ** English **

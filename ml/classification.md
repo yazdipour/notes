@@ -1,5 +1,11 @@
 # Classification
 
+```py
+from sklearn.linear_model import LogisticRegression,SGDClassifier
+from sklearn.svm import SVC, LinearSVC, NuSVC
+from sklearn.naive_bayes import MultinomialNB,BernoulliNB
+```
+
 ## Linear Regression
 
 ex. Predict House prize based on other houses properties and prize -> Draw random line -> try minimize error using Gradient Descent (least square).

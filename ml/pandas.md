@@ -1,10 +1,12 @@
 # Pandas
 
+- To see number of Non-nulls and Data Type:
+
+`df.info()`
+
+- Basics
+
 ```py
-import pandas as pd from pandas import Series, DataFrame from pandas import Series, DataFrame
-
-Series (data=None, index=None, dtype=None, name=None, copy=False, fastpath=False)
-
 obj.values
 obj.index
 ser1.sort_index()
