@@ -97,6 +97,7 @@
   - [Parallelized Pre-Processing](ml/parallel.md)
 - [Deep Learning](ml/deep.md)
   - [NN](ml/nn.md)
+  - [Transformers](ml/transformers.md)
   - [NLP](ml/nlp.md)
   - [Image Processing](ml/ip.md)
   - [Computer Vision](ml/cv.md)

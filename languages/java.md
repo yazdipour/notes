@@ -1,5 +1,24 @@
 # Java
 
+## hashcode() & 0xfffffff
+
+`x.hashcode() & 0xfffffff` will turn the sign bit off. Math.abs is not used here because it returns negative if x.hashCode is equal to `Integer.MIN_VALUE` which will make the hashtable's array throw an ArrayOutOfBoundException which is not something you want.
+
+From @JonSkeet comment: It doesn't just turn the sign bit off, it clears the next three bits as well.
+
+But with hash codes we deal with collisions all the time, so it is considered fine.
+
+## Static Block
+
+```java
+public class A{
+    static {}
+```
+
+This is called a static block and will only be executed once during initialization. Also, if there are more than one static initialization blocks, the run time guarantees that they will be called in the order they appear in the source code.
+
+Why we need static block ? Because we cannot initialize our static final member variables within the constructor, it does not make any sense.
+
 ## Basic Spring Controller Test
 
 ```java

@@ -38,7 +38,7 @@ az aks get-credentials -n <yourClusterName> -g <yourResourceGroupName>
 
 `az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr myACRName`
 
-## Start the Kubernetes dashboard
+## Start the Kubernetes dashboard [DEPRECATED]
 
 `az aks browse --resource-group myResourceGroup --name myAKSCluster`
 
@@ -63,3 +63,14 @@ https://www.youtube.com/watch?v=5S_395VKMqs
 2 https://cert-manager.io/docs/concepts/issuer/
 
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.4 --set installCRDs=true
+
+## Expose Port to Public
+
+`kubectl expose pod test --type=NodePort --port=80 --target-port=5000`
+
+## Port forwarding
+
+```
+kubectl -n yournamespace get pods
+kubectl port-forward pod/mongo-db-r3pl1ka3 8080:5762
+```
