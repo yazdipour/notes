@@ -1,5 +1,10 @@
 # NLP
 
+## Text Encoding
+
+1. (BPE) Byte Pair Enc
+2. Word Piece Enc
+
 ## Summary of NLTK
 
 ![nlp](assets/nltk.png)

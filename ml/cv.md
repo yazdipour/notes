@@ -1,5 +1,9 @@
 # Computer Vision
 
+## Hugging face Transformers meets VISION
+
+https://huggingface.co/google/vit-base-patch16-224
+
 ## ImageNet Models
 
 - Classic: LeNet5, AlexNet, ZFNet, VGG(Nice structure, Bad Memory usage)

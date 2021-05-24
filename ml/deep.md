@@ -6,6 +6,21 @@
 
 ![](https://raw.githubusercontent.com/Foroozani/Deep-Neural-Nets/main/images/DL.png)
 
+## Hyperparameters
+
+- Hyper optimization
+  - GridSearch, RandomSearch
+  - Bayesian Optimization
+- Regularization: Dropout, L2, L1
+  - DNNs = Dropout
+  - L2 = most common
+  - L1 = sparsity (zeros) & feature-selection (rarer circumstances)
+- Optimizers (SGD): Momentum -> Adagrad -> RMSProp -> Adam -> Nadam
+- Initializers: Zeros, Random Uniform, Xavier
+- Scaling
+  - Feature-scaling: MinMaxScaler, StandardScaler, RobustScaler
+  - Features + inter-layer: Batch Normalization
+
 ## Activation Function
 
 ![Activation Function](assets/activation.jpg)

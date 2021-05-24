@@ -4,7 +4,18 @@
 
 ```py
 # https://drive.google.com/uc?id=[url_id]
+! pip install gdown -q
 !gdown --id [url_id]
+```
+
+- Make sure you don’t get disconnected
+
+```js
+%%javascript
+function ClickConnect(){
+console.log("Working");
+document.querySelector("colab-toolbar-button#connect").click()
+}setInterval(ClickConnect,60000)
 ```
 
 - To get less output
@@ -16,6 +27,22 @@
 -qq:  hide WARNING and ERROR messages
 -qqq: hide all messages
 ```
+
+- Use fastprogress when your code will take a while
+
+```py
+! pip install fastprogress
+from fastprogress import master_bar, progress_bar
+
+#before
+for item in my_list:
+    process(item)
+#after
+for item in progress_bar(my_list):
+    process(item)
+```
+
+![fastprogress](https://miro.medium.com/max/875/0*z0XfZlGfZeEmyF5U.gif)
 
 # Jupyter
 
