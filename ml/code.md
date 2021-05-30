@@ -16,18 +16,15 @@ file_list = glob.glob('../hindi_*')
 data = next(iter(df))
 ```
 
-<!-- tabs:start -->
+## Saving results in pickle
 
-#### ** English **
+```py
+save_classifier = open("naivebayes.pickle","wb")
+pickle.dump(classifier, save_classifier)
+save_classifier.close()
 
-Hello!
 
-#### ** French **
-
-Bonjour!
-
-#### ** Italian **
-
-Ciao!
-
-<!-- tabs:end -->
+classifier_f = open("naivebayes.pickle", "rb")
+classifier = pickle.load(classifier_f)
+classifier_f.close()
+```

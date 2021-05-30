@@ -1,22 +1,30 @@
 # NLP
 
-## Text Encoding
-
-1. (BPE) Byte Pair Enc
-2. Word Piece Enc
-
-## Summary of NLTK
-
-![nlp](assets/nltk.png)
-
-## NLP NLTK
-
-- Tokenizing - Splitting sentences and words from the body of text
 - Corpus - Body of text, singular. Corpora is the plural of this. Example: A collection of medical journals.
 - Lexicon - Words and their meanings. Example: English dictionary. Consider, however, that various fields will have different lexicons. For example: To a financial investor, the first meaning for the word &quot;Bull&quot; is someone who is confident about the market, as compared to the common English lexicon, where the first meaning for the word &quot;Bull&quot; is an animal. As such, there is a special lexicon for financial investors, doctors, children, mechanics, and so on.
 - Token - Each &quot;entity&quot; that is a part of whatever was split up based on rules. For examples, each word is a token when a sentence is &quot;tokenized&quot; into words. Each sentence can also be a token, if you tokenized the sentences out of a paragraph.
 
-_From [\_https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/_](https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/)
+## Text Encoding / Tokenzation
+
+Splitting sentences and words from the body of text
+
+1. (BPE) Byte-level Byte-pair encoding tokenizer
+
+```py
+from tokenizers import ByteLevelBPETokenizer
+tokenizer = ByteLevelBPETokenizer()
+tokenizer.train(files=paths, vocab_size=52_000, min_frequency=2, special_tokens=[
+    "<s>",
+    "<pad>",
+    "</s>",
+    "<unk>",
+    "<mask>",
+])
+tokenizer.save_model("folderName") #will output merges.txt vocab.json
+```
+
+2. WordPiece
+3. Unigram
 
 ## Language modeling
 
@@ -353,21 +361,6 @@ classifier.show_most_informative_features(15)
 
 _From [\_https://pythonprogramming.net/naive-bayes-classifier-nltk-tutorial/?completed=/words-as-features-nltk-tutorial/_](https://pythonprogramming.net/naive-bayes-classifier-nltk-tutorial/?completed=/words-as-features-nltk-tutorial/)
 
-### Saving results in pickle
-
-```py
-save_classifier = open("naivebayes.pickle","wb")
-pickle.dump(classifier, save_classifier)
-save_classifier.close()
-
-
-classifier_f = open("naivebayes.pickle", "rb")
-classifier = pickle.load(classifier_f)
-classifier_f.close()
-```
-
-_From [\_https://pythonprogramming.net/pickle-classifier-save-nltk-tutorial/?completed=/naive-bayes-classifier-nltk-tutorial/_](https://pythonprogramming.net/pickle-classifier-save-nltk-tutorial/?completed=/naive-bayes-classifier-nltk-tutorial/)
-
 ### Scikit-Learn Sklearn with NLTK
 
 ```py
@@ -404,3 +397,7 @@ BLEU’s strength is that it correlates well with human judgment by averaging ou
 - [Github Repo](https://github.com/adashofdata/nlp-in-python-tutorial)
 
 ![nlp](assets/nlp.png)
+
+## Summary of NLTK
+
+![nlp](assets/nltk.png)
