@@ -10,21 +10,25 @@ Splitting sentences and words from the body of text
 
 1. (BPE) Byte-level Byte-pair encoding tokenizer
 
-```py
-from tokenizers import ByteLevelBPETokenizer
-tokenizer = ByteLevelBPETokenizer()
-tokenizer.train(files=paths, vocab_size=52_000, min_frequency=2, special_tokens=[
-    "<s>",
-    "<pad>",
-    "</s>",
-    "<unk>",
-    "<mask>",
-])
-tokenizer.save_model("folderName") #will output merges.txt vocab.json
-```
+One of the most popular subword tokenization algorithm. The Byte-Pair-Encoding works by starting with characters, while merging those that are the most frequently seen together, thus creating new tokens. It then works iteratively to build new tokens out of the most frequent pairs it sees in a corpus.
+
+BPE is able to build words it has never seen by using multiple subword tokens, and thus requires smaller vocabularies, with less chances of having “unk” (unknown) tokens.
 
 2. WordPiece
+
+This is a subword tokenization algorithm quite similar to BPE, used mainly by Google in models like BERT. It uses a greedy algorithm, that tries to build long words first, splitting in multiple tokens when entire words don’t exist in the vocabulary. This is different from BPE that starts from characters, building bigger tokens as possible.
+
+It uses the famous ## prefix to identify tokens that are part of a word (ie not starting a word).
+
 3. Unigram
+
+Unigram is also a subword tokenization algorithm, and works by trying to identify the best set of subword tokens to maximize the probability for a given sentence. This is different from BPE in the way that this is not deterministic based on a set of rules applied sequentially. Instead Unigram will be able to compute multiple ways of tokenizing, while choosing the most probable one.
+
+4. WordLevel
+
+This is the “classic” tokenization algorithm. It let’s you simply map words to IDs without anything fancy. This has the advantage of being really simple to use and understand, but it requires extremely large vocabularies for a good coverage.
+
+Using this Model requires the use of a PreTokenizer. No choice will be made by this model directly, it simply maps input tokens to IDs
 
 ## Language modeling
 

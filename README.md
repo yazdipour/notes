@@ -110,6 +110,7 @@
   - [Pytorch](ml/pytorch.md)
   - [Visualization](ml/visualization.md)
 - CheatSheet
+  - [Generalized Language Models/Transformers](https://lilianweng.github.io/lil-log/2019/01/31/generalized-language-models.html)
   - [Standford Deep](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-deep-learning)
   - [Standford Unsupervised](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-unsupervised-learning)
   - [Standford Supervised](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning)
@@ -180,3 +181,4 @@
 - [Guifre Security Cheatsheet](https://guif.re/)
 - [Book Resource](notes/book.md)
 - [Keyboard Switches](https://github.com/yazdipour/notes/raw/master/notes/keyboard_switches.jpg)
+- [English-Persian Computer Science Technical Dictionary](https://github.com/hkhojasteh/EN-FA-CS-Dictionary)
