@@ -8,6 +8,25 @@
 !gdown --id [url_id]
 ```
 
+- Throw Exception when you do not get TeslaT4 Graphic.
+
+```py
+import pynvml
+pynvml.nvmlInit()
+handle = pynvml.nvmlDeviceGetHandleByIndex(0)
+device_name = pynvml.nvmlDeviceGetName(handle)
+
+if device_name != b'Tesla T4':
+  raise Exception("""
+    Unfortunately this instance does not have a T4 GPU.
+    Please make sure you've configured Colab to request a GPU instance type.    
+    Sometimes Colab allocates a Tesla K80 instead of a T4. Resetting the instance.
+    If you get a K80 GPU, try Runtime -> Reset all runtimes...
+  """)
+else:
+  print('Woo! You got the right kind of GPU!')
+```  
+
 - Make sure you don’t get disconnected
 
 ```js
@@ -16,6 +35,33 @@ function ClickConnect(){
 console.log("Working");
 document.querySelector("colab-toolbar-button#connect").click()
 }setInterval(ClickConnect,60000)
+```
+
+- This cell runs JS code to automatic reconnect to runtime:
+
+```py
+import IPython
+from google.colab import output
+
+display(IPython.display.Javascript('''
+ function ClickConnect(){
+   btn = document.querySelector("colab-connect-button")
+   if (btn != null){
+     console.log("Click colab-connect-button"); 
+     btn.click() 
+     }
+   
+   btn = document.getElementById('ok')
+   if (btn != null){
+     console.log("Click reconnect"); 
+     btn.click() 
+     }
+  }
+  
+setInterval(ClickConnect,60000)
+'''))
+
+print("Done.")
 ```
 
 - To get less output
