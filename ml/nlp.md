@@ -4,6 +4,16 @@
 - Lexicon - Words and their meanings. Example: English dictionary. Consider, however, that various fields will have different lexicons. For example: To a financial investor, the first meaning for the word &quot;Bull&quot; is someone who is confident about the market, as compared to the common English lexicon, where the first meaning for the word &quot;Bull&quot; is an animal. As such, there is a special lexicon for financial investors, doctors, children, mechanics, and so on.
 - Token - Each &quot;entity&quot; that is a part of whatever was split up based on rules. For examples, each word is a token when a sentence is &quot;tokenized&quot; into words. Each sentence can also be a token, if you tokenized the sentences out of a paragraph.
 
+## Vectorizing
+
+![Vectorizing](./assets/vectorizing.png)
+
+Types:
+
+- Count vectorization
+- N-grams
+- Term frequency — inverse document frequency (TF-IDF)
+
 ## Text Encoding / Tokenzation
 
 Splitting sentences and words from the body of text
