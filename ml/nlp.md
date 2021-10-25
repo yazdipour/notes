@@ -57,6 +57,13 @@ The idea of stemming is a sort of normalizing method.
 
 One of the most popular stemming algorithms is the Porter stemmer, which has been around since 1979.
 
+Types:
+
+- Porter stemmer
+- Snowball Stemmer
+- Lancaster Stemmer
+- Regex-Based Stemmer
+
 First, we&#39;re going to grab and define our stemmer:
 
 ```py
