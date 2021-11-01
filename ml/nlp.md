@@ -209,6 +209,8 @@ _From [\_https://pythonprogramming.net/chinking-nltk-tutorial/_](https://pythonp
 
 ### Named Entity Recognition
 
+![](https://mobidev.biz/wp-content/uploads/2019/12/nlp-task-named-entity-recognition.png)
+
 The idea is to have the machine immediately be able to pull out &quot;entities&quot; like people, places, things, locations, monetary figures, and more.
 
 ```py
