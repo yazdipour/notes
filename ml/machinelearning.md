@@ -38,6 +38,17 @@ All losses have general equaltion, by using maximum likelihood estimation we wil
 ![loss](assets/loss/8.jpg)
 ![loss](assets/loss/7.jpg)
 
+## overfitting / underfitting
+
+- If validation loss >> training loss you can call it overfitting.
+- If validation loss  > training loss you can call it some overfitting.
+- If validation loss  < training loss you can call it some underfitting.
+- If validation loss << training loss you can call it underfitting.
+
+- Your aim is to make the validation loss as low as possible.
+- Some overfitting is nearly always a good thing.
+- All that matters in the end is: is the validation loss as low as you can get it.
+
 ## Optimzers
 
 ![sgd](https://ruder.io/content/images/2015/12/without_momentum.gif)
