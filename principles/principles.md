@@ -49,3 +49,35 @@ IoC without using DI, for example would be the Template pattern because the impl
 DI Frameworks are designed to make use of DI and can define interfaces (or Annotations in Java) to make it easy to pass in the implementations.
 
 IoC Containers are DI frameworks that can work outside of the programming language. In some you can configure which implementations to use in metadata files (e.g. XML) which are less invasive.
+
+## DDD
+
+[What I understand about domain-driven design](https://medium.com/code-thoughts/what-i-understand-about-domain-driven-design-f7fbd00e364f)
+
+It feels like DDD is mostly about good object-oriented design presented in particular, formalized way with specific buzzwords (aggregate, bounded context, etc.).
+
+DDD is also enforcing designing system around business domain, not around, e.g. database. That is usually a case when designing architecture from scratch quickly. As 99% of apps are CRUDs, ending up with database driven architectures would be natural. You usually start with file->new project, and go from there. This is not a problem for small apps, but might strike later when evolving the app. DDD solves that problem.
+
+If you are familiar with [Clean Code](https://amzn.to/2BBzG84) and [SOLID](https://en.wikipedia.org/wiki/SOLID) design as presented in [Agile Principles, Patterns, and Practices in C#](https://amzn.to/2LxBMuv) then DDD does not bring much new concepts to the table. It may make you think more from a business perspective, and consider using new patterns ([Repository pattern](https://deviq.com/repository-pattern/), [CQRS](https://martinfowler.com/bliki/CQRS.html) or [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)) though.
+
+Going back to DDD terms (AKA buzzwords), they could be also summarized as follows:
+
+- Ubiquitous Language – use meaningful names for classes, methods and variables
+- Domain – be aware what problem you are solving
+- Bounded Context – group objects that depends on each other
+- Value Object – simple, immutable class
+- Entity – class with unique identifier, usually used to represent persistent data
+- Aggregate – group of related entities
+- Repository – facade over your persistence layer to make it implementation agnostic
+- Application Service – your system’s API
+- Anti-corruption layer – layer for interaction with external system
+- [CQRS (Command Query Responsibility Segregation)](https://martinfowler.com/bliki/CQRS.html) – separates querying for data and modifying data
+- [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) – storing changes to application state as a list of events, which allows to invoke and process events in producer/consumer fashion
+
+Two main rules to Domain Driven Design:
+
+- do not share models (and data)
+  - It is better to repeat yourself than end up in complicated inheritance with switches.
+  - It is not bad to have multiple customer classes in different contexts. Customer in search, in recommendations, in shopping card, in checkout, in shipping and in billing are different. In some cases those contexts do not overlap but when they do trouble starts.
+- keep your business logic away from view and infrastructure
+  - DDD people suggest having infrastructure and view layer but there are different ways to achieve this. Most important is to keep it away from especially persistence layer, as that is what often happening . This is hard to reach if you do not repeat yourself – see point above. When your model is complicated you have complicated ways to retrieve data and you end up coupling business logic with persistence layer. Simplest models can be easily stored even in files as JSON files.
