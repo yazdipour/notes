@@ -103,6 +103,40 @@ It may or may not need inheritance in Method Overloading.
 
 ![collection](https://www.edureka.co/blog/wp-content/uploads/2017/05/Collection-framework-hierarchy.png)
 
+## Spring Annotations
+
+https://springframework.guru/spring-framework-annotations/
+
+### @Required
+
+### @Autowired
+
+### @Component
+
+### @Qualifier
+
+### @Configuration
+
+### @ComponentScan
+
+### @Bean
+
+### @Lazy
+
+### @Value
+
+### @Controller
+
+### @Service
+
+### @Repository
+
+### @EnableAutoConfiguration
+
+### @SpringBootApplication
+
+### @InitBinder
+
 ## Job Interview Questions
 
 1. تفاوت بین متدهای استاتیک و غیراستاتیک را توضیح دهید و همچنین نوع معماری حافظه که برای آن‌ها در نظر گرفته می‌شود را شرح دهید.
